@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../../index.css";
+
 
 interface YouTubeVideo {
   id: { videoId: string };
@@ -12,12 +12,11 @@ interface YouTubeVideo {
   };
 }
 
-const TestingVideoApi: React.FC = () => {
+const Mexico: React.FC = () => {
   const [videos, setVideos] = useState<YouTubeVideo[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  console.log("API Key:", import.meta.env.VITE_GOOGLE_API_KEY); // Debug the variable
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -92,4 +91,4 @@ const TestingVideoApi: React.FC = () => {
   );
 };
 
-export default TestingVideoApi;
+export default Mexico;

@@ -2,9 +2,11 @@ import  { useRef } from "react";
 import Map from "react-map-gl/maplibre";
 import type { MapRef } from "@vis.gl/react-maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
+  import { useNavigate } from 'react-router-dom';
 
 const WorldMap = () => {
   const mapRef = useRef<MapRef | null>(null);
+  const navigate = useNavigate();
 
   return (
     <Map
@@ -22,6 +24,7 @@ const WorldMap = () => {
         if (mapRef.current) {
           const map = mapRef.current.getMap();
           const features = map.queryRenderedFeatures(event.point);
+          navigate(`/${features[0].layer.id}`)
           console.log("Double-clicked Country:", features[0].layer.id);
         }
       }}

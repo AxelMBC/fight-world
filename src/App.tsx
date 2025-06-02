@@ -1,17 +1,15 @@
+import { Outlet } from "react-router-dom";
+// import Header from "./components/Header";
+// import Footer from "./components/Footer";
 
-import './App.css'
-// import TestingVideo from "./components/TestingVideoApi";
-import WorldMap from "./components/WorldMap";
-
-function App() {
-  // const [count, setCount] = useState(0)
-
+const App = () => {
   return (
     <>
-     {/* <TestingVideo/> */}
-     <WorldMap/>
+      {/* <Header /> */}
+      <Outlet />
+      {/* <Footer /> */}
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
