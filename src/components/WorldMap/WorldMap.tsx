@@ -70,7 +70,7 @@ const WorldMap = () => {
           latitude: 21.8,
           zoom: 1,
         }}
-        minZoom={1}
+        minZoom={2}
         style={{
           width: "100vw",
           height: "100vh",
@@ -92,15 +92,15 @@ const WorldMap = () => {
       />
       {dialog.show && (
         <div
-          className="position-absolute bg-primary text-white rounded-3 p-3 shadow-lg"
+          className="position-absolute bg-primary  rounded-3 p-3 shadow-lg"
           style={{
             left: `${dialog.x}px`,
             top: `${dialog.y - 80}px`,
             transform: "translateX(-50%)",
             zIndex: 1000,
             minWidth: "180px",
-            background: "linear-gradient(135deg, #007bff, #00d4ff)",
-            border: "2px solid #ffffff",
+            background: "linear-gradient( #cc1c2a, #f89a16)",
+            border: "2px solid darkred",
             animation: "popIn 0.3s ease-out",
           }}
         >
@@ -109,6 +109,7 @@ const WorldMap = () => {
             style={{
               textTransform: "capitalize",
               textShadow: "1px 1px 2px rgba(0,0,0,0.3)",
+              color: "white"
             }}
           >
             {dialog.country}
@@ -123,7 +124,7 @@ const WorldMap = () => {
               height: 0,
               borderLeft: "10px solid transparent",
               borderRight: "10px solid transparent",
-              borderTop: "10px solid #007bff",
+              borderTop: "10px solid #cc1c2a",
             }}
           />
         </div>
