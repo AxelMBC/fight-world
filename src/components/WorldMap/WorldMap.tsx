@@ -62,7 +62,7 @@ const WorldMap = () => {
   };
 
   return (
-    <div className="map-container">
+    <div className="relative w-screen h-screen">
       <Map
         ref={mapRef}
         initialViewState={{
@@ -90,33 +90,26 @@ const WorldMap = () => {
           }
         }}
       />
+
       {dialog.show && (
         <div
-          className="position-absolute bg-primary  rounded-3 p-3 shadow-lg"
+          className="absolute z-[1000] px-4 py-3 rounded-md shadow-xl border-2 text-center animate-pop-in"
           style={{
             left: `${dialog.x}px`,
             top: `${dialog.y - 80}px`,
             transform: "translateX(-50%)",
-            zIndex: 1000,
             minWidth: "180px",
-            background: "linear-gradient( #cc1c2a, #f89a16)",
-            border: "2px solid darkred",
-            animation: "popIn 0.3s ease-out",
+            background: "linear-gradient(#cc1c2a, #f89a16)",
+            borderColor: "darkred",
           }}
         >
-          <h4
-            className="mb-0 text-center fw-bold"
-            style={{
-              textTransform: "capitalize",
-              textShadow: "1px 1px 2px rgba(0,0,0,0.3)",
-              color: "white"
-            }}
-          >
+          <h4 className="mb-0 text-white font-black text-lg capitalize drop-shadow">
             {dialog.country}
           </h4>
+
           <div
+            className="absolute"
             style={{
-              position: "absolute",
               bottom: "-10px",
               left: "50%",
               transform: "translateX(-50%)",
@@ -129,11 +122,22 @@ const WorldMap = () => {
           />
         </div>
       )}
+
       <style>
         {`
-          @keyframes popIn {
-            0% { transform: translateX(-50%) scale(0.8); opacity: 0; }
-            100% { transform: translateX(-50%) scale(1); opacity: 1; }
+          @keyframes pop-in {
+            0% {
+              transform: translateX(-50%) scale(0.8);
+              opacity: 0;
+            }
+            100% {
+              transform: translateX(-50%) scale(1);
+              opacity: 1;
+            }
+          }
+
+          .animate-pop-in {
+            animation: pop-in 0.3s ease-out;
           }
         `}
       </style>
