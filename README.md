@@ -1,7 +1,5 @@
 # Getting Started with Your React + TypeScript + Vite App
 
-This guide will help you run your app on any machine.
-
 ## Prerequisites
 
 Make sure you have the following installed:
