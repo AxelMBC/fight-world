@@ -1,133 +1,25 @@
 import React, { useState, useEffect } from 'react';
 
-// --- TYPE DEFINITIONS (The Blueprint) ---
-interface YouTubeVideo {
-  id: { videoId: string };
-  snippet: {
-    title: string;
-    description: string;
-    thumbnails: { high: { url: string } };
-  };
-}
+import '../../../styles/Mexico/style.css';
 
-interface Boxer {
-  id: string;
-  name: string;
-  record: string;
-  achievements: string;
-  image: string;
-}
+// Types
+import type { Fighter } from '../../../types/Fighter';
+import type { YouTubeVideo} from '../../../types/YoutubeVideo';
 
-// --- MOCK DATA (The Legends) ---
-const topBoxers: Boxer[] = [
-  { id: "1", name: "Julio César Chávez", record: "107-6-2", achievements: "El Gran Campeón Mexicano", image: "https://dmxg5wxfqgb4u.cloudfront.net/styles/inline/s3/2020-04/Chavez_Julio_Cesar_04-03-20.jpg" },
-  { id: "2", name: "Salvador Sánchez", record: "44-1-1", achievements: "El Campeón Inmortal", image: "https://www.ringtv.com/wp-content/uploads/2021/08/salvador-sanchez-action-gettyimages-51787160-1024x733.jpg" },
-  { id: "3", name: "Juan Manuel Márquez", record: "56-7-1", achievements: "Maestro del Contragolpe", image: "https://e0.365dm.com/12/12/2048x1152/Juan-Manuel-Marquez-Manny-Pacquiao-knockout_2874135.jpg" },
-  { id: "4", name: "Canelo Álvarez", record: "61-2-2", achievements: "Rey Indiscutido", image: "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2023/10/01/16961234714427.jpg" },
-  { id: "5", name: "Ricardo López", record: "51-0-1", achievements: "Finito, La Perfección", image: "https://www.izquierdazo.com/wp-content/uploads/2022/10/finito-lopez-pelea.jpg" }
+// Components
+import VideoCard from './VideoCard';
+import BoxerCard from './BoxerCard'
+import MainEventVideo from './MainEventVideo';
+
+const topBoxers: Fighter[] = [
+  { id: "1", name: "Julio César Chávez", record: "107-6-2", achievements: "El Gran Campeón Mexicano", image: "https://i.ytimg.com/vi/KAi-7KO9COw/maxresdefault.jpg" },
+  { id: "2", name: "Canelo Álvarez", record: "61-2-2", achievements: "Rey Indiscutido", image: "https://e9t9dc498r8.exactdn.com/wp-content/uploads/2024/12/Canelo-Alvarez-peleas-2025.jpg?strip=all&lossy=1&ssl=1" },
+  { id: "3", name: "Ricardo López", record: "51-0-1", achievements: "Finito, La Perfección", image: "https://www.infobae.com/resizer/v2/6AMVEHZNYVGHJGXDUVFYHCJNRQ.jpg?auth=673c35eeb291c91cd8d7928c4a4943f64ffe929c7200e7715ec93f8e4afd8155" },
+  { id: "4", name: "Juan Manuel Márquez", record: "56-7-1", achievements: "Maestro del Contragolpe", image: "https://i0.wp.com/wbanews.com/wp-content/uploads/2013/01/Juan-Manuel-Marquez-dejo-a-Latinoamerica-en-lo-mas-alto.jpg" },
+  { id: "5", name: "Salvador Sánchez", record: "44-1-1", achievements: "El Campeón Inmortal", image: "https://www.debate.com.mx/img/2020/06/13/salvador_sanchez-2.jpg?__scale=c:transparent,w:640,h:860,t:3" }
 ];
 
-// --- CUSTOM CSS (The Finishing Blow) ---
-const GlobalStyles = () => (
-  <style>{`
-    @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-    
-    body {
-      background-color: #E5E5E5; /* Light grey, like raw concrete */
-    }
 
-    .font-anton {
-      font-family: 'Anton', sans-serif;
-    }
-
-    .text-stroke {
-      -webkit-text-stroke: 2px black;
-      text-stroke: 2px black;
-      color: white;
-    }
-    
-    .text-stroke-red {
-      -webkit-text-stroke: 2px #DC2626; /* red-600 */
-      text-stroke: 2px #DC2626;
-      color: transparent;
-    }
-
-    .card-tape::before {
-      content: '';
-      position: absolute;
-      top: -15px;
-      right: -15px;
-      width: 80px;
-      height: 40px;
-      background-color: rgba(255, 255, 255, 0.4);
-      border: 2px solid rgba(0,0,0,0.2);
-      transform: rotate(45deg);
-      z-index: 1;
-    }
-  `}</style>
-);
-
-// --- MAIN VIDEO PLAYER (The Main Event) ---
-const MainVideoPlayer: React.FC<{ video: YouTubeVideo }> = ({ video }) => (
-  <div className="bg-white p-4 border-4 border-black shadow-[10px_10px_0_#000]">
-    <div className="border-4 border-black">
-      <iframe
-        src={`https://www.youtube.com/embed/${video.id.videoId}?autoplay=1&mute=1&start=300`}
-        title={video.snippet.title}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{ height: '500px', width: '100%' }}
-      ></iframe>
-    </div>
-    <div className="mt-4">
-      <h3 className="text-2xl md:text-4xl font-anton uppercase">{video.snippet.title}</h3>
-      <p className="mt-2 text-gray-700">{video.snippet.description}</p>
-    </div>
-  </div>
-);
-
-
-// --- VIDEO CARD COMPONENT (The Highlight Reel) ---
-const VideoCard: React.FC<{ video: YouTubeVideo }> = ({ video }) => (
-  <a
-    href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="group bg-white flex flex-col border-4 border-black shadow-[8px_8px_0_#000] hover:shadow-[12px_12px_0_#DC2626] transition-all duration-200"
-  >
-    <div className="overflow-hidden border-b-4 border-black">
-      <img
-        src={video.snippet.thumbnails.high.url}
-        alt={video.snippet.title}
-        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 ease-in-out"
-      />
-    </div>
-    <div className="p-4 flex-grow flex flex-col">
-      <h3 className="font-bold text-lg uppercase flex-grow">{video.snippet.title}</h3>
-      <div className="mt-4 text-red-600 font-bold self-end uppercase">Ver Video →</div>
-    </div>
-  </a>
-);
-
-// --- BOXER CARD COMPONENT (The Tale of the Tape) ---
-const BoxerCard: React.FC<{ boxer: Boxer; rank: number }> = ({ boxer, rank }) => (
-  <div className="relative group card-tape">
-     <div className="relative bg-white border-4 border-black shadow-[10px_10px_0_#000] group-hover:shadow-[12px_12px_0_#16A34A] transition-all duration-200">
-      <div className="absolute top-0 left-0 bg-black text-white font-anton text-5xl px-3 z-10">#{rank}</div>
-      <div className="overflow-hidden">
-          <img src={boxer.image} alt={boxer.name} className="w-full h-80 object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-300" />
-      </div>
-      <div className="p-5 border-t-4 border-black">
-        <h3 className="font-anton text-3xl uppercase text-black truncate">{boxer.name}</h3>
-        <p className="mt-1 text-md text-gray-700 font-mono">RÉCORD: {boxer.record}</p>
-        <p className="mt-2 text-green-700 font-bold uppercase">{boxer.achievements}</p>
-      </div>
-    </div>
-  </div>
-);
-
-
-// --- MAIN COMPONENT (The Arena) ---
 const BoxeoBrutal: React.FC = () => {
   const [mainVideo, setMainVideo] = useState<YouTubeVideo | null>(null);
   const [videos, setVideos] = useState<YouTubeVideo[]>([]);
@@ -168,7 +60,6 @@ const BoxeoBrutal: React.FC = () => {
 
   return (
     <>
-      <GlobalStyles />
       <div className="min-h-screen p-4 sm:p-8 font-sans">
         <div className="container mx-auto max-w-7xl p-4 sm:p-6 bg-white border-4 md:border-8 border-black">
           {/* Header */}
@@ -190,7 +81,7 @@ const BoxeoBrutal: React.FC = () => {
           <section className="mb-20 border-y-8 border-black py-10">
             {loading && <p className="text-center font-bold text-3xl animate-pulse">CARGANDO EL PRIMER ROUND...</p>}
             {error && <p className="text-center font-bold text-2xl text-red-600 bg-black p-4">ERROR: {error}</p>}
-            {mainVideo && <MainVideoPlayer video={mainVideo} />}
+            {mainVideo && <MainEventVideo video={mainVideo} />}
           </section>
 
           {/* Top Boxers Section */}
