@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
-import WorldMap from "./components/WorldMap/WorldMap.tsx";
+import WorldMap from "./pages/Home/WorldMap/WorldMap.tsx";
 import Mexico from "./pages/countries/Mexico/index.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 

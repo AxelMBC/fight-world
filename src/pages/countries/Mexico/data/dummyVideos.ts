@@ -33,6 +33,7 @@ export const dummyVideos = [
       channelTitle: "Boxeo De Leyenda",
       liveBroadcastContent: "none",
       publishTime: "2010-01-01T00:00:00Z",
+      link: "https://www.youtube.com/watch?v=gdqZIabo2qI", // Link to the video
     },
   },
   {

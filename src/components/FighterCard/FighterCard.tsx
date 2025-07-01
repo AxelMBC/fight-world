@@ -1,6 +1,6 @@
-import type { Fighter } from '../../../../types/Fighter';
+import type { Fighter } from '../../types/Fighter';
 
-const BoxerCard: React.FC<{ boxer: Fighter; rank: number }> = ({
+const FighterCard: React.FC<{ boxer: Fighter; rank: number }> = ({
   boxer,
   rank,
 }) => (
@@ -31,4 +31,4 @@ const BoxerCard: React.FC<{ boxer: Fighter; rank: number }> = ({
   </div>
 );
 
-export default BoxerCard;
+export default FighterCard;

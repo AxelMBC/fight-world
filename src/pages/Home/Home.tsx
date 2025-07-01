@@ -1,4 +1,4 @@
-import WorldMap from "../../components/WorldMap";
+import WorldMap from "./WorldMap";
 
 const Home = () => {
   return <WorldMap />;

@@ -10,9 +10,11 @@ import { topBoxers } from "./data/topFighters";
 import { dummyVideos } from "./data/dummyVideos";
 
 // Components
-import VideoCard from "./VideoCard";
-import BoxerCard from "./BoxerCard";
-import MainEventVideo from "./MainEventVideo";
+import HeaderTitle from "../../../components/HeaderTitle";
+import TopFighters from "../../../components/TopFighters";
+import MainEvent from "../../../components/MainEvent";
+import "../../../components/MainEvent"
+import TopVideos from "../../../components/TopVideos"
 
 const BoxeoBrutal: React.FC = () => {
   
@@ -85,71 +87,13 @@ const BoxeoBrutal: React.FC = () => {
     <>
       <div className="min-h-screen p-4 sm:p-4 font-sans">
         <div className="container mx-auto max-w-7xl p-4 sm:p-6 bg-white border-4 md:border-8 border-black">
-          <header className="text-center mb-6">
-            <div className="flex justify-center items-center space-x-4 mt-1 mb-4">
-              <span className="w-16 h-8 bg-[#006847]"></span>
-              <span className="w-16 h-8 bg-white border-2 border-black"></span>
-              <span className="w-16 h-8 bg-[#CE1126]"></span>
-            </div>
-            <h1 className="pt-2 text-6xl md:text-8xl font-anton uppercase text-stroke">
-              Boxeo al Estilo <span className="text-stroke-red">MEXICANO</span>
-            </h1>
-          </header>
+          <HeaderTitle />
+          <MainEvent loading={loading} error={error} mainVideo={mainVideo} fetchMainVideo={fetchMainVideo} />
 
-          <section className="mb-20 border-y-8 border-black py-5">
-            {loading && (
-              <p className="text-center font-bold text-3xl animate-pulse">
-                BUSCANDO COMBATE...
-              </p>
-            )}
-            {error && (
-              <p className="text-center font-bold text-2xl text-red-600 bg-black p-4">
-                {error}
-              </p>
-            )}
-            {mainVideo && <MainEventVideo video={mainVideo} />}
-            {!loading && mainVideo && (
-              <div className="text-center my-7">
-                <button
-                  onClick={() => fetchMainVideo()}
-                  className="cursor-pointer bg-red-600 text-white font-anton uppercase text-2xl py-3 px-8 border-4 border-black hover:bg-black hover:text-white transition-colors duration-300 shadow-[8px_8px_0_#000]"
-                >
-                  Buscar Otro Combate
-                </button>
-              </div>
-            )}
-          </section>
-
-          <section className="mb-20">
-            <h2 className="text-5xl md:text-7xl font-anton uppercase mb-10 text-center">
-              ÍDOLOS DE MÉXICO
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              <div className="lg:col-span-2">
-                {topBoxers[0] && <BoxerCard boxer={topBoxers[0]} rank={1} />}
-              </div>
-              <div className="md:col-span-1">
-                {topBoxers[1] && <BoxerCard boxer={topBoxers[1]} rank={2} />}
-              </div>
-              {topBoxers.slice(2).map((b, i) => (
-                <BoxerCard key={b.id} boxer={b} rank={i + 3} />
-              ))}
-            </div>
-          </section>
+          <TopFighters />
 
           {dummyVideos.length > 0 && (
-            <section>
-              <h2 className="text-5xl md:text-7xl font-anton uppercase mb-10 text-center">
-                MÁS PELEAS LEGENDARIAS
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {dummyVideos.map(
-                  (v) =>
-                    v.id &&
-                    v.id.videoId && <VideoCard key={v.id.videoId} video={v} />
-                )}
-              </div>
-            </section>
+           <TopVideos/>
           )}
         </div>
       </div>
