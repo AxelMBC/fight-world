@@ -6,3 +6,10 @@ export interface YouTubeVideo {
     thumbnails: { high: { url: string } };
   };
 }
+
+export interface VideoArchive {
+  title: string;
+  tags: string[];
+  thumbnail: string;
+  idYt: string;
+}
