@@ -1,4 +1,4 @@
-import type { MainEventType } from '../../types/VideoContentType';
+import type { MainEventType } from '../../../types/VideoContentType';
 
 const MainEventVideo: React.FC<{ video: MainEventType }> = ({ video }) => (
   <div className="bg-white p-4 border-4 border-black shadow-[10px_10px_0_#000]">

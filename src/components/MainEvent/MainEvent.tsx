@@ -1,9 +1,11 @@
-import VideoMainEvent from "../VideoMainEvent";
+import type { MainEventType } from '../../types/VideoContentType';
+import VideoMainEvent from "./VideoMainEvent";
+
 
 type MainEventProps = {
   loading: boolean;
   error: string | null;
-  mainVideo: any;
+  mainVideo: MainEventType;
   fetchMainVideo: () => void;
 };
 

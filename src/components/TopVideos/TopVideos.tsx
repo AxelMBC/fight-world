@@ -1,5 +1,5 @@
 import type { TopVideoType } from "../../types/VideoContentType";
-import VideoCard from "../VideoCard";
+import VideoCard from "./VideoCard";
 
 type TopVideosProps = {
   videos: TopVideoType[];

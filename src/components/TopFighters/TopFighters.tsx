@@ -1,5 +1,5 @@
 import type { TopFighterType } from "../../types/TopFighterType";
-import FighterCard from "../FighterCard";
+import FighterCard from "./FighterCard";
 
 interface TopFightersProps {
   topFighters: TopFighterType[];
