@@ -1,6 +1,6 @@
-import type { Fighter } from "../../../../types/Fighter";
+import type { TopFighterType } from "../../../../types/TopFighterType";
 
-export const topBoxers: Fighter[] = [
+export const topBoxers: TopFighterType[] = [
   {
     id: "1",
     name: "Julio César Chávez",

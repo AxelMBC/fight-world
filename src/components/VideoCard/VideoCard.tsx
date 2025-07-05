@@ -1,4 +1,4 @@
-import type { VideoArchive } from '../../types/YoutubeVideo'
+import type { VideoArchive } from '../../types/VideoContentType'
 
 const VideoCard: React.FC<{ video: VideoArchive }> = ({ video }) => (
   <a

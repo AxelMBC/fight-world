@@ -1,23 +1,23 @@
+// Types
+import type { MainEventType } from "../../../types/VideoContentType";
+
 import React, { useState, useEffect, useCallback } from "react";
 
+// Styles
 import "../../../styles/Mexico/style.css";
 
-// Types
-import type { YouTubeVideo } from "../../../types/YoutubeVideo";
-
 // Data
-import { topBoxers } from "./data/topFighters";
-import { boxingVideos } from "./data/boxingVideos";
+import { topBoxers } from "./data/topBoxers";
+import { videosBoxing } from "./data/videosBoxing";
 
 // Components
 import HeaderTitle from "../../../components/HeaderTitle";
 import TopFighters from "../../../components/TopFighters";
 import MainEvent from "../../../components/MainEvent";
-import "../../../components/MainEvent";
 import TopVideos from "../../../components/TopVideos";
 
 const BoxeoBrutal: React.FC = () => {
-  const [mainVideo, setMainVideo] = useState<YouTubeVideo | null>(null);
+  const [mainVideo, setMainVideo] = useState<MainEventType | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -77,7 +77,7 @@ const BoxeoBrutal: React.FC = () => {
         "podcast",
       ];
       const validVideos = (data.items || []).filter(
-        (item: YouTubeVideo) =>
+        (item: MainEventType) =>
           !noiseWords.some((word) =>
             item.snippet.title.toLowerCase().includes(word)
           )
@@ -91,7 +91,6 @@ const BoxeoBrutal: React.FC = () => {
         return;
       }
 
-      // Elegimos un video aleatorio de los resultados válidos.
       const newMainVideo =
         validVideos[Math.floor(Math.random() * validVideos.length)];
 
@@ -120,9 +119,9 @@ const BoxeoBrutal: React.FC = () => {
             fetchMainVideo={fetchMainVideo}
           />
 
-          <TopFighters />
+          <TopFighters topFighters={topBoxers} />
 
-          {boxingVideos.length > 0 && <TopVideos videos={boxingVideos} />}
+          <TopVideos videos={videosBoxing} />
         </div>
       </div>
     </>

@@ -1,4 +1,4 @@
-export interface Fighter {
+export interface TopFighterType {
   id: string;
   name: string;
   record: string;

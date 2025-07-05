@@ -1,4 +1,4 @@
-export interface YouTubeVideo {
+export interface MainEventType {
   id: { videoId: string };
   snippet: {
     title: string;
@@ -7,7 +7,8 @@ export interface YouTubeVideo {
   };
 }
 
-export interface VideoArchive {
+export interface TopVideoType {
+  id: number;
   title: string;
   tags: string[];
   thumbnail: string;

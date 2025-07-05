@@ -1,8 +1,8 @@
-import type { VideoArchive } from "../../types/YoutubeVideo";
+import type { TopVideoType } from "../../types/VideoContentType";
 import VideoCard from "../VideoCard";
 
 type TopVideosProps = {
-  videos: VideoArchive[];
+  videos: TopVideoType[];
 };
 
 const TopVideos = ({ videos }: TopVideosProps) => {
