@@ -1,8 +1,8 @@
-import type { VideoArchive } from '../../types/VideoContentType'
+import type { TopVideoType } from '../../types/VideoContentType'
 
-const VideoCard: React.FC<{ video: VideoArchive }> = ({ video }) => (
+const VideoCard: React.FC<{ video: TopVideoType }> = ({ video }) => (
   <a
-    href={`https://www.youtube.com/watch?v=$${video.idYt}`}
+    href={`https://www.youtube.com/watch?v=${video.idYt}`}
     target="_blank"
     rel="noopener noreferrer"
     className="group bg-white flex flex-col border-4 border-black shadow-[8px_8px_0_#000] hover:shadow-[12px_12px_0_#16A34A] transition-all duration-300 max-w-sm"
@@ -17,7 +17,7 @@ const VideoCard: React.FC<{ video: VideoArchive }> = ({ video }) => (
     <div className="p-4 flex flex-col flex-grow">
       <h3 className="font-bold text-lg uppercase flex-grow mb-4">{video.title}</h3>
       <div className="flex flex-wrap gap-2 mb-4">
-        {video.tags.map((tag, index) => (
+        {video.tags.map((tag:string, index:number) => (
           <span
             key={index}
             className={`px-2 py-1 text-xs font-bold uppercase border-2 border-black shadow-[4px_4px_0_#000] 
