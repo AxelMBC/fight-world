@@ -16,6 +16,9 @@ import TopFighters from "../../../components/TopFighters";
 import MainEvent from "../../../components/MainEvent";
 import TopVideos from "../../../components/TopVideos";
 
+// Utils
+import isNoiseWordPresent from "../../../utils/isNoiseWordPresent";
+
 const BoxeoBrutal: React.FC = () => {
   const [mainVideo, setMainVideo] = useState<MainEventType | null>(null);
   const [loading, setLoading] = useState(true);
@@ -41,9 +44,18 @@ const BoxeoBrutal: React.FC = () => {
         "boxeo profesional",
         "pelea completa",
         "campeonato mundial",
+        "full fight",
+        "combate completo", 
+        "título mundial",
+        "pelea estelar",
+        "combate estelar",
+        "boxeo profesional",
+        "sparring"
+
       ];
       const excludeTerms =
-        "-reaccion -analisis -entrevista -documental -podcast -noticias -vlog -trending";
+        "-reaccion -resumen -highlights -'mejores momentos' -historia -homenaje -debate -analisis -entrevista -documental -podcast -noticias -vlog -trending";
+
       const query = `"${boxer1}" (${keywords.join(" | ")}) ${excludeTerms}`;
 
       const key = import.meta.env.VITE_GOOGLE_API_KEY;
@@ -53,35 +65,32 @@ const BoxeoBrutal: React.FC = () => {
       const categoryId = "17"; // Deportes
       const videoDuration = "long"; // > 20 minutos
 
-      const maxResults = 25;
+      const maxResults = "25";
 
-      const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(
-        query
-      )}&type=video&maxResults=${maxResults}&order=viewCount&videoCategoryId=${categoryId}&videoDuration=${videoDuration}&videoDefinition=high&regionCode=MX&key=${key}`;
+      const apiUrlURLSearchParams = new URLSearchParams({
+        part: "snippet",
+        q: query,
+        type: "video",
+        maxResults: maxResults,
+        order: "viewCount",
+        videoCategoryId: categoryId,
+        videoDuration: videoDuration,
+        videoDefinition: "high",
+        regionCode: "MX",
+        key: key,
+      })
 
-      const res = await fetch(apiUrl);
+    
+      const youTubeSearchApi = `https://www.googleapis.com/youtube/v3/search?${apiUrlURLSearchParams}`;
+
+      const res = await fetch(youTubeSearchApi);
       const data = await res.json();
 
       if (!res.ok)
         throw new Error(
           data.error.message || `Error del servidor: ${res.statusText}`
         );
-
-      const noiseWords = [
-        "trending",
-        "noticias",
-        "vlog",
-        "reaccion",
-        "analisis",
-        "entrevista",
-        "podcast",
-      ];
-      const validVideos = (data.items || []).filter(
-        (item: MainEventType) =>
-          !noiseWords.some((word) =>
-            item.snippet.title.toLowerCase().includes(word)
-          )
-      );
+      const validVideos = isNoiseWordPresent(data)
 
       if (validVideos.length === 0) {
         console.warn(
@@ -110,7 +119,7 @@ const BoxeoBrutal: React.FC = () => {
   return (
     <>
       <div className="min-h-screen p-4 sm:p-4 font-sans">
-        <div className="container mx-auto max-w-7xl p-4 sm:p-6 bg-white border-4 md:border-8 border-black">
+        <div className="container mx-auto max-w-7xl p-4 sm:p-6 bg-white border-4 md:border-8 border-black" style={{maxWidth: "1405px"}}>
           <HeaderTitle />
           <MainEvent
             loading={loading}

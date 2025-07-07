@@ -5,7 +5,7 @@ import VideoMainEvent from "./VideoMainEvent";
 type MainEventProps = {
   loading: boolean;
   error: string | null;
-  mainVideo: MainEventType;
+  mainVideo: MainEventType | null;
   fetchMainVideo: () => void;
 };
 

@@ -8,7 +8,7 @@ const MainEventVideo: React.FC<{ video: MainEventType }> = ({ video }) => (
         title={video.snippet.title}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-        style={{ height: '500px', width: '100%' }}
+        style={{ height: '729px', width: '1296px' }}
       ></iframe>
     </div>
     <div className="mt-4">
