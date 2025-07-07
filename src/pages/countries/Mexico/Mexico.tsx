@@ -45,13 +45,12 @@ const BoxeoBrutal: React.FC = () => {
         "pelea completa",
         "campeonato mundial",
         "full fight",
-        "combate completo", 
+        "combate completo",
         "título mundial",
         "pelea estelar",
         "combate estelar",
         "boxeo profesional",
-        "sparring"
-
+        "sparring",
       ];
       const excludeTerms =
         "-reaccion -resumen -highlights -'mejores momentos' -historia -homenaje -debate -analisis -entrevista -documental -podcast -noticias -vlog -trending";
@@ -78,19 +77,18 @@ const BoxeoBrutal: React.FC = () => {
         videoDefinition: "high",
         regionCode: "MX",
         key: key,
-      })
+      });
 
-    
       const youTubeSearchApi = `https://www.googleapis.com/youtube/v3/search?${apiUrlURLSearchParams}`;
-
       const res = await fetch(youTubeSearchApi);
+      console.log("API URL:", res);
       const data = await res.json();
 
       if (!res.ok)
         throw new Error(
           data.error.message || `Error del servidor: ${res.statusText}`
         );
-      const validVideos = isNoiseWordPresent(data)
+      const validVideos = isNoiseWordPresent(data);
 
       if (validVideos.length === 0) {
         console.warn(
@@ -116,11 +114,22 @@ const BoxeoBrutal: React.FC = () => {
     fetchMainVideo();
   }, [fetchMainVideo]);
 
+  const flag = (
+    <>
+      <span className="w-16 h-8 bg-[#006847]"></span>
+      <span className="w-16 h-8 bg-white border-2 border-black"></span>
+      <span className="w-16 h-8 bg-[#CE1126]"></span>
+    </>
+  );
+
   return (
     <>
       <div className="min-h-screen p-4 sm:p-4 font-sans">
-        <div className="container mx-auto max-w-7xl p-4 sm:p-6 bg-white border-4 md:border-8 border-black" style={{maxWidth: "1405px"}}>
-          <HeaderTitle />
+        <div
+          className="container mx-auto max-w-7xl p-4 sm:p-6 bg-white border-4 md:border-8 border-black"
+          style={{ maxWidth: "1405px" }}
+        >
+          <HeaderTitle flag={flag} title="Boxeo al Estilo" style="MEXICANO" />
           <MainEvent
             loading={loading}
             error={error}

@@ -1,4 +1,4 @@
-import type { TopVideoType } from '../../types/VideoContentType'
+import type { TopVideoType } from '../../../types/VideoContentType'
 
 const VideoCard: React.FC<{ video: TopVideoType }> = ({ video }) => (
   <a
