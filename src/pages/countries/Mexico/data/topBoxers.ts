@@ -41,3 +41,42 @@ export const topBoxers: TopFighterType[] = [
       "https://www.debate.com.mx/img/2020/06/13/salvador_sanchez-2.jpg?__scale=c:transparent,w:640,h:860,t:3",
   },
 ];
+
+export const boxersSearch = [
+  {
+    id: "1",
+    name: "Julio César Chávez",
+  },
+  {
+    id: "2",
+    name: "Canelo Álvarez",
+  },
+  {
+    id: "3",
+    name: "Ricardo López",
+  },
+  {
+    id: "4",
+    name: "Juan Manuel Márquez",
+  },
+  {
+    id: "5",
+    name: "Salvador Sánchez",
+  },
+  {
+    id: 6,
+    name: "Rubén 'Púas' Olivares",
+  },
+  {
+    id: 7,
+    name: "Érik 'El Terrible' Morales",
+  },
+  {
+    id: 8,
+    name: "Marco Antonio Barrera",
+  },
+  {
+    id: 9,
+    name: "Carlos Zárate",
+  },
+];

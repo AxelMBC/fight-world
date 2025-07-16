@@ -6,7 +6,7 @@ const HeaderTitle = ({flag, title, style}:{flag: React.ReactNode, title: string,
       </div>
       <h1 className="pt-2 text-6xl md:text-8xl font-anton uppercase text-stroke">
         {title}
-        <span className="text-stroke-red">{style}</span>
+        <span className="text-stroke-red"> {style}</span>
       </h1>
     </header>
   );
