@@ -1,6 +1,6 @@
-import type { MainEventVideoType } from "../../../../types/VideoContentType";
+import type { mainEventType } from "../../../../types/fightEventType";
 
-export const MainEventVideos: MainEventVideoType[] = [
+export const mainEventFights: mainEventType[] = [
   {
     id: 0,
     title: "Pelea completa Saúl 'Canelo' Álvarez vs Jaime Munguía",

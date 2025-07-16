@@ -1,4 +1,4 @@
-import type { MainEventType } from "../types/VideoContentType";
+import type { mainEventType } from "../types/fightEventType";
 const noiseWords = [
         "trending",
         "noticias",
@@ -9,9 +9,9 @@ const noiseWords = [
         "podcast",
       ];
 
-const isNoiseWordPresent = (data: { items: MainEventType[] }) => 
+const isNoiseWordPresent = (data: { items: mainEventType[] }) => 
   (data.items || []).filter(
-    (item: MainEventType) =>
+    (item: mainEventType) =>
       !noiseWords.some((word) =>
         item.snippet.title.toLowerCase().includes(word)
       )

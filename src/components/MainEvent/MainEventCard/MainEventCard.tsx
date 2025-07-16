@@ -1,6 +1,6 @@
-import type { MainEventVideoType } from "../../../types/VideoContentType";
+import type { mainEventType } from "../../../types/fightEventType";
 
-const MainEventVideo: React.FC<{ video: MainEventVideoType }> = ({ video }) => (
+const MainEventVideo: React.FC<{ video: mainEventType }> = ({ video }) => (
   <div className="bg-white p-4 border-4 border-black shadow-[10px_10px_0_#000]">
     <div className="border-4 border-black">
       <iframe

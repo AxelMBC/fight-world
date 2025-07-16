@@ -1,4 +1,4 @@
-export const videosBoxing = [
+export const topFights = [
   {
     id: 1,
     title: "Ricardo Lopez vs Hideyuki Ohashi 1990",

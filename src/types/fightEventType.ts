@@ -1,4 +1,4 @@
-export interface MainEventVideoType {
+export interface mainEventType {
   id: number;
   idYt: string;
   title: string;
@@ -9,7 +9,7 @@ export interface MainEventVideoType {
   fighterRed?: string;
 }
 
-export interface TopVideoType {
+export interface topFightsType {
   id: number;
   idYt: string;
   title: string;

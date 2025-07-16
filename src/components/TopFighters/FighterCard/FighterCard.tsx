@@ -1,6 +1,6 @@
-import type { TopFighterType } from '../../../types/TopFighterType';
+import type { topFighterType } from '../../../types/topFighterType';
 
-const FighterCard: React.FC<{ boxer: TopFighterType; rank: number }> = ({
+const FighterCard: React.FC<{ boxer: topFighterType; rank: number }> = ({
   boxer,
   rank,
 }) => (

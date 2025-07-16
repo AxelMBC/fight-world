@@ -1,10 +1,10 @@
-import type { MainEventVideoType } from "../../types/VideoContentType";
-import VideoMainEvent from "./VideoMainEvent";
+import type { mainEventType } from "../../types/fightEventType";
+import MainEventCard from "./MainEventCard";
 
 type MainEventProps = {
   loading: boolean;
   error: string | null;
-  mainVideo: MainEventVideoType | null;
+  mainVideo: mainEventType | null;
   fetchMainVideo: () => void;
 };
 
@@ -26,7 +26,7 @@ const MainEvent = ({
           {error}
         </p>
       )}
-      {mainVideo && <VideoMainEvent video={mainVideo} />}
+      {mainVideo && <MainEventCard video={mainVideo} />}
       {!loading && mainVideo && (
         <div className="text-center my-7">
           <button

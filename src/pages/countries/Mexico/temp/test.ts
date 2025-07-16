@@ -12,7 +12,7 @@
 
   //   try {
   //     const boxer1 =
-  //       topBoxers[Math.floor(Math.random() * topBoxers.length)].name;
+  //       topFightersData[Math.floor(Math.random() * topFightersData.length)].name;
   //     const keywords = [
   //       "full fight",
   //       "boxeo profesional",

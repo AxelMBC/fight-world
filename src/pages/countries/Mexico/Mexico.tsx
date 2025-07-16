@@ -1,5 +1,5 @@
 // Types
-import type { MainEventVideoType } from "../../../types/VideoContentType";
+import type { mainEventType } from "../../../types/fightEventType";
 
 import React, { useState, useCallback, useEffect } from "react";
 
@@ -7,26 +7,26 @@ import React, { useState, useCallback, useEffect } from "react";
 import "../../../styles/Mexico/style.css";
 
 // Data
-import { topBoxers } from "./data/topBoxers";
-import { videosBoxing } from "./data/videosBoxing";
-import { MainEventVideos } from "./data/videosMainEvent";
+import { topFightersData } from "./data/topFighters";
+import { topFights } from "./data/topFights";
+import { mainEventFights } from "./data/mainEventFights";
 
 // Components
 import HeaderTitle from "../../../components/HeaderTitle";
 import TopFighters from "../../../components/TopFighters";
 import MainEvent from "../../../components/MainEvent";
-import TopVideos from "../../../components/TopVideos";
+import TopFigths from "../../../components/TopFights";
 
 const Mexico: React.FC = () => {
-  const [mainVideo, setMainVideo] = useState<MainEventVideoType | null>(null);
+  const [mainVideo, setMainVideo] = useState<mainEventType | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   
   const fetchMainVideo = useCallback(async () => {
     setLoading(true);
-    const randomIndex = Math.floor(Math.random() * MainEventVideos.length);
-    const video = MainEventVideos[randomIndex];
-    MainEventVideos.splice(randomIndex, 1);
+    const randomIndex = Math.floor(Math.random() * mainEventFights.length);
+    const video = mainEventFights[randomIndex];
+    mainEventFights.splice(randomIndex, 1);
     setMainVideo(video);
     setLoading(false);
     setError(null);
@@ -59,9 +59,9 @@ const Mexico: React.FC = () => {
             fetchMainVideo={fetchMainVideo}
           />
 
-          <TopFighters topFighters={topBoxers} />
+          <TopFighters topFightersData={topFightersData} />
 
-          <TopVideos videos={videosBoxing} />
+          <TopFigths videos={topFights} />
         </div>
       </div>
     </>

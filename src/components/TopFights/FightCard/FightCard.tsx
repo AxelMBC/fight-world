@@ -1,6 +1,6 @@
-import type { TopVideoType } from '../../../types/VideoContentType'
+import type { topFightsType } from '../../../types/fightEventType'
 
-const VideoCard: React.FC<{ video: TopVideoType }> = ({ video }) => (
+const FightCard: React.FC<{ video: topFightsType }> = ({ video }) => (
   <a
     href={`https://www.youtube.com/watch?v=${video.idYt}`}
     target="_blank"
@@ -40,4 +40,4 @@ const VideoCard: React.FC<{ video: TopVideoType }> = ({ video }) => (
   </a>
 );
 
-export default VideoCard;
+export default FightCard;
