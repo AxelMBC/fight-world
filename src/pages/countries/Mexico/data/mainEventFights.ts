@@ -3,7 +3,7 @@ import type { mainEventType } from "../../../../types/fightEventType";
 export const mainEventFights: mainEventType[] = [
   {
     id: 0,
-    title: "Pelea completa Saúl 'Canelo' Álvarez vs Jaime Munguía",
+    title: "Canelo Álvarez vs Jaime Munguía | Full Fight",
     description:
       "Pelea entre dos grandes boxeadores mexicanos, Saúl 'Canelo' Álvarez y Jaime Munguía, por el título mundial de peso medio.",
     idYt: "oWlNgNUTyC0",
@@ -14,7 +14,7 @@ export const mainEventFights: mainEventType[] = [
   },
   {
     id: 1,
-    title: "FULL FIGHT | Canelo vs. Daniel Jacobs",
+    title: "Canelo vs. Daniel Jacobs  | Full Fight",
     description:
       "Pelea completa entre Saúl 'Canelo' Álvarez y Daniel Jacobs por el título mundial de peso medio.",
     idYt: "1VbXe9ZjzTM",
@@ -25,7 +25,7 @@ export const mainEventFights: mainEventType[] = [
   },
   {
     id: 2,
-    title: "Ricardo Lopez vs Hideyuki Ohashi 1990",
+    title: "Ricardo Lopez vs Hideyuki Ohashi 1990  | Full Fight",
     description:
       "Pelea completa entre Ricardo Lopez y Hideyuki Ohashi por el título mundial de peso mínimo.",
     idYt: "gdqZIabo2qI",
@@ -36,7 +36,7 @@ export const mainEventFights: mainEventType[] = [
   },
   {
     id: 3,
-    title: "Saul Canelo Alvarez; Sparring - Complete & Unedited",
+    title: "Saul Canelo Alvarez  | Sparring Session",
     description:
       "Sesión de sparring de Canelo preparándose para Josesito Lopez, mostrando su defensa, relajación y precisión en sus golpes.",
     idYt: "lTCBaL2ccPI",
@@ -46,7 +46,7 @@ export const mainEventFights: mainEventType[] = [
   },
   {
     id: 4,
-    title: "Will Grigsby vs Ricardo Lopez [02-10-1999] [Vía Digital]",
+    title: "Will Grigsby vs Ricardo Lopez | Full Fight",
     description:
       "Pelea por el Título Mundial IBF Peso Mini Mosca entre Ricardo 'Finito' López y Will Grigsby desde Las Vegas, Nevada.",
     idYt: "x77u20vxhmU",
@@ -57,7 +57,7 @@ export const mainEventFights: mainEventType[] = [
   },
   {
     id: 5,
-    title: 'Ricardo "Finito" Lopez vs Zolani Petelo',
+    title: 'Ricardo "Finito" Lopez vs Zolani Petelo | Full Fight',
     description:
       "La pelea de retiro de Ricardo López, donde demuestra por qué es una de las máximas joyas del boxeo mexicano.",
     idYt: "NA65p34TdXU",
@@ -68,7 +68,7 @@ export const mainEventFights: mainEventType[] = [
   },
   {
     id: 6,
-    title: "Ricardo Lopez vs Will Grigsby - Full Fight",
+    title: "Ricardo Lopez vs Will Grigsby | Full Fight",
     description:
       "Pelea por el título mosca junior de la IBF. Will Grigsby presenta una sólida y competitiva batalla contra la leyenda Ricardo 'Finito' López.",
     idYt: "7jASSHmHUZw",
@@ -87,5 +87,27 @@ export const mainEventFights: mainEventType[] = [
     tags: ["Duelo de Leyendas", "Guerra en el Ring", "Orgullo Mexicano"],
     fighterBlue: "Timothy 'Desert Storm' Bradley Jr.",
     fighterRed: "Juan Manuel 'Dinamita' Márquez",
+  },
+  {
+    id: 8,
+    title: "Julio César Chávez vs Oscar De La Hoya | Full Fight",
+    description:
+      "Combate legendario del 7 de junio de 1996 entre Julio César Chávez Sr. y Oscar De La Hoya desde el Caesars Palace en Las Vegas, Nevada.",
+    idYt: "Rqn4HukOhM8",
+    startTime: "255",
+    tags: ["Leyendas del Boxeo", "Pelea Histórica", "Orgullo Mexicano"],
+    fighterBlue: "Julio César Chávez Sr.",
+    fighterRed: "Oscar De La Hoya",
+  },
+  {
+    id: 9,
+    title: "Juan Manuel Márquez vs Josue Atilano | Sparring Session",
+    description:
+      "Sesión de sparring entre Juan Manuel 'Dinamita' Márquez y Josue 'Golden Boy' Atilano, mostrando técnica, potencia y experiencia en el ring.",
+    idYt: "DavT9L9o-G4",
+    startTime: "6",
+    tags: ["Sparring", "Técnica de Boxeo", "Leyenda Mexicana"],
+    fighterBlue: "Juan Manuel 'Dinamita' Márquez",
+    fighterRed: "Josue 'Golden Boy' Atilano",
   },
 ];
