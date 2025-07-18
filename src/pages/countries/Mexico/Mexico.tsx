@@ -1,6 +1,6 @@
 // Types
 import type { mainEventType } from "../../../types/fightEventType";
-import type { fighterType } from "../../../types/topFighterType";
+import type { fighterType } from "../../../types/fighterType";
 
 import React, { useState, useCallback, useEffect } from "react";
 

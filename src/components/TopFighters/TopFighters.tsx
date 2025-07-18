@@ -1,4 +1,4 @@
-import type {  topFightersType } from "../../types/topFighterType";
+import type {  topFightersType } from "../../types/fighterType";
 import FighterCard from "./FighterCard";
 
 const topFightersData = ({ topFightersData, setSelectedFighter }: topFightersType) => {

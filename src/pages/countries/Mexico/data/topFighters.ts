@@ -1,4 +1,4 @@
-import type { fighterType } from "../../../../types/topFighterType";
+import type { fighterType } from "../../../../types/fighterType";
 
 export const topFightersData: fighterType[] = [
   {
