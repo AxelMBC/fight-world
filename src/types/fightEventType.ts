@@ -5,6 +5,7 @@ export interface mainEventType {
   description: string;
   tags: string[] | [];
   startTime: string;
+  fighterId?: string;
   fighterBlue?: string;
   fighterRed?: string;
 }

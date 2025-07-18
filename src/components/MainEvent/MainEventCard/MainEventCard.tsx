@@ -5,7 +5,9 @@ const MainEventVideo: React.FC<{ video: mainEventType }> = ({ video }) => (
     <div className="border-4 border-black">
       <iframe
         id="main-event-video"
-        src={`https://www.youtube.com/embed/${video.idYt}?autoplay=1&mute=1${video.startTime ? `&start=${video.startTime}` : ""}`}
+        src={`https://www.youtube.com/embed/${video.idYt}?autoplay=1&mute=1${
+          video.startTime ? `&start=${video.startTime}` : ""
+        }`}
         title={video.title}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen

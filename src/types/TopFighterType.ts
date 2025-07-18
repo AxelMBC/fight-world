@@ -1,4 +1,4 @@
-export interface topFighterType {
+export interface fighterType {
   id: string;
   name: string;
   record: string;
@@ -7,5 +7,6 @@ export interface topFighterType {
 }
 
 export interface topFightersType{
-  topFightersData: topFighterType[];
+  topFightersData: fighterType[];
+  setSelectedFighter: (fighter: fighterType | null) => void;
 }

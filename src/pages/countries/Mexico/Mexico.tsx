@@ -1,5 +1,6 @@
 // Types
 import type { mainEventType } from "../../../types/fightEventType";
+import type { fighterType } from "../../../types/topFighterType";
 
 import React, { useState, useCallback, useEffect } from "react";
 
@@ -20,8 +21,13 @@ import TopFigths from "../../../components/TopFights";
 const Mexico: React.FC = () => {
   const [mainVideo, setMainVideo] = useState<mainEventType | null>(null);
   const [loading, setLoading] = useState(true);
+  const [selectedFighter, setSelectedFighter] = useState<fighterType | null>(
+    null
+  );
   const [error, setError] = useState<string | null>(null);
+
   
+
   const fetchMainVideo = useCallback(async () => {
     setLoading(true);
     const randomIndex = Math.floor(Math.random() * mainEventFights.length);
@@ -33,8 +39,33 @@ const Mexico: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    fetchMainVideo();
-  }, [fetchMainVideo]);
+    const fetchFighterMainEvent = () => {
+
+      const shuffledMainEvents = mainEventFights.sort(
+        () => Math.random() - 0.5
+      );
+
+      const fightEvent = shuffledMainEvents.find(
+        (event) => event.fighterId === selectedFighter?.id
+      );
+
+      if (fightEvent) {
+        const element = document.getElementById("target-scroll");
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+        setMainVideo(fightEvent);
+      } else {
+        setError("No main event found for the selected fighter.");
+      }
+    };
+    
+    if (selectedFighter) {
+      fetchFighterMainEvent();
+    } else {
+      fetchMainVideo();
+    }
+  }, [fetchMainVideo, selectedFighter]);
 
   const flag = (
     <>
@@ -59,7 +90,10 @@ const Mexico: React.FC = () => {
             fetchMainVideo={fetchMainVideo}
           />
 
-          <TopFighters topFightersData={topFightersData} />
+          <TopFighters
+            topFightersData={topFightersData}
+            setSelectedFighter={setSelectedFighter}
+          />
 
           <TopFigths videos={topFights} />
         </div>
