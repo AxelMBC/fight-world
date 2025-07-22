@@ -18,6 +18,13 @@ const router = createBrowserRouter([
   },
 ]);
 
-createRoot(document.getElementById("root")!).render(
-    <RouterProvider router={router} />
+const rootElement = document.getElementById('root');
+
+if (!rootElement) {
+  throw new Error("Failed to find the root element. Check your index.html file.");
+}
+
+const root = createRoot(rootElement);
+root.render(
+  <RouterProvider router={router} />
 );

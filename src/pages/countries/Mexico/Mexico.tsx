@@ -10,7 +10,7 @@ import "../../../styles/Mexico/style.css";
 // Data
 import { topFightersData } from "./data/topFighters";
 import { topFights } from "./data/topFights";
-import { mainEventFights } from "./data/mainEventFights";
+import { mainEventFights } from "./data/mainEvents";
 
 // Components
 import HeaderTitle from "../../../components/HeaderTitle";
@@ -26,8 +26,6 @@ const Mexico: React.FC = () => {
   );
   const [error, setError] = useState<string | null>(null);
 
-  
-
   const fetchMainVideo = useCallback(async () => {
     setLoading(true);
     const randomIndex = Math.floor(Math.random() * mainEventFights.length);
@@ -40,7 +38,6 @@ const Mexico: React.FC = () => {
 
   useEffect(() => {
     const fetchFighterMainEvent = () => {
-
       const shuffledMainEvents = mainEventFights.sort(
         () => Math.random() - 0.5
       );
@@ -52,14 +49,14 @@ const Mexico: React.FC = () => {
       if (fightEvent) {
         const element = document.getElementById("target-scroll");
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: "smooth" });
         }
         setMainVideo(fightEvent);
       } else {
         setError("No main event found for the selected fighter.");
       }
     };
-    
+
     if (selectedFighter) {
       fetchFighterMainEvent();
     } else {

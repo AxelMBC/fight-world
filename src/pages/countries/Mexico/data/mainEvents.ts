@@ -119,4 +119,37 @@ export const mainEventFights: mainEventType[] = [
     fighterBlue: "Juan Manuel 'Dinamita' Márquez",
     fighterRed: "Josue 'Golden Boy' Atilano",
   },
+  {
+    id: 10,
+    title: "Isaac Cruz vs Ángel Fierro | Full Fight",
+    description:
+      "El 1 de febrero de 2025, Isaac 'Pitbull' Cruz y Ángel Fierro se enfrentaron en una intensa guerra de 10 asaltos en superligero. Una pelea candidata a 'Combate del Año' con más de 1,400 golpes lanzados y emoción total de principio a fin.",
+    idYt: "BrPJ242lgds",
+    startTime: "390",
+    tags: ["Pelea del Año", "Guerra Mexicana", "Acción Ininterrumpida"],
+    fighterBlue: "Isaac 'Pitbull' Cruz",
+    fighterRed: "Ángel Fierro",
+  },
+  {
+    id: 11,
+    title: "Isaac Cruz vs Rolly Romero | Full Fight",
+    description:
+      "El 30 de marzo de 2024, Isaac 'Pitbull' Cruz conquistó el título mundial superligero de la AMB con una contundente victoria por TKO en el octavo asalto sobre Rolando 'Rolly' Romero. Un despliegue de poder y presión que dejó sin respuestas al excampeón.",
+    idYt: "A-Ug__-5KK8",
+    startTime: "232",
+    tags: ["Título Mundial", "TKO", "Pitbull imparable"],
+    fighterBlue: "Isaac 'Pitbull' Cruz",
+    fighterRed: "Rolando 'Rolly' Romero",
+  },
+  {
+    id: 12,
+    title: "Isaac Cruz vs Yuriorkis Gamboa | Full Fight",
+    description:
+      "El 16 de abril de 2022, Isaac 'Pitbull' Cruz arrasó con Yuriorkis Gamboa, ex campeón mundial unificado, derribándolo tres veces antes de sellar una victoria por nocaut técnico en el quinto asalto. Una actuación brutal que consolidó al Pitbull como un verdadero contendiente al título.",
+    idYt: "TBlX4b2-TH0",
+    startTime: "223",
+    tags: ["Knockdown", "TKO", "Dominio total"],
+    fighterBlue: "Isaac 'Pitbull' Cruz",
+    fighterRed: "Yuriorkis Gamboa",
+  },
 ];
