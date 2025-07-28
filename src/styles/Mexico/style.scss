@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+$brutal-black: #1a1a1a;
+$brutal-white: #f0f0f0;
+$brutal-accent-primary: #ca2626;
+$brutal-background: #2c2c2c;
+
+$flag-green: #006847;
+$flag-red: #780606;
+
+body {
+  background-color: $brutal-background;
+  font-family: "Anton", sans-serif;
+}
+
+.font-anton {
+  font-family: "Anton", sans-serif;
+}
+
+.bg-white {
+  background-color: $brutal-white;
+}
+
+.border-black {
+  border-color: $brutal-black;
+}
+
+.bg-black {
+  background-color: $brutal-black;
+}
+
+.text-black {
+  color: $brutal-black;
+}
+
+.text-white {
+  color: $brutal-white;
+}
+
+.text-red-600 {
+  color: $brutal-accent-primary;
+}
+
+.bg-red-600 {
+  background-color: $brutal-accent-primary;
+}
+
+@mixin brutalist-text-stroke(
+  $stroke-color: $brutal-black,
+  $text-color: $brutal-white
+) {
+  -webkit-text-stroke: 2px $stroke-color;
+  color: $text-color;
+  text-shadow: 4px 4px 0px rgba($brutal-accent-primary, 1);
+}
+
+.text-stroke {
+  @include brutalist-text-stroke($brutal-black, $brutal-white);
+
+  &-red {
+    @include brutalist-text-stroke($brutal-accent-primary, transparent);
+  }
+}
+
+@mixin brutalist-shadow($color: $brutal-black, $offset: 10px) {
+  box-shadow: $offset $offset 0 $color;
+}
+
+.shadow-\[10px_10px_0_\#000\] {
+  @include brutalist-shadow($brutal-black, 10px);
+}
+
+.shadow-\[8px_8px_0_\#000\] {
+  @include brutalist-shadow($brutal-black, 8px);
+}
+
+.shadow-\[4px_4px_0_\#000\] {
+  @include brutalist-shadow($brutal-black, 4px);
+}
+
+.group-hover\:shadow-\[12px_12px_0_\#16A34A\]:hover {
+  @include brutalist-shadow($brutal-accent-primary, 12px);
+}
+
+.hover\:shadow-\[12px_12px_0_\#16A34A\]:hover {
+  @include brutalist-shadow($brutal-accent-primary, 12px);
+}
+
+.card-tape {
+  &::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 80px;
+    height: 40px;
+    background-color: rgba($brutal-white, 0.4);
+    border: 2px solid rgba($brutal-black, 0.2);
+    transform: rotate(45deg);
+    z-index: 1;
+  }
+}
+
+.bg-\[\#006847\] {
+  background-color: $flag-green;
+}
+
+.bg-\[\#CE1126\] {
+  background-color: $flag-red;
+}
+
+.text-gray-700 {
+  color: darken($brutal-white, 40%);
+}
+
+.text-green-700 {
+  color: $brutal-accent-primary;
+}
+
+.bg-green-600 {
+  background-color: $brutal-accent-primary;
+}
+
+.animate-pulse {
+  color: $brutal-accent-primary;
+}

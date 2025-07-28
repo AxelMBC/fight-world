@@ -5,7 +5,7 @@ import type { fighterType } from "../../../types/fighterType";
 import React, { useState, useCallback, useEffect } from "react";
 
 // Styles
-import "../../../styles/Mexico/style.css";
+import "../../../styles/Mexico/style.scss";
 
 // Data
 import { topFightersData } from "./data/topFighters";
