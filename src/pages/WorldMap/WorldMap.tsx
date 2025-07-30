@@ -103,9 +103,9 @@ const WorldMap = () => {
             borderColor: "darkred",
           }}
         >
-          <h4 className="mb-0 text-white font-black text-lg capitalize drop-shadow">
+          <h1 className="mb-0 text-white tracking-wider text-xl">
             {dialog.country}
-          </h4>
+          </h1>
 
           <div
             className="absolute"

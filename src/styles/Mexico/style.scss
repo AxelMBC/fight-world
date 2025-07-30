@@ -1,4 +1,8 @@
+// Import the Sass color module - This must come first!
+@use "sass:color";
+
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
 
 $brutal-black: #1a1a1a;
 $brutal-white: #f0f0f0;
@@ -110,7 +114,7 @@ body {
 }
 
 .text-gray-700 {
-  color: darken($brutal-white, 40%);
+  color: color.adjust($brutal-white, $lightness: -40%, $space: hsl);
 }
 
 .text-green-700 {
