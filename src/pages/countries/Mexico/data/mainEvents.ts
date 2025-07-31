@@ -152,4 +152,15 @@ export const mainEventFights: mainEventType[] = [
     fighterBlue: "Isaac 'Pitbull' Cruz",
     fighterRed: "Yuriorkis Gamboa",
   },
+  {
+    id: 13,
+    title: "Salvador Sánchez vs Wilfredo Gómez | Full Fight",
+    description:
+      "Histórica pelea del 21 de agosto de 1981 entre Salvador Sánchez y Wilfredo Gómez por el título pluma del CMB. Una clase magistral de boxeo y corazón que quedó grabada en la historia del deporte.",
+    idYt: "O5RPDtB7ufI",
+    startTime: "104",
+    tags: ["Pelea Histórica", "México vs Puerto Rico", "Campeonato CMB"],
+    fighterBlue: "Salvador Sánchez",
+    fighterRed: "Wilfredo Gómez",
+  },
 ];

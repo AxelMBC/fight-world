@@ -7,6 +7,9 @@ import React, { useState, useCallback, useEffect } from "react";
 // Styles
 import "../../../styles/Mexico/style.scss";
 
+// Utils
+import scrollToMainEvent from "../../../utils/scrollToMainEvent";
+
 // Data
 import { topFightersData } from "./data/topFighters";
 import { topFights } from "./data/topFights";
@@ -17,6 +20,24 @@ import HeaderTitle from "../../../components/HeaderTitle";
 import TopFighters from "../../../components/TopFighters";
 import MainEvent from "../../../components/MainEvent";
 import TopFigths from "../../../components/TopFights";
+
+// Knuth Shuffle/Fisher-Yates algorithm
+const  shuffleArray = (array: mainEventType[])=>  {
+  const shuffledArray = [...array];
+  let currentIndex = shuffledArray.length;
+
+  while (currentIndex !== 0) {
+    const randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [shuffledArray[currentIndex], shuffledArray[randomIndex]] = [
+      shuffledArray[randomIndex],
+      shuffledArray[currentIndex],
+    ];
+  }
+
+  return shuffledArray;
+}
 
 const Mexico: React.FC = () => {
   const [mainVideo, setMainVideo] = useState<mainEventType | null>(null);
@@ -30,8 +51,10 @@ const Mexico: React.FC = () => {
     setLoading(true);
     const randomIndex = Math.floor(Math.random() * mainEventFights.length);
     const video = mainEventFights[randomIndex];
+    console.log("shuffled array: ",shuffleArray(mainEventFights));
     mainEventFights.splice(randomIndex, 1);
     setMainVideo(video);
+    scrollToMainEvent()
     setLoading(false);
     setError(null);
   }, []);
@@ -47,10 +70,7 @@ const Mexico: React.FC = () => {
       );
 
       if (fightEvent) {
-        const element = document.getElementById("target-scroll");
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
+        scrollToMainEvent();
         setMainVideo(fightEvent);
       } else {
         setError("No main event found for the selected fighter.");

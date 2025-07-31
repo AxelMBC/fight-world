@@ -1,8 +1,8 @@
-import type { topFightsType } from "../../types/fightEventType";
+import type { mainEventType } from "../../types/fightEventType";
 import FightCard from "./FightCard";
 
 type TopVideosProps = {
-  videos: topFightsType[];
+  videos: mainEventType[];
 };
 
 const TopFights = ({ videos }: TopVideosProps) => {
