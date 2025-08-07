@@ -15,5 +15,5 @@ export interface topFightsType {
   idYt: string;
   title: string;
   tags: string[];
-  thumbnail: string;
+  thumbnail?: string;
 }

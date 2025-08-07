@@ -1,14 +1,17 @@
-// Types
 import type { mainEventType } from "../../../types/fightEventType";
 import type { fighterType } from "../../../types/fighterType";
 
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 
 // Styles
 import "../../../styles/Mexico/style.scss";
 
+// Resources
+import Flag from "./resources/Flag";
+
 // Utils
 import scrollToMainEvent from "../../../utils/scrollToMainEvent";
+import shuffleArray from "../../../utils/shuffleArray";
 
 // Data
 import { topFightersData } from "./data/topFighters";
@@ -21,57 +24,58 @@ import TopFighters from "../../../components/TopFighters";
 import MainEvent from "../../../components/MainEvent";
 import TopFigths from "../../../components/TopFights";
 
-// Knuth Shuffle/Fisher-Yates algorithm
-const  shuffleArray = (array: mainEventType[])=>  {
-  const shuffledArray = [...array];
-  let currentIndex = shuffledArray.length;
-
-  while (currentIndex !== 0) {
-    const randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [shuffledArray[currentIndex], shuffledArray[randomIndex]] = [
-      shuffledArray[randomIndex],
-      shuffledArray[currentIndex],
-    ];
-  }
-
-  return shuffledArray;
-}
-
 const Mexico: React.FC = () => {
-  const [mainVideo, setMainVideo] = useState<mainEventType | null>(null);
+  const [mainVideo, setMainEvent] = useState<mainEventType | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedFighter, setSelectedFighter] = useState<fighterType | null>(
     null
   );
   const [error, setError] = useState<string | null>(null);
 
+  const mainEventQueue = useRef<mainEventType[]>([]);
+
   const fetchMainVideo = useCallback(async () => {
     setLoading(true);
-    const randomIndex = Math.floor(Math.random() * mainEventFights.length);
-    const video = mainEventFights[randomIndex];
-    console.log("shuffled array: ",shuffleArray(mainEventFights));
-    mainEventFights.splice(randomIndex, 1);
-    setMainVideo(video);
-    scrollToMainEvent()
-    setLoading(false);
+
+    if (mainEventQueue.current.length === 0) {
+      setError("No hay más videos disponibles.");
+      setMainEvent(null);
+      setLoading(false);
+      return;
+    }
+
+    const randomIndex = Math.floor(
+      Math.random() * mainEventQueue.current.length
+    );
+    const randomEvent = mainEventQueue.current[randomIndex];
+
+    mainEventQueue.current.splice(randomIndex, 1);
+
+    setMainEvent(randomEvent);
+    scrollToMainEvent();
     setError(null);
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    mainEventQueue.current = shuffleArray(mainEventFights);
   }, []);
 
   useEffect(() => {
     const fetchFighterMainEvent = () => {
-      const shuffledMainEvents = mainEventFights.sort(
-        () => Math.random() - 0.5
-      );
-
-      const fightEvent = shuffledMainEvents.find(
+      const fightEvent = mainEventQueue.current.find(
         (event) => event.fighterId === selectedFighter?.id
       );
 
       if (fightEvent) {
         scrollToMainEvent();
-        setMainVideo(fightEvent);
+        setMainEvent(fightEvent);
+
+        mainEventQueue.current = mainEventQueue.current.filter(
+          (event) => event.fighterId !== selectedFighter?.id
+        );
+
+        setError(null);
       } else {
         setError("No main event found for the selected fighter.");
       }
@@ -84,38 +88,28 @@ const Mexico: React.FC = () => {
     }
   }, [fetchMainVideo, selectedFighter]);
 
-  const flag = (
-    <>
-      <span className="w-16 h-8 bg-[#006847]"></span>
-      <span className="w-16 h-8 bg-white border-2 border-black"></span>
-      <span className="w-16 h-8 bg-[#CE1126]"></span>
-    </>
-  );
-
   return (
-    <>
-      <div className="min-h-screen p-4 sm:p-4 font-sans">
-        <div
-          className="container mx-auto max-w-7xl p-4 sm:p-6 bg-white border-4 md:border-8 border-black"
-          style={{ maxWidth: "1405px" }}
-        >
-          <HeaderTitle flag={flag} title="Boxeo al Estilo" style="MEXICANO" />
-          <MainEvent
-            loading={loading}
-            error={error}
-            mainVideo={mainVideo}
-            fetchMainVideo={fetchMainVideo}
-          />
+    <div className="min-h-screen p-4 sm:p-4 font-sans">
+      <div
+        className="container mx-auto max-w-7xl p-4 sm:p-6 bg-white border-4 md:border-8 border-black"
+        style={{ maxWidth: "1405px" }}
+      >
+        <HeaderTitle flag={Flag} title="Boxeo al Estilo" style="MEXICANO" />
+        <MainEvent
+          loading={loading}
+          error={error}
+          mainVideo={mainVideo}
+          fetchMainVideo={fetchMainVideo}
+        />
 
-          <TopFighters
-            topFightersData={topFightersData}
-            setSelectedFighter={setSelectedFighter}
-          />
+        <TopFighters
+          topFightersData={topFightersData}
+          setSelectedFighter={setSelectedFighter}
+        />
 
-          <TopFigths videos={topFights} />
-        </div>
+        <TopFigths videos={topFights} />
       </div>
-    </>
+    </div>
   );
 };
 
