@@ -1,7 +1,7 @@
 import type { mainEventType } from "../../../types/fightEventType";
 import type { fighterType } from "../../../types/fighterType";
 
-import React, { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 
 // Styles
 import "../../../styles/Mexico/style.scss";
@@ -24,7 +24,7 @@ import TopFighters from "../../../components/TopFighters";
 import MainEvent from "../../../components/MainEvent";
 import TopFigths from "../../../components/TopFights";
 
-const Mexico: React.FC = () => {
+const Mexico = () => {
   const [mainVideo, setMainEvent] = useState<mainEventType | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedFighter, setSelectedFighter] = useState<fighterType | null>(
@@ -103,11 +103,16 @@ const Mexico: React.FC = () => {
         />
 
         <TopFighters
+          title="ÍDOLOS DE MÉXICO"
           topFightersData={topFightersData}
           setSelectedFighter={setSelectedFighter}
         />
 
-        <TopFigths videos={topFights} />
+        <TopFigths
+          title="LAS PELEAS MAS LEGENDARIAS"
+          videos={topFights}
+          setMainEvent={setMainEvent}
+        />
       </div>
     </div>
   );

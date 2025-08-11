@@ -8,6 +8,7 @@ export interface mainEventType {
   fighterId?: string;
   fighterBlue?: string;
   fighterRed?: string;
+  thumbnail?: string;
 }
 
 export interface topFightsType {

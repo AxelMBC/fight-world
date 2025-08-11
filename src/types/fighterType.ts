@@ -7,6 +7,7 @@ export interface fighterType {
 }
 
 export interface topFightersType{
+  title: string;
   topFightersData: fighterType[];
   setSelectedFighter: (fighter: fighterType | null) => void;
 }
