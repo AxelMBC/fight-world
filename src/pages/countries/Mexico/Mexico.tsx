@@ -1,6 +1,5 @@
 import type { mainEventType } from "../../../types/fightEventType";
 import type { fighterType } from "../../../types/fighterType";
-
 import { useState, useCallback, useEffect, useRef } from "react";
 
 // Styles
@@ -28,9 +27,6 @@ import TopFigths from "../../../components/TopFights";
 const Mexico = () => {
   const [mainVideo, setMainEvent] = useState<mainEventType | null>(null);
   const [loading, setLoading] = useState(true);
-  const [selectedFighter, setSelectedFighter] = useState<fighterType | null>(
-    null
-  );
   const [error, setError] = useState<string | null>(null);
 
   const mainEventQueue = useRef<mainEventType[]>([]);
@@ -57,36 +53,32 @@ const Mexico = () => {
     setLoading(false);
   }, []);
 
-  useEffect(() => {
-    mainEventQueue.current = shuffleArray(mainEventFights);
+  const fetchFighterMainEvent = useCallback((fighter: fighterType) => {
+    const fighterEvents = mainEventQueue.current
+      .map((event, index) => ({ event, index }))
+      .filter(({ event }) => event.fighterId === fighter.id);
+
+    if (fighterEvents.length > 0) {
+      const randomIndexInFighterEvents = Math.floor(
+        Math.random() * fighterEvents.length
+      );
+      const { event: randomEvent, index: originalIndex } =
+        fighterEvents[randomIndexInFighterEvents];
+
+      setMainEvent(randomEvent);
+      scrollToMainEvent();
+      setError(null);
+
+      mainEventQueue.current.splice(originalIndex, 1);
+    } else {
+      setError("No main event found for the selected fighter.");
+    }
   }, []);
 
   useEffect(() => {
-    const fetchFighterMainEvent = () => {
-      const fightEvent = mainEventQueue.current.find(
-        (event) => event.fighterId === selectedFighter?.id
-      );
-
-      if (fightEvent) {
-        scrollToMainEvent();
-        setMainEvent(fightEvent);
-
-        mainEventQueue.current = mainEventQueue.current.filter(
-          (event) => event.fighterId !== selectedFighter?.id
-        );
-
-        setError(null);
-      } else {
-        setError("No main event found for the selected fighter.");
-      }
-    };
-
-    if (selectedFighter) {
-      fetchFighterMainEvent();
-    } else {
-      fetchMainVideo();
-    }
-  }, [fetchMainVideo, selectedFighter]);
+    mainEventQueue.current = shuffleArray(mainEventFights);
+    fetchMainVideo();
+  }, [fetchMainVideo]);
 
   return (
     <div className="min-h-screen p-4 sm:p-4 font-sans">
@@ -105,7 +97,7 @@ const Mexico = () => {
         <TopFighters
           title="ÍDOLOS DE MÉXICO"
           topFightersData={topFightersData}
-          setSelectedFighter={setSelectedFighter}
+          onFighterSelect={fetchFighterMainEvent}
         />
 
         <TopFigths

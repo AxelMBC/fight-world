@@ -3,14 +3,14 @@ import type { fighterType } from "../../../types/fighterType";
 interface FighterCardProps {
   boxer: fighterType;
   rank: number;
-  setSelectedFighter: (fighter: fighterType | null) => void;
+  onSelect: (fighter: fighterType) => void;
 }
 
-const FighterCard = ({ boxer, rank, setSelectedFighter }: FighterCardProps) => {
+const FighterCard = ({ boxer, rank, onSelect }: FighterCardProps) => {
   return (
     <div
       className="relative group card-tape cursor-pointer"
-      onClick={() => setSelectedFighter(boxer)}
+      onClick={() => onSelect(boxer)}
     >
       <div className="relative bg-white border-4 border-black shadow-[10px_10px_0_#000] group-hover:shadow-[12px_12px_0_#16A34A] transition-all duration-200">
         <div className="absolute top-0 left-0 bg-black text-white font-anton text-5xl px-3 z-10">
