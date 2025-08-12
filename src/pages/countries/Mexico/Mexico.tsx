@@ -12,6 +12,7 @@ import Flag from "./resources/Flag";
 // Utils
 import scrollToMainEvent from "../../../utils/scrollToMainEvent";
 import shuffleArray from "../../../utils/shuffleArray";
+import pickRandomEvent from "../../../utils/pickRandomEvent";
 
 // Data
 import { topFightersData } from "./data/topFighters";
@@ -44,10 +45,9 @@ const Mexico = () => {
       return;
     }
 
-    const randomIndex = Math.floor(
-      Math.random() * mainEventQueue.current.length
+    const { randomEvent, randomIndex } = pickRandomEvent(
+      mainEventQueue.current
     );
-    const randomEvent = mainEventQueue.current[randomIndex];
 
     mainEventQueue.current.splice(randomIndex, 1);
 
