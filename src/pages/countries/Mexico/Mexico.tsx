@@ -1,6 +1,6 @@
 import type { mainEventType } from "../../../types/fightEventType";
 import type { fighterType } from "../../../types/fighterType";
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // Styles
 import "../../../styles/Mexico/style.scss";
@@ -31,7 +31,7 @@ const Mexico = () => {
 
   const mainEventQueue = useRef<mainEventType[]>([]);
 
-  const fetchMainVideo = useCallback(async () => {
+  const fetchMainVideo = async () => {
     setLoading(true);
 
     if (mainEventQueue.current.length === 0) {
@@ -51,9 +51,9 @@ const Mexico = () => {
     scrollToMainEvent();
     setError(null);
     setLoading(false);
-  }, []);
+  };
 
-  const fetchFighterMainEvent = useCallback((fighter: fighterType) => {
+  const fetchFighterMainEvent = (fighter: fighterType) => {
     const fighterEvents = mainEventQueue.current
       .map((event, index) => ({ event, index }))
       .filter(({ event }) => event.fighterId === fighter.id);
@@ -73,12 +73,12 @@ const Mexico = () => {
     } else {
       setError("No main event found for the selected fighter.");
     }
-  }, []);
+  };
 
   useEffect(() => {
     mainEventQueue.current = shuffleArray(mainEventFights);
     fetchMainVideo();
-  }, [fetchMainVideo]);
+  }, []);
 
   return (
     <div className="min-h-screen p-4 sm:p-4 font-sans">
