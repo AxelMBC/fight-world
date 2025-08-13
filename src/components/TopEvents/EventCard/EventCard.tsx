@@ -1,12 +1,12 @@
 import type { mainEventType } from "../../../types/fightEventType";
 import scrollToMainEvent from "../../../utils/scrollToMainEvent";
 
-interface FightCardPropsType {
+interface EventCardProps {
   video: mainEventType;
   setMainEvent: (event: mainEventType | null) => void;
 }
 
-const FightCard = ({ video, setMainEvent }: FightCardPropsType) => {
+const EventCard = ({ video, setMainEvent }: EventCardProps) => {
   const handleVideoClick = () => {
     setMainEvent(video);
     scrollToMainEvent();
@@ -56,4 +56,4 @@ const FightCard = ({ video, setMainEvent }: FightCardPropsType) => {
   );
 };
 
-export default FightCard;
+export default EventCard;

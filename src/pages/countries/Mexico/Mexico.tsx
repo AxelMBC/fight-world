@@ -15,14 +15,14 @@ import pickRandomEvent from "../../../utils/pickRandomEvent";
 
 // Data
 import { topFightersData } from "./data/topFighters";
-import { topFights } from "./data/topFights";
+import { topEvents } from "./data/topEvents";
 import { mainEventFights } from "./data/mainEvents";
 
 // Components
 import HeaderTitle from "../../../components/HeaderTitle";
 import TopFighters from "../../../components/TopFighters";
 import MainEvent from "../../../components/MainEvent";
-import TopFigths from "../../../components/TopFights";
+import TopFigths from "../../../components/TopEvents";
 
 const Mexico = () => {
   const [mainVideo, setMainEvent] = useState<mainEventType | null>(null);
@@ -102,7 +102,7 @@ const Mexico = () => {
 
         <TopFigths
           title="LAS PELEAS MAS LEGENDARIAS"
-          videos={topFights}
+          videos={topEvents}
           setMainEvent={setMainEvent}
         />
       </div>

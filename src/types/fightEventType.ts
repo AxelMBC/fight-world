@@ -11,7 +11,7 @@ export interface mainEventType {
   thumbnail?: string;
 }
 
-export interface topFightsType {
+export interface topEventsType {
   id: number;
   idYt: string;
   title: string;
