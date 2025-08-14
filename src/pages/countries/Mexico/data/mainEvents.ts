@@ -154,6 +154,7 @@ export const mainEventFights: mainEventType[] = [
   },
   {
     id: 13,
+    fighterId: "5",
     title: "Salvador Sánchez vs Wilfredo Gómez | Full Fight",
     description:
       "Histórica pelea del 21 de agosto de 1981 entre Salvador Sánchez y Wilfredo Gómez por el título pluma del CMB. Una clase magistral de boxeo y corazón que quedó grabada en la historia del deporte.",
@@ -162,5 +163,65 @@ export const mainEventFights: mainEventType[] = [
     tags: ["Pelea Histórica", "México vs Puerto Rico", "Campeonato CMB"],
     fighterBlue: "Salvador Sánchez",
     fighterRed: "Wilfredo Gómez",
+  },
+  {
+    id: 14,
+    fighterId: "5",
+    title: "Salvador Sánchez vs Danny 'Little Red' Lopez | Full Fight",
+    description:
+      "El 2 de febrero de 1980, un joven Salvador Sánchez de 21 años sorprende al mundo al derrotar de manera brutal a Danny 'Little Red' Lopez para arrebatarle el título mundial pluma del CMB. La pelea marcó el inicio del breve pero legendario reinado de 'Sal'.",
+    idYt: "08ZeGfqHEhg",
+    startTime: "0",
+    tags: ["Campeonato CMB", "Clase magistral", "Título Pluma"],
+    fighterBlue: "Salvador Sánchez",
+    fighterRed: "Danny 'Little Red' Lopez",
+  },
+  {
+    id: 15,
+    fighterId: "5",
+    title: "Salvador Sánchez vs Azumah Nelson | Full Fight",
+    description:
+      "La última pelea del legendario Salvador Sánchez, el 21 de julio de 1982. En una batalla épica, 'Sal' se enfrentó al futuro campeón Azumah Nelson, demostrando una vez más su increíble técnica, resistencia y corazón de campeón antes de sellar la victoria por TKO en el 15º asalto. Sánchez falleció trágicamente en un accidente de coche 22 días después.",
+    idYt: "tXcSQYqTVc4",
+    startTime: "45",
+    tags: ["Última pelea", "TKO", "Homenaje"],
+    fighterBlue: "Salvador Sánchez",
+    fighterRed: "Azumah Nelson",
+  },
+  {
+    id: 16,
+    fighterId: "1",
+    title: "Julio César Chávez vs Juan Laporte | Full Fight",
+    description:
+      "Un joven Julio César Chávez se enfrenta a otro grande del boxeo, Juan Laporte. Chávez ganó en una dura pelea que demostró el talento de ambos boxeadores, consolidando al 'César del boxeo' en la historia.",
+    idYt: "12J_QOE0esU",
+    startTime: "40",
+    tags: ["Leyendas del boxeo", "Campeones", "Clásicos del boxeo"],
+    fighterBlue: "Julio César Chávez",
+    fighterRed: "Juan Laporte",
+  },
+  {
+    id: 17,
+    fighterId: "4",
+    title: "Juan Manuel Márquez  vs Marco Antonio Barrera | Full Fight",
+    description:
+      "El 17 de marzo de 2007, dos leyendas mexicanas se enfrentaron en una guerra épica por el Campeonato de Peso Superpluma del CMB. Una exhibición de técnica, poder y corazón que dejó a los aficionados al boxeo pidiendo más.",
+    idYt: "n9gRn6h6mDk",
+    startTime: "37",
+    tags: ["Guerra mexicana", "Campeonato CMB", "Leyendas"],
+    fighterBlue: "Juan Manuel Márquez",
+    fighterRed: "Marco Antonio Barrera",
+  },
+  {
+    id: 18,
+    fighterId: "2",
+    title: "Canelo Álvarez vs. Gennadiy Golovkin III | Full Fight",
+    description:
+      "El 17 de septiembre de 2022, Saúl 'Canelo' Álvarez y Gennadiy 'GGG' Golovkin se enfrentaron por tercera y última vez por el título indiscutido de peso súper mediano. Canelo se llevó la victoria por decisión unánime, cerrando una de las trilogías más grandes del boxeo moderno.",
+    idYt: "6rZCJGsoGxI",
+    startTime: "105",
+    tags: ["Trilogía épica", "Campeonato indiscutido", "Pelea moderna"],
+    fighterBlue: "Saúl 'Canelo' Álvarez",
+    fighterRed: "Gennadiy 'GGG' Golovkin",
   },
 ];

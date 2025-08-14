@@ -37,5 +37,38 @@ export const topEvents = [
       "https://i.ytimg.com/vi/FpsGoanw4S4/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLC3VepFlvZcB7_PbuC33nKmljNPoA",
     fighterBlue: "Saúl 'Canelo' Álvarez",
     fighterRed: "Billy Joe Saunders",
+  },
+  {
+    id: 4,
+    title: "Julio César Chávez vs Juan Laporte | Full Fight",
+    description: "Un joven Julio César Chávez se enfrenta a otro grande del boxeo, Juan Laporte. Chávez ganó en una dura pelea que demostró el talento de ambos boxeadores, consolidando al 'César del boxeo' en la historia.",
+    idYt: "12J_QOE0esU",
+    startTime: "40",
+    tags: ["Leyendas del boxeo", "Campeones", "Clásicos del boxeo"],
+    fighterBlue: "Julio César Chávez",
+    fighterRed: "Juan Laporte",
+    thumbnail: "https://a4.espncdn.com/combiner/i?img=%2Fdeportes%2F2003%2Fphotos2015%2F1023%2Fbox_g_chavez576.jpg"
+  },
+  {
+    id: 5,
+    title: "Marco Antonio Barrera vs Juan Manuel Márquez | Full Fight",
+    description: "El 17 de marzo de 2007, dos leyendas mexicanas se enfrentaron en una guerra épica por el Campeonato de Peso Superpluma del CMB. Una exhibición de técnica, poder y corazón que dejó a los aficionados al boxeo pidiendo más.",
+    idYt: "n9gRn6h6mDk",
+    startTime: "37",
+    tags: ["Guerra mexicana", "Campeonato CMB", "Leyendas"],
+    fighterBlue: "Juan Manuel Márquez",
+    fighterRed: "Marco Antonio Barrera",
+    thumbnail: "https://i.ytimg.com/vi/72nNrnvbeUA/sddefault.jpg"
+  },
+  {
+    id: 6,
+    title: "Canelo Álvarez vs. Gennadiy Golovkin III | Full Fight",
+    description: "El 17 de septiembre de 2022, Saúl 'Canelo' Álvarez y Gennadiy 'GGG' Golovkin se enfrentaron por tercera y última vez por el título indiscutido de peso súper mediano. Canelo se llevó la victoria por decisión unánime, cerrando una de las trilogías más grandes del boxeo moderno.",
+    idYt: "6rZCJGsoGxI",
+    startTime: "105",
+    tags: ["Trilogía épica", "Campeonato indiscutido", "Pelea moderna"],
+    fighterBlue: "Saúl 'Canelo' Álvarez",
+    fighterRed: "Gennadiy 'GGG' Golovkin",
+    thumbnail: "https://platform.badlefthook.com/wp-content/uploads/sites/18/chorus/uploads/chorus_asset/file/24040851/1243362878.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400"
   }
 ];
