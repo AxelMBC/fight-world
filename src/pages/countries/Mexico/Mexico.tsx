@@ -86,7 +86,7 @@ const Mexico = () => {
         className="container mx-auto max-w-7xl p-4 sm:p-6 bg-white border-4 md:border-8 border-black"
         style={{ maxWidth: "1405px" }}
       >
-        <HeaderTitle flag={Flag} title="Boxeo al Estilo" style="MEXICANO" />
+        <HeaderTitle flag={Flag} title="Boxeo al Estilo Mexicano" />
         <MainEvent
           loading={loading}
           error={error}

@@ -9,7 +9,7 @@ const MainEventVideo: React.FC<{ video: mainEventType }> = ({ video }) => (
           video.startTime ? `&start=${video.startTime}` : ""
         }`}
         title={video.title}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media;"
         allowFullScreen
         style={{ height: "729px", width: "1296px" }}
       ></iframe>

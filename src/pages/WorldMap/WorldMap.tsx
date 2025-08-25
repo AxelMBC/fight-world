@@ -1,13 +1,15 @@
-import { useRef, useState, useEffect, useCallback } from "react";
-import Map from "react-map-gl/maplibre";
-import type { MapRef } from "@vis.gl/react-maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
+import "./styles.scss";
+import type { MapRef } from "@vis.gl/react-maplibre";
+
+import { useRef, useState, useEffect } from "react";
+import Map from "react-map-gl/maplibre";
 import { useNavigate } from "react-router-dom";
 
 const WorldMap = () => {
-  const mapRef = useRef<MapRef | null>(null);
   const navigate = useNavigate();
 
+  const mapRef = useRef<MapRef | null>(null);
   const [dialog, setDialog] = useState({
     show: false,
     country: "",
@@ -17,15 +19,14 @@ const WorldMap = () => {
     y: 0,
   });
 
-  const updateDialogPosition = useCallback(() => {
-    if (dialog.show && mapRef.current) {
+  useEffect(() => {
+    const updateDialogPosition = () => {
+      if (!mapRef.current) return;
       const map = mapRef.current.getMap();
       const point = map.project([dialog.lng, dialog.lat]);
       setDialog((prev) => ({ ...prev, x: point.x, y: point.y }));
-    }
-  }, [dialog.show, dialog.lng, dialog.lat]);
+    };
 
-  useEffect(() => {
     if (dialog.show && mapRef.current) {
       const map = mapRef.current.getMap();
       map.on("move", updateDialogPosition);
@@ -33,7 +34,7 @@ const WorldMap = () => {
         map.off("move", updateDialogPosition);
       };
     }
-  }, [dialog.show, updateDialogPosition]);
+  }, [dialog.lat, dialog.lng, dialog.show]);
 
   const handleClick = (
     event: maplibregl.MapMouseEvent & {
@@ -44,7 +45,11 @@ const WorldMap = () => {
     if (mapRef.current) {
       const map = mapRef.current.getMap();
       const features = map.queryRenderedFeatures(event.point);
-      if (features.length > 0 && features[0].layer.id !== "Water") {
+      if (
+        features.length > 0 &&
+        features[0].layer.id !== "Water" &&
+        features[0].layer.id !== "Country labels"
+      ) {
         const countryName = features[0].layer.id;
         setDialog({
           show: true,
@@ -56,7 +61,7 @@ const WorldMap = () => {
         });
         setTimeout(() => {
           setDialog((prev) => ({ ...prev, show: false }));
-        }, 2000);
+        }, 3000);
       }
     }
   };
@@ -64,28 +69,31 @@ const WorldMap = () => {
   return (
     <div className="relative w-screen h-screen">
       <Map
+        mapStyle="https://api.maptiler.com/maps/0197251e-f92a-7cb9-98e8-774bde6e5d8e/style.json?key=FcmP3QUhWP2LWWud2CSk"
         ref={mapRef}
+        minZoom={1}
+        renderWorldCopies={false}
         initialViewState={{
           longitude: 0,
           latitude: 21.8,
           zoom: 1,
         }}
-        minZoom={2}
         style={{
           width: "100vw",
           height: "100vh",
           display: "block",
         }}
-        mapStyle="https://api.maptiler.com/maps/0197251e-f92a-7cb9-98e8-774bde6e5d8e/style.json?key=FcmP3QUhWP2LWWud2CSk"
-        renderWorldCopies={false}
         onClick={handleClick}
         onDblClick={(event) => {
           if (mapRef.current) {
             const map = mapRef.current.getMap();
             const features = map.queryRenderedFeatures(event.point);
-            if (features.length > 0) {
+            if (
+              features.length > 0 &&
+              features[0].layer.id !== "Water" &&
+              features[0].layer.id !== "Country labels"
+            ) {
               navigate(`/${features[0].layer.id}`);
-              console.log("Double-clicked Country:", features[0].layer.id);
             }
           }
         }}
@@ -122,25 +130,6 @@ const WorldMap = () => {
           />
         </div>
       )}
-
-      <style>
-        {`
-          @keyframes pop-in {
-            0% {
-              transform: translateX(-50%) scale(0.8);
-              opacity: 0;
-            }
-            100% {
-              transform: translateX(-50%) scale(1);
-              opacity: 1;
-            }
-          }
-
-          .animate-pop-in {
-            animation: pop-in 0.3s ease-out;
-          }
-        `}
-      </style>
     </div>
   );
 };
