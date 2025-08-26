@@ -1,4 +1,8 @@
 import type { mainEventType } from "../../types/fightEventType";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDiceThree } from "@fortawesome/free-solid-svg-icons";
+
 import MainEventCard from "./MainEventCard";
 
 type MainEventProps = {
@@ -34,6 +38,9 @@ const MainEvent = ({
             onClick={() => fetchMainVideo()}
             className="cursor-pointer bg-red-600 text-white font-anton uppercase text-2xl py-3 px-8 border-4 border-black hover:bg-black hover:text-white transition-colors duration-300 shadow-[8px_8px_0_#000]"
           >
+            <span className="me-2">
+              <FontAwesomeIcon icon={faDiceThree} />
+            </span>
             Buscar Otro Combate
           </button>
         </div>

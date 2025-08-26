@@ -90,21 +90,6 @@ body {
   @include brutalist-shadow($brutal-accent-primary, 12px);
 }
 
-.card-tape {
-  &::before {
-    content: "";
-    position: absolute;
-    top: -15px;
-    right: -15px;
-    width: 80px;
-    height: 40px;
-    background-color: rgba($brutal-white, 0.4);
-    border: 2px solid rgba($brutal-black, 0.2);
-    transform: rotate(45deg);
-    z-index: 1;
-  }
-}
-
 .bg-\[\#006847\] {
   background-color: $flag-green;
 }
