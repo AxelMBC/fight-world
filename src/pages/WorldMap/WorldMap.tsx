@@ -8,6 +8,11 @@ import { useNavigate } from "react-router-dom";
 
 const WorldMap = () => {
   const navigate = useNavigate();
+    const goToCountry = (country: string) => {
+    if (country) {
+      navigate(`/${country}`);
+    }
+  };
 
   const mapRef = useRef<MapRef | null>(null);
   const [dialog, setDialog] = useState({
@@ -84,24 +89,11 @@ const WorldMap = () => {
           display: "block",
         }}
         onClick={handleClick}
-        onDblClick={(event) => {
-          if (mapRef.current) {
-            const map = mapRef.current.getMap();
-            const features = map.queryRenderedFeatures(event.point);
-            if (
-              features.length > 0 &&
-              features[0].layer.id !== "Water" &&
-              features[0].layer.id !== "Country labels"
-            ) {
-              navigate(`/${features[0].layer.id}`);
-            }
-          }
-        }}
       />
 
       {dialog.show && (
         <div
-          className="absolute z-[1000] px-4 py-3 rounded-md shadow-xl border-2 text-center animate-pop-in"
+          className="absolute z-[1000] px-4 py-3 flex items-center justify-center rounded-md shadow-xl border-2 text-center country-label animate-pop-in"
           style={{
             left: `${dialog.x}px`,
             top: `${dialog.y - 80}px`,
@@ -111,7 +103,7 @@ const WorldMap = () => {
             borderColor: "darkred",
           }}
         >
-          <h1 className="mb-0 text-white tracking-wider text-xl">
+          <h1 className="mb-0 text-white tracking-wider text-xl cursor-pointer hover:text-sm"  onClick={() => goToCountry(dialog.country)}>
             {dialog.country}
           </h1>
 

@@ -95,7 +95,7 @@ const Mexico = () => {
         />
 
         <TopFighters
-          title="ÍDOLOS DE MÉXICO"
+          title="DISFRUTA LAS PELEAS DE LOS ÍDOLOS DE MÉXICO"
           topFightersData={topFightersData}
           onFighterSelect={fetchFighterMainEvent}
         />
