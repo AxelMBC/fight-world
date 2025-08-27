@@ -150,7 +150,8 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease;
 
   &:hover {
-    background-color: darken($brutal-accent-primary, 8%);
+    background-color: color.scale($brutal-accent-primary, $lightness: -17%);
+    
     animation: button-lift 0.25s forwards;
   }
 
