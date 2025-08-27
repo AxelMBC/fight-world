@@ -103,7 +103,7 @@ const WorldMap = () => {
             borderColor: "darkred",
           }}
         >
-          <h1 className="mb-0 text-white tracking-wider text-xl cursor-pointer hover:text-sm"  onClick={() => goToCountry(dialog.country)}>
+          <h1 className="mb-0 text-white tracking-wider text-xl cursor-pointer title-country"  onClick={() => goToCountry(dialog.country)}>
             {dialog.country}
           </h1>
 

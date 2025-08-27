@@ -3,7 +3,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
-
 $brutal-black: #1a1a1a;
 $brutal-white: #f0f0f0;
 $brutal-accent-primary: #ca2626;
@@ -112,4 +111,50 @@ body {
 
 .animate-pulse {
   color: $brutal-accent-primary;
+}
+@keyframes button-lift {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: 8px 8px 0 $brutal-black;
+  }
+  100% {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 12px 12px 0 $brutal-black,
+      0 0 12px rgba($brutal-accent-primary, 0.6);
+  }
+}
+
+@keyframes button-reset {
+  0% {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 12px 12px 0 $brutal-black,
+      0 0 12px rgba($brutal-accent-primary, 0.6);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 8px 8px 0 $brutal-black;
+  }
+}
+
+#fetch-another-fight {
+  position: relative;
+  cursor: pointer;
+  background-color: $brutal-accent-primary;
+  color: $brutal-white;
+  font-family: "Anton", sans-serif;
+  text-transform: uppercase;
+  font-size: 2rem;
+  padding: 0.75rem 2rem;
+  border: 4px solid $brutal-black;
+  @include brutalist-shadow($brutal-black, 8px);
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background-color: darken($brutal-accent-primary, 8%);
+    animation: button-lift 0.25s forwards;
+  }
+
+  &:not(:hover) {
+    animation: button-reset 0.25s forwards;
+  }
 }

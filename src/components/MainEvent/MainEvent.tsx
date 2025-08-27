@@ -36,7 +36,7 @@ const MainEvent = ({
           <button
             id="fetch-another-fight"
             onClick={() => fetchMainVideo()}
-            className="cursor-pointer bg-red-600 text-white font-anton uppercase text-2xl py-3 px-8 border-4 border-black hover:bg-black hover:text-white transition-colors duration-300 shadow-[8px_8px_0_#000]"
+            className="cursor-pointer bg-red-600 text-white font-anton uppercase text-2xl py-3 px-8 border-4 border-black hover:bg-black hover:text-white transition-colors duration-300 shadow-[8px_8px_0_#000] animate-shake-impact"
           >
             <span className="me-2">
               <FontAwesomeIcon icon={faDiceThree} />
