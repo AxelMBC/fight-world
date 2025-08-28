@@ -21,7 +21,7 @@ const EventCard = ({ video, setMainEvent }: EventCardProps) => {
         <img
           src={video.thumbnail}
           alt={video.title}
-          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 ease-in-out"
+          className="w-full h-48 object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300 ease-in-out"
         />
       </div>
       <div className="p-4 flex flex-col flex-grow">

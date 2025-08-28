@@ -9,7 +9,7 @@ interface FighterCardProps {
 const FighterCard = ({ boxer, rank, onSelect }: FighterCardProps) => {
   return (
     <div
-      className="relative group card-tape cursor-pointer"
+      className="relative group cursor-pointer"
       onClick={() => onSelect(boxer)}
     >
       <div className="relative bg-white border-4 border-black shadow-[10px_10px_0_#000] group-hover:shadow-[12px_12px_0_#16A34A] transition-all duration-200">
