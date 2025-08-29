@@ -21,12 +21,12 @@ const MainEvent = ({
   return (
     <section className="mb-20 border-y-8 border-black py-5">
       {loading && (
-        <p className="text-center font-bold text-3xl animate-pulse">
+        <p className="text-center font-bold text-3xl fc-primary">
           BUSCANDO COMBATE...
         </p>
       )}
       {error && (
-        <p className="text-center font-bold text-2xl text-red-600 bg-black p-4">
+        <p className="fc-error text-center font-bold text-2xl p-4">
           {error}
         </p>
       )}
@@ -36,7 +36,7 @@ const MainEvent = ({
           <button
             id="fetch-another-fight"
             onClick={() => fetchMainVideo()}
-            className="cursor-pointer bg-red-600 text-white font-anton uppercase text-2xl py-3 px-8 border-4 border-black hover:bg-black hover:text-white transition-colors duration-300 shadow-[8px_8px_0_#000] animate-shake-impact"
+            className="bg-secondary-dark cursor-pointer fc-white font-anton uppercase text-2xl py-3 px-8 border-4 border-black hover:bg-black hover:fc-white transition-colors duration-300 shadow-[8px_8px_0_#000] animate-shake-impact"
           >
             <span className="me-2">
               <FontAwesomeIcon icon={faDiceThree} />

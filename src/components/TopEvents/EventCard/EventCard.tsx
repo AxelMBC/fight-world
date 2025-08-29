@@ -15,7 +15,7 @@ const EventCard = ({ video, setMainEvent }: EventCardProps) => {
   return (
     <div
       onClick={() => handleVideoClick()}
-      className="group bg-white flex flex-col border-4 border-black shadow-[8px_8px_0_#000] hover:shadow-[12px_12px_0_#16A34A] transition-all duration-300 max-w-sm cursor-pointer"
+      className="group bg-white flex flex-col border-4 border-black shadow-[8px_8px_0_#000] hover:shadow-[12px_12px_0_#ca2626] transition-all duration-300 max-w-sm cursor-pointer"
     >
       <div className="overflow-hidden border-b-4 border-black">
         <img
@@ -35,17 +35,17 @@ const EventCard = ({ video, setMainEvent }: EventCardProps) => {
               className={`px-2 py-1 text-xs font-bold uppercase border-2 border-black shadow-[4px_4px_0_#000] 
               ${
                 index % 3 === 0
-                  ? "bg-green-600 text-white"
+                  ? "bg-primary fc-white"
                   : index % 3 === 1
-                  ? "bg-white text-black"
-                  : "bg-red-600 text-white"
+                  ? "bg-white fc-black"
+                  : "bg-secondary-dark fc-white"
               }`}
             >
               {tag}
             </span>
           ))}
         </div>
-        <div className="mt-auto text-red-600 font-bold self-end uppercase flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+        <div className="mt-auto fc-primary font-bold self-end uppercase flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
           Ver Video{" "}
           <span className="transition-transform duration-300 group-hover:translate-x-1">
             →
