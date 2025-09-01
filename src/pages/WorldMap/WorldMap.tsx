@@ -1,5 +1,5 @@
 import "maplibre-gl/dist/maplibre-gl.css";
-import "./styles.scss";
+import "../../styles/WorldMap/styles.scss";
 import type { MapRef } from "@vis.gl/react-maplibre";
 
 import { useRef, useState, useEffect } from "react";
@@ -103,7 +103,7 @@ const WorldMap = () => {
             borderColor: "darkred",
           }}
         >
-          <h1 className="mb-0 fc-white text-xl cursor-pointer title-country"  onClick={() => goToCountry(dialog.country)}>
+          <h1 className="fc-white title-country mb-0 text-xl cursor-pointer"  onClick={() => goToCountry(dialog.country)}>
             {dialog.country}
           </h1>
 

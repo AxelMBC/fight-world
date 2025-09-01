@@ -1,4 +1,3 @@
-// Entrada con "pop"
 @keyframes pop-in {
   0% {
     transform: translateX(-50%) scale(0.8);
@@ -10,7 +9,6 @@
   }
 }
 
-// Salida con fade-out
 @keyframes pop-out {
   0% {
     transform: translateX(-50%) scale(1);
@@ -32,7 +30,6 @@
   }
 }
 
-// Hover en el título
 .title-country {
   transition: font-size 0.2s ease;
   &:hover {

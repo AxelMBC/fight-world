@@ -5,7 +5,7 @@
 // Color Palette
 // Primary
 $primary-color: #ca2626;
-$primary-color-dark: #4a3333;
+$primary-color-dark: #780606;
 $primary-color-light: #8a3d3d;
 
 //Secondary
@@ -21,12 +21,17 @@ $error-color: #d40000;
 body {
   background-color: $background-color;
 
+  // Font
   .font-anton {
     font-family: "Anton", sans-serif;
   }
 
   .fc-primary {
     color: $primary-color;
+  }
+
+  .fc-primary-dark {
+    color: $primary-color-dark;
   }
 
   .fc-black {
@@ -45,6 +50,7 @@ body {
     color: $error-color;
   }
 
+  // Background Colors
   .bg-primary {
     background-color: $primary-color;
   }
@@ -57,11 +63,12 @@ body {
     background-color: $background-color;
   }
 
-  .border-black {
-    border-color: $background-color;
-  }
   .bg-white {
     background-color: $accent-color;
+  }
+
+  .border-black {
+    border-color: $background-color;
   }
 }
 
@@ -94,14 +101,9 @@ body {
 }
 
 #fetch-another-fight {
-  position: relative;
-  cursor: pointer;
   background-color: $primary-color;
-  font-family: "Anton", sans-serif;
-  text-transform: uppercase;
   font-size: 2rem;
   padding: 0.75rem 2rem;
-  border: 4px solid $background-color;
   @include brutalist-shadow($background-color, 8px);
   transition: background-color 0.2s ease, color 0.2s ease;
 

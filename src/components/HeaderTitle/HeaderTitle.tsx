@@ -10,13 +10,13 @@ const HeaderTitle = ({ flag, title }: HeaderTitleProps) => {
         <div className="flex justify-center items-center space-x-4 mt-1 mb-4">
           {flag}
         </div>
-        <h1 className="title-massive color-secondary pt-2 uppercase">
+        <h1 className="title-massive fc-primary-dark pt-2 uppercase">
           {title}
         </h1>
       </header>
       <div id="target-scroll"></div>
     </>
-  );
+);
 };
 
 export default HeaderTitle;
