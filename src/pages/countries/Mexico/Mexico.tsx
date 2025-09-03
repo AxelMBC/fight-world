@@ -14,9 +14,9 @@ import shuffleArray from "../../../utils/shuffleArray";
 import pickRandomEvent from "../../../utils/pickRandomEvent";
 
 // Data
-import { topFightersData } from "./data/topFighters";
-import { topEvents } from "./data/topEvents";
-import { mainEventFights } from "./data/mainEvents";
+import { topFightersData } from "./data/topFightersList";
+import { topEvents } from "./data/topEventsList";
+import { mainEventFights } from "./data/mainEventsList";
 
 // Components
 import HeaderTitle from "../../../components/HeaderTitle";
