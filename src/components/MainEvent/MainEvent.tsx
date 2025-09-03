@@ -19,7 +19,7 @@ const MainEvent = ({
   fetchMainVideo,
 }: MainEventProps) => {
   return (
-    <section className="mb-20 border-y-8 border-black py-5">
+    <section className="section-spacing border-y-8 border-black py-5">
       {loading && (
         <p className="text-center font-bold text-3xl fc-primary">
           BUSCANDO COMBATE...
@@ -36,7 +36,7 @@ const MainEvent = ({
           <button
             id="fetch-another-fight"
             onClick={() => fetchMainVideo()}
-            className="fc-white cursor-pointer font-anton uppercase text-2xl py-3 px-8 border-4 border-black"
+            className="fc-white button-font cursor-pointer font-anton uppercase text-2xl py-3 px-8 border-4 border-black"
           >
             <span className="me-2">
               <FontAwesomeIcon icon={faDiceThree} />

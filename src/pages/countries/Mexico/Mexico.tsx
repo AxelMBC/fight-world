@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 
 // Styles
 import "../../../styles/Mexico/style.scss";
+import "../../../styles/all/spacing.scss";
 
 // Resources
 import Flag from "./resources/Flag";

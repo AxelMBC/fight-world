@@ -27,7 +27,7 @@ const FighterCard = ({ boxer, rank, onSelect }: FighterCardProps) => {
           <h3 className="font-anton text-3xl uppercase fc-black truncate">
             {boxer.name}
           </h3>
-          <p className="mt-1 text-md fc-gray font-mono">
+          <p className="fc-gray mt-1 text-md font-mono">
             RÉCORD: {boxer.record}
           </p>
           <p className="mt-2 fc-primary font-bold uppercase">

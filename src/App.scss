@@ -1,38 +1,62 @@
-$color-primary: #ca2626;
-$color-primary-dark: #780606;
-$color-secondary: #006847;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1200px;
 
 @font-face {
   font-family: "Rubik Distressed";
-  /* src: url("./assets/fonts/RubikDistressed-Regular.ttf") format("truetype"); */
   src: url("./assets/fonts/RubikDirt-Regular.ttf") format("truetype");
-  /* src: url("./assets/fonts/Nosifer-Regular.ttf") format("truetype"); */
-  /* src: url("./assets/fonts/NewRocker-Regular.ttf") format("truetype"); */
   font-weight: normal;
   font-style: normal;
 }
 
-.title-massive {
+.title-main {
   font-family: "Rubik Distressed", sans-serif;
-  font-size: 80px;
+  font-size: 32px;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 48px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 72px;
+  }
 }
 
-.title-1 {
-  font-family: "Rubik Distressed", sans-serif;
-  font-size: 64px;
-}
-
-.title-2 {
+.subtitle {
   font-family: "Rubik Distressed", sans-serif;
   font-size: 24px;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 36px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 56px;
+  }
 }
 
-.title-3 {
-  font-family: "Rubik Distressed", sans-serif;
-  font-size: 16px;
+.button-font {
+  font-size: 1rem;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 1.25rem;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 2rem;
+  }
 }
 
-// Primary color classes
-.color-primary {
-  color: $color-primary;
+.body-text {
+  font-size: 12px;
+  
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 24px;
+  
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 24px;
+   
+  }
 }
