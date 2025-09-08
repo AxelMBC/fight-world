@@ -76,12 +76,12 @@ const WorldMap = () => {
       <Map
         mapStyle="https://api.maptiler.com/maps/0197251e-f92a-7cb9-98e8-774bde6e5d8e/style.json?key=FcmP3QUhWP2LWWud2CSk"
         ref={mapRef}
-        minZoom={1}
+        minZoom={2}
         renderWorldCopies={false}
         initialViewState={{
           longitude: 0,
           latitude: 21.8,
-          zoom: 1,
+          zoom: 2,
         }}
         style={{
           width: "100vw",

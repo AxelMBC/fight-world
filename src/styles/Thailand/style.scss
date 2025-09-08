@@ -4,21 +4,21 @@
 
 // Color Palette
 // Primary
-$primary-color: #ca2626;
-$primary-color-dark: #780606;
-$primary-color-light: #8a3d3d;
+$primary-color: #2D2A4A;
+$primary-color-dark: #120e31;
+$primary-color-light: #5d5699;
 
 //Secondary
-$secondary-color: #26c954;
-$secondary-color-dark: #3d744d;
+$secondary-color: #F4E589;
+$secondary-color-dark: #948b53;
 
 // Extended
-$background-color: #031602;
+$background-color: #120e31;
 $text-color: #faf9f6;
 $accent-color: #faf9f6;
 $error-color: #d40000;
 
-.mexico-theme {
+.thailand-theme {
   background-color: $background-color;
 
   // Font
@@ -36,6 +36,10 @@ $error-color: #d40000;
 
   .fc-black {
     color: $background-color;
+  }
+
+  .fc-white {
+    color: $text-color;
   }
 
   .fc-gray {
@@ -66,25 +70,6 @@ $error-color: #d40000;
   .border-black {
     border-color: $background-color;
   }
-
-  #fetch-another-fight {
-    background-color: $primary-color;
-    // font-size: 2rem;
-    padding: 0.75rem 2rem;
-
-    &:hover {
-      background-color: color.scale($primary-color, $lightness: -17%);
-      animation: button-lift 0.25s forwards;
-    }
-
-    &:not(:hover) {
-      animation: button-reset 0.25s forwards;
-    }
-  }
-}
-
-.fc-white {
-  color: $text-color;
 }
 
 @keyframes button-lift {
@@ -108,5 +93,20 @@ $error-color: #d40000;
   100% {
     transform: translateY(0) scale(1);
     box-shadow: 8px 8px 0 $background-color;
+  }
+}
+
+#fetch-another-fight {
+  background-color: $primary-color;
+  // font-size: 2rem;
+  padding: 0.75rem 2rem;
+
+  &:hover {
+    background-color: color.scale($primary-color, $lightness: -17%);
+    animation: button-lift 0.25s forwards;
+  }
+
+  &:not(:hover) {
+    animation: button-reset 0.25s forwards;
   }
 }

@@ -5,6 +5,7 @@ import App from "./App.tsx";
 
 import WorldMap from "./pages/WorldMap";
 import Mexico from "./pages/countries/Mexico/index.tsx";
+import Thailand from "./pages/countries/Thailand/index.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <WorldMap /> },
       { path: "Mexico", element: <Mexico /> },
+      { path: "Thailand", element: <Thailand /> },
     ],
   },
 ]);

@@ -1,15 +1,13 @@
 import type { mainEventType } from "../../../types/fightEventType";
-import scrollToMainEvent from "../../../utils/scrollToMainEvent";
 
 interface EventCardProps {
   video: mainEventType;
-  setMainEvent: (event: mainEventType | null) => void;
+  onVideoSelect: (event: mainEventType) => void;
 }
 
-const EventCard = ({ video, setMainEvent }: EventCardProps) => {
+const EventCard = ({ video, onVideoSelect }: EventCardProps) => {
   const handleVideoClick = () => {
-    setMainEvent(video);
-    scrollToMainEvent();
+    onVideoSelect(video);
   };
 
   return (
