@@ -6,7 +6,7 @@ export const topFightersData: fighterType[] = [
     name: "Namsaknoi Yudthagarngamtorn",
     record: "280-15-5",
     achievements: "El Emperador",
-    image: "https://lh3.googleusercontent.com/proxy/wlDt_sUltNJFD9ONpQQUef0EeSVH_9fdkDqAI568g0xaPZINDNPGWqePY_uK6wWOf8Gf3vRB6MygeYJqstD2_daJkNvaFyBzUnXe2ZRPC5_RrDR2QL3unVQ",
+    image: "https://gofind.jjtravel.com/26657",
   },
   {
     id: "2",
