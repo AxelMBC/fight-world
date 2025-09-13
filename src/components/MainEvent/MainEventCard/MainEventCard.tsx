@@ -20,7 +20,7 @@ const MainEventVideo: React.FC<{ video: mainEventType }> = ({ video }) => (
       <h3 className="text-2xl md:text-4xl font-anton uppercase">
         {video.title}
       </h3>
-      <p className="fc-gray body-text mt-2">{video.description}</p>
+      <p className="mt-2">{video.description}</p>
     </div>
   </div>
 );

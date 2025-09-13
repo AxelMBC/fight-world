@@ -2,11 +2,9 @@ $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1200px;
 
 .header-title {
-  margin-bottom: 24px;
   padding-top: 0.5rem;
 
   @media (min-width: $breakpoint-tablet) {
-    margin-bottom: 32px;
     padding-top: 1rem;
   }
 }

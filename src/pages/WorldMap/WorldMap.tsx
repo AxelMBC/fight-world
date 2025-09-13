@@ -53,7 +53,8 @@ const WorldMap = () => {
       if (
         features.length > 0 &&
         features[0].layer.id !== "Water" &&
-        features[0].layer.id !== "Country labels"
+        features[0].layer.id !== "Country labels" &&
+        features[0].layer.id !== "Ocean labels"
       ) {
         const countryName = features[0].layer.id;
         setDialog({

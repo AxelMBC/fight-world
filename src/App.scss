@@ -13,11 +13,11 @@ $breakpoint-desktop: 1200px;
   font-size: 32px;
 
   @media (min-width: $breakpoint-tablet) {
-    font-size: 48px;
+    font-size: 40px;
   }
 
   @media (min-width: $breakpoint-desktop) {
-    font-size: 72px;
+    font-size: 64px;
   }
 }
 
@@ -51,12 +51,12 @@ $breakpoint-desktop: 1200px;
   
 
   @media (min-width: $breakpoint-tablet) {
-    font-size: 24px;
+    font-size: 16px;
   
   }
 
   @media (min-width: $breakpoint-desktop) {
-    font-size: 24px;
+    font-size: 18px;
    
   }
 }
