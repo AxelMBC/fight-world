@@ -20,7 +20,7 @@ const FighterCard = ({ boxer, rank, onSelect }: FighterCardProps) => {
           <img
             src={boxer.image}
             alt={boxer.name}
-            className="w-full h-80 object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-300"
+            className="w-full h-80 object-cover object-top filter lg:grayscale group-hover:grayscale-0 transition-all duration-300"
           />
         </div>
         <div className="p-5 border-t-4 border-black">

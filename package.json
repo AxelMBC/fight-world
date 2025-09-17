@@ -15,11 +15,13 @@
     "@fortawesome/free-regular-svg-icons": "^7.0.0",
     "@fortawesome/free-solid-svg-icons": "^7.0.0",
     "@fortawesome/react-fontawesome": "^3.0.0",
+    "@reduxjs/toolkit": "^2.9.0",
     "@tailwindcss/vite": "^4.1.10",
     "maplibre-gl": "^5.5.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-map-gl": "^8.0.4",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^7.6.1"
   },
   "devDependencies": {

@@ -18,6 +18,10 @@ import TopFigths from "../../../components/TopEvents";
 // Hooks
 import { useMainVideoQueue } from "../../../hooks/useMainVideoQueue";
 
+// Redux
+import { useSelector } from "react-redux";
+import { selectFightersState } from "../../../store/Fighters";
+
 const Mexico = () => {
   const {
     mainVideo,
@@ -27,6 +31,11 @@ const Mexico = () => {
     fetchVideoByFighter,
     selectSpecificVideo,
   } = useMainVideoQueue(mainEventFights);
+
+  const reduxState = useSelector(selectFightersState);
+
+  // TODO: borrar console
+  console.log(reduxState);
 
   return (
     <div className="mexico-theme font-sans">

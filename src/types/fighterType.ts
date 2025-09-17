@@ -3,7 +3,7 @@ export interface fighterType {
   name: string;
   record: string;
   achievements: string;
-  image: string;
+  image?: string;
 }
 
 export interface topFightersType{

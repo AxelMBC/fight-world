@@ -1,4 +1,6 @@
 import type { fighterType } from "../../../../types/fighterType";
+import JulioCesarImg from "../resources/Fighters/topFighterJulioCesar.avif";
+import CaneloAlvarezImg from "../resources/Fighters/topFighterCaneloAlvarez.webp";
 
 export const topFightersData: fighterType[] = [
   {
@@ -6,15 +8,14 @@ export const topFightersData: fighterType[] = [
     name: "Julio César Chávez",
     record: "107-6-2",
     achievements: "El Gran Campeón Mexicano",
-    image: "https://i.ytimg.com/vi/KAi-7KO9COw/maxresdefault.jpg",
+    image: JulioCesarImg,
   },
   {
     id: "2",
     name: "Canelo Álvarez",
     record: "61-2-2",
     achievements: "Rey Indiscutido",
-    image:
-      "https://e9t9dc498r8.exactdn.com/wp-content/uploads/2024/12/Canelo-Alvarez-peleas-2025.jpg?strip=all&lossy=1&ssl=1",
+    image: CaneloAlvarezImg,
   },
   {
     id: "3",
