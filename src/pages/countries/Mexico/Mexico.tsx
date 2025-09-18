@@ -2,9 +2,6 @@
 import "../../../styles/Mexico/style.scss";
 import "../../../styles/all/spacing.scss";
 
-// Resources
-import Flag from "./resources/Flag";
-
 // Data
 import { topFightersData } from "./data/topFightersList";
 import { topEvents } from "./data/topEventsList";
@@ -43,7 +40,7 @@ const Mexico = () => {
         className="container mx-auto p-4 sm:p-6 bg-white border-4 md:border-8 border-black"
         style={{ maxWidth: "1040px" }}
       >
-        <HeaderTitle flag={Flag} title="Boxeo al Estilo Mexicano" />
+        <HeaderTitle title="Boxeo al Estilo Mexicano" />
         <MainEvent
           loading={loading}
           error={error}

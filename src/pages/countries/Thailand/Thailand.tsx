@@ -2,9 +2,6 @@
 import "../../../styles/Thailand/style.scss";
 import "../../../styles/all/spacing.scss";
 
-// Resources
-import Flag from "./resources/Flag";
-
 // Data
 import { topFightersData } from "./data/topFightersList";
 import { topEvents } from "./data/topEventsList";
@@ -19,16 +16,15 @@ import TopFigths from "../../../components/TopEvents";
 // Hooks
 import { useMainVideoQueue } from "../../../hooks/useMainVideoQueue";
 
-
 const Thailand = () => {
   const {
-      mainVideo,
-      loading,
-      error,
-      fetchNextVideo,
-      fetchVideoByFighter,
-      selectSpecificVideo,
-    } = useMainVideoQueue(mainEventFights);
+    mainVideo,
+    loading,
+    error,
+    fetchNextVideo,
+    fetchVideoByFighter,
+    selectSpecificVideo,
+  } = useMainVideoQueue(mainEventFights);
 
   return (
     <div className="thailand-theme min-h-screen p-4 sm:p-4 font-sans">
@@ -36,7 +32,7 @@ const Thailand = () => {
         className="container mx-auto max-w-7xl p-4 sm:p-6 bg-white border-4 md:border-8 border-black"
         style={{ maxWidth: "1405px" }}
       >
-        <HeaderTitle flag={Flag} title="El arte de las 8 extremidades" />
+        <HeaderTitle title="El arte de las 8 extremidades" />
         <MainEvent
           loading={loading}
           error={error}
@@ -53,7 +49,7 @@ const Thailand = () => {
         <TopFigths
           title="Las guerras mas emocionantes"
           videos={topEvents}
-         onVideoSelect={selectSpecificVideo}
+          onVideoSelect={selectSpecificVideo}
         />
       </div>
     </div>
