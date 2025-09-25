@@ -41,7 +41,7 @@ const Mexico = () => {
   }, [dispatch]);
 
   // TODO: borrar console
-  console.log(reduxState);
+  console.log("Estado redux: ", reduxState);
 
   return (
     <div className="mexico-theme font-sans">
