@@ -14,12 +14,16 @@ import TopFigths from "../../../components/TopEvents";
 
 // Hooks
 import { useMainVideoQueue } from "../../../hooks/useMainVideoQueue";
+import { useEffect } from "react";
 
 // Redux
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectFightersState } from "../../../store/Fighters";
+import { fetchFightersRequest } from "../../../store/Fighters";
+import type { AppDispatch } from "../../../store";
 
 const Mexico = () => {
+  const dispatch = useDispatch<AppDispatch>();
   const {
     mainVideo,
     loading,
@@ -30,6 +34,11 @@ const Mexico = () => {
   } = useMainVideoQueue(mainEventFights);
 
   const reduxState = useSelector(selectFightersState);
+
+  // Trigger saga to load fighters on component mount
+  useEffect(() => {
+    dispatch(fetchFightersRequest());
+  }, [dispatch]);
 
   // TODO: borrar console
   console.log(reduxState);
