@@ -7,10 +7,10 @@ import { topFightersData } from "./data/topFightersList";
 import { topEvents } from "./data/topEventsList";
 import { mainEventFights } from "./data/mainEventsList";
 
-import HeaderTitle from "../../../components/HeaderTitle";
-import TopFighters from "../../../components/TopFighters";
-import MainEvent from "../../../components/MainEvent";
-import TopFigths from "../../../components/TopEvents";
+import HeaderTitle from "@components/HeaderTitle";
+import TopFighters from "@components/TopFighters";
+import MainEvent from "@components/MainEvent";
+import TopFigths from "@components/TopEvents";
 
 // Hooks
 import { useMainVideoQueue } from "../../../hooks/useMainVideoQueue";
