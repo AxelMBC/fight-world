@@ -1,29 +1,30 @@
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
 // Styles
-import "../../../styles/Mexico/style.scss";
-import "../../../styles/all/spacing.scss";
+import "@/styles/Mexico/style.scss";
+import "@/styles/all/spacing.scss";
 
 // Data
 import { topFightersData } from "./data/topFightersList";
 import { topEvents } from "./data/topEventsList";
 import { mainEventFights } from "./data/mainEventsList";
 
+// Components
 import HeaderTitle from "@components/HeaderTitle";
 import TopFighters from "@components/TopFighters";
 import MainEvent from "@components/MainEvent";
 import TopFigths from "@components/TopEvents";
 
 // Hooks
-import { useMainVideoQueue } from "../../../hooks/useMainVideoQueue";
-import { useEffect } from "react";
+import { useMainVideoQueue } from "@/hooks/useMainVideoQueue";
 
 // Redux
-import { useSelector, useDispatch } from "react-redux";
-import { selectFightersState } from "../../../store/Fighters";
-import { fetchFightersRequest } from "../../../store/Fighters";
-import type { AppDispatch } from "../../../store";
+import { selectFightersState } from "@store/Fighters";
+import { fetchFightersRequest } from "@store/Fighters";
 
 const Mexico = () => {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch();
   const {
     mainVideo,
     loading,
