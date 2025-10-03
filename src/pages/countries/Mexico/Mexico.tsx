@@ -2,19 +2,19 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 // Styles
-import "@/styles/Mexico/style.scss";
-import "@/styles/all/spacing.scss";
+import "@styles/Mexico/style.scss";
+import "@styles/all/spacing.scss";
 
 // Data
 import { topFightersData } from "./data/topFightersList";
-import { topEvents } from "./data/topEventsList";
+import { topEventsList } from "./data/topEventsList";
 import { mainEventFights } from "./data/mainEventsList";
 
 // Components
 import HeaderTitle from "@components/HeaderTitle";
 import TopFighters from "@components/TopFighters";
 import MainEvent from "@components/MainEvent";
-import TopFigths from "@components/TopEvents";
+import TopEvents from "@components/TopEvents";
 
 // Hooks
 import { useMainVideoQueue } from "@/hooks/useMainVideoQueue";
@@ -38,6 +38,8 @@ const Mexico = () => {
 
   // Trigger saga to load fighters on component mount
   useEffect(() => {
+    // Scroll to top on component mount
+    window.scrollTo(0, 0);
     dispatch(fetchFightersRequest());
   }, [dispatch]);
 
@@ -48,7 +50,7 @@ const Mexico = () => {
     <div className="mexico-theme font-sans">
       <div
         className="container mx-auto p-4 sm:p-6 bg-white border-4 md:border-8 border-black"
-        style={{ maxWidth: "1040px" }}
+        style={{ maxWidth: "1120px" }}
       >
         <HeaderTitle title="Boxeo al Estilo Mexicano" />
         <MainEvent
@@ -64,9 +66,9 @@ const Mexico = () => {
           onFighterSelect={fetchVideoByFighter}
         />
 
-        <TopFigths
+        <TopEvents
           title="LAS PELEAS MAS LEGENDARIAS"
-          videos={topEvents}
+          videos={topEventsList}
           onVideoSelect={selectSpecificVideo}
         />
       </div>

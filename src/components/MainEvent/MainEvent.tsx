@@ -1,9 +1,8 @@
 import type { mainEventType } from "../../types/fightEventType";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiceThree } from "@fortawesome/free-solid-svg-icons";
-
 import MainEventCard from "./MainEventCard";
+import { motion } from "framer-motion";
 
 type MainEventProps = {
   loading: boolean;
@@ -33,16 +32,19 @@ const MainEvent = ({
       {mainVideo && <MainEventCard video={mainVideo} />}
       {!loading && mainVideo && (
         <div className="text-center my-7">
-          <button
+          <motion.button
             id="fetch-another-fight"
             onClick={() => fetchMainVideo()}
             className="fc-white button-font cursor-pointer font-anton uppercase text-2xl py-3 px-8 border-4 border-black"
+            whileHover={{ scale: 1.3 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
             <span className="me-2">
               <FontAwesomeIcon icon={faDiceThree} />
             </span>
             Buscar Otro Combate
-          </button>
+          </motion.button>
         </div>
       )}
     </section>

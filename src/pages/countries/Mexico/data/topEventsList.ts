@@ -1,4 +1,4 @@
-export const topEvents = [
+export const topEventsList = [
   {
     id: 1,
     title: "Ricardo Lopez vs Hideyuki Ohashi | Full Fight",

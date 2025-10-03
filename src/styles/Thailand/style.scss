@@ -95,18 +95,3 @@ $error-color: #d40000;
     box-shadow: 8px 8px 0 $background-color;
   }
 }
-
-#fetch-another-fight {
-  background-color: $primary-color;
-  // font-size: 2rem;
-  padding: 0.75rem 2rem;
-
-  &:hover {
-    background-color: color.scale($primary-color, $lightness: -17%);
-    animation: button-lift 0.25s forwards;
-  }
-
-  &:not(:hover) {
-    animation: button-reset 0.25s forwards;
-  }
-}

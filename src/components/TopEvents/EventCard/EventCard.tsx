@@ -23,14 +23,14 @@ const EventCard = ({ video, onVideoSelect }: EventCardProps) => {
         />
       </div>
       <div className="p-4 flex flex-col flex-grow">
-        <h3 className="font-bold text-lg uppercase flex-grow mb-4">
+        <h3 className="font-bold text-md uppercase flex-grow mb-4">
           {video.title}
         </h3>
         <div className="flex flex-wrap gap-2 mb-4">
           {video.tags.map((tag: string, index: number) => (
             <span
               key={index}
-              className={`px-2 py-1 text-xs font-bold uppercase border-2 border-black shadow-[4px_4px_0_#000] 
+              className={`px-2 py-1 text-xs font-bold border-2 border-black shadow-[1px_1px_0_#000] 
               ${
                 index % 3 === 0
                   ? "bg-primary fc-white"

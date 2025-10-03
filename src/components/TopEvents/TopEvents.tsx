@@ -9,7 +9,7 @@ type TopVideosProps = {
 
 const TopEvents = ({ title, videos, onVideoSelect }: TopVideosProps) => {
   return (
-    <section>
+    <section style={{marginTop: '120px'}} >
       <h2 className="subtitle section-spacing fc-primary-dark text-5xl md:text-7xl uppercase mb-10 text-center">
         {title}
       </h2>
