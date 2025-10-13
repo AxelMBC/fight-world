@@ -23,7 +23,7 @@ const EventCard = ({ video, onVideoSelect }: EventCardProps) => {
         />
       </div>
       <div className="p-4 flex flex-col flex-grow">
-        <h3 className="font-bold text-md uppercase flex-grow mb-4">
+        <h3 className="font-bold text-md flex-grow mb-4">
           {video.title}
         </h3>
         <div className="flex flex-wrap gap-2 mb-4">

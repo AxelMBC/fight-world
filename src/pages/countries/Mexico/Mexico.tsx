@@ -47,7 +47,7 @@ const Mexico = () => {
   console.log("Estado redux: testing: ", reduxState);
 
   return (
-    <div className="mexico-theme font-sans">
+    <div className="mexico-theme">
       <div
         className="container mx-auto p-4 sm:p-6 bg-white border-4 md:border-8 border-black"
         style={{ maxWidth: "1120px" }}
@@ -61,13 +61,13 @@ const Mexico = () => {
         />
 
         <TopFighters
-          title="DISFRUTA LAS PELEAS DE LOS ÍDOLOS DE MÉXICO"
+          title="Ídolos de México"
           topFightersData={topFightersData}
           onFighterSelect={fetchVideoByFighter}
         />
 
         <TopEvents
-          title="LAS PELEAS MAS LEGENDARIAS"
+          title="Peleas Históricas"
           videos={topEventsList}
           onVideoSelect={selectSpecificVideo}
         />

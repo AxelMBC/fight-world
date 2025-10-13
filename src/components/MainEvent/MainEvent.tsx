@@ -43,7 +43,7 @@ const MainEvent = ({
             <span className="me-2">
               <FontAwesomeIcon icon={faDiceThree} />
             </span>
-            Buscar Otro Combate
+            Otro Combate
           </motion.button>
         </div>
       )}

@@ -17,4 +17,5 @@ export interface topEventsType {
   title: string;
   tags: string[];
   thumbnail?: string;
+  type: string;
 }

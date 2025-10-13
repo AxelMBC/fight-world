@@ -2,14 +2,15 @@ $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1200px;
 
 @font-face {
-  font-family: "Rubik Distressed";
-  src: url("./assets/fonts/RubikDirt-Regular.ttf") format("truetype");
+  font-family: "Roboto Slab";
+  src: url("./assets/fonts/RobotoSlab.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 .title-main {
-  font-family: "Rubik Distressed", sans-serif;
+  // font-family: "Roboto Slab", sans-serif;
+  // font-weight: Bold;
   font-size: 32px;
 
   @media (min-width: $breakpoint-tablet) {
@@ -22,8 +23,9 @@ $breakpoint-desktop: 1200px;
 }
 
 .subtitle {
-  font-family: "Rubik Distressed", sans-serif;
+  font-family: "Roboto Slab", sans-serif;
   font-size: 24px;
+  font-weight: bold;
 
   @media (min-width: $breakpoint-tablet) {
     font-size: 36px;

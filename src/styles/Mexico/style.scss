@@ -18,8 +18,16 @@ $text-color: #faf9f6;
 $accent-color: #faf9f6;
 $error-color: #d40000;
 
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("./assets/fonts/RobotoSlab.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .mexico-theme {
   background-color: $background-color;
+  font-family: "Roboto Slab", sans-serif;
 
   // Font
   .font-anton {

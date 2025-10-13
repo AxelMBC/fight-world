@@ -1,7 +1,8 @@
 export const topEventsList = [
   {
     id: 1,
-    title: "Ricardo Lopez vs Hideyuki Ohashi | Full Fight",
+    type: "Full Fight",
+    title: "Ricardo Lopez vs Hideyuki Ohashi",
     description:
       "Pelea completa entre Ricardo López y Hideyuki Ohashi por el título mundial de peso mínimo. Una exhibición técnica del legendario campeón mexicano.",
     idYt: "gdqZIabo2qI",
@@ -14,7 +15,8 @@ export const topEventsList = [
   },
   {
     id: 2,
-    title: "Julio César Chávez vs Meldrick Taylor I | Full Fight",
+    type: "Full Fight",
+    title: "Julio César vs Meldrick Taylor I",
     description:
       "Una de las peleas más dramáticas de todos los tiempos. El 17 de marzo de 1990, Chávez logra una victoria agónica sobre Taylor con un TKO a segundos del final.",
     idYt: "LQYscDiQUS8",
@@ -27,7 +29,8 @@ export const topEventsList = [
   },
   {
     id: 3,
-    title: "Canelo Álvarez vs Billy Joe Saunders | Full Fight",
+    type: "Full Fight",
+    title: "Canelo Álvarez vs Billy Saunders",
     description:
       "Saúl 'Canelo' Álvarez unificó títulos supermedianos tras dominar a Billy Joe Saunders, forzando el abandono del británico por lesión en el rostro.",
     idYt: "FpsGoanw4S4",
@@ -40,7 +43,8 @@ export const topEventsList = [
   },
   {
     id: 4,
-    title: "Julio César Chávez vs Juan Laporte | Full Fight",
+    type: "Full Fight",
+    title: "Julio César vs Juan Laporte",
     description: "Un joven Julio César Chávez se enfrenta a otro grande del boxeo, Juan Laporte. Chávez ganó en una dura pelea que demostró el talento de ambos boxeadores, consolidando al 'César del boxeo' en la historia.",
     idYt: "12J_QOE0esU",
     startTime: "40",
@@ -51,7 +55,8 @@ export const topEventsList = [
   },
   {
     id: 5,
-    title: "Marco Antonio Barrera vs Juan Manuel Márquez | Full Fight",
+    type: "Full Fight",
+    title: "Marco Barrera vs Manuel Márquez",
     description: "El 17 de marzo de 2007, dos leyendas mexicanas se enfrentaron en una guerra épica por el Campeonato de Peso Superpluma del CMB. Una exhibición de técnica, poder y corazón que dejó a los aficionados al boxeo pidiendo más.",
     idYt: "n9gRn6h6mDk",
     startTime: "37",
@@ -62,7 +67,8 @@ export const topEventsList = [
   },
   {
     id: 6,
-    title: "Canelo Álvarez vs. Gennadiy Golovkin III | Full Fight",
+    type: "Full Fight",
+    title: "Canelo Álvarez vs. GGG III",
     description: "El 17 de septiembre de 2022, Saúl 'Canelo' Álvarez y Gennadiy 'GGG' Golovkin se enfrentaron por tercera y última vez por el título indiscutido de peso súper mediano. Canelo se llevó la victoria por decisión unánime, cerrando una de las trilogías más grandes del boxeo moderno.",
     idYt: "6rZCJGsoGxI",
     startTime: "105",
