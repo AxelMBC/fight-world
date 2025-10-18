@@ -3,9 +3,9 @@ import type { CountryPageConfig } from "@components/CountryPage/CountryPage.type
 export const thailandConfig: CountryPageConfig = {
   countryName: "Thailand",
   themeClassName: "thailand-theme",
-  headerTitle: "El arte de las 8 extremidades",
-  topFightersTitle: "Leyendas historicas del Box Tailandes",
-  topEventsTitle: "Las guerras mas emocionantes",
+  headerTitle: "Armas Thailandesas",
+  topFightersTitle: "Leyendas Historicas",
+  topEventsTitle: "Las guerras de Thailandia",
   colorPalette: {
     primary: "#0047AB",      // Royal blue
     primaryDark: "#002855",

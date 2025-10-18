@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import type { CSSProperties } from "react";
-import { useSelector, useDispatch } from "react-redux";
 
 // Styles
 import "./CountryPage.scss";
@@ -15,10 +14,6 @@ import TopEvents from "@components/TopEvents";
 // Hooks
 import { useMainVideoQueue } from "@/hooks/useMainVideoQueue";
 
-// Redux
-import { selectFightersState } from "@store/Fighters";
-import { fetchFightersRequest } from "@store/Fighters";
-
 // Types
 import type { CountryPageProps } from "./CountryPage.types";
 
@@ -28,7 +23,6 @@ const CountryPage = ({
   topEventsList,
   mainEventFights,
 }: CountryPageProps) => {
-  const dispatch = useDispatch();
   const {
     mainVideo,
     loading,
@@ -38,29 +32,13 @@ const CountryPage = ({
     selectSpecificVideo,
   } = useMainVideoQueue(mainEventFights);
 
-  const reduxState = useSelector(selectFightersState);
 
-  // Scroll to top on component mount
   useEffect(() => {
     if (config.enableScrollToTop) {
       window.scrollTo(0, 0);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // Trigger saga to load fighters on component mount
-  useEffect(() => {
-    if (config.enableReduxFighters) {
-      dispatch(fetchFightersRequest());
-    }
-  }, [dispatch, config.enableReduxFighters]);
-
-  // TODO: borrar console
-  useEffect(() => {
-    if (config.enableReduxFighters) {
-      console.log("Estado redux: testing: ", reduxState);
-    }
-  }, [config.enableReduxFighters, reduxState]);
 
   // Generate CSS custom properties from color palette
   const themeStyles: CSSProperties = {
