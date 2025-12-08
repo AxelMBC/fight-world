@@ -35,7 +35,7 @@ const MainEvent = ({
           <motion.button
             id="fetch-another-fight"
             onClick={() => fetchMainVideo()}
-            className="fc-white button-font cursor-pointer font-anton uppercase text-2xl py-3 px-8 border-4 border-black"
+            className="fc-white button-font cursor-pointer uppercase text-2xl py-3 px-8 border-4 border-black"
             whileHover={{ scale: 1.3 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}

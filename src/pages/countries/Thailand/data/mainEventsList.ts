@@ -3,7 +3,7 @@ import type { mainEventType } from "../../../../types/fightEventType";
 export const mainEventFights: mainEventType[] = [
   {
     id: 0,
-    title: "Namsaknoi vs Saenchai | Full Fight",
+    title: "Namsaknoi vs Saenchai",
     description:
       "Pelea épica de Muay Thai entre Namsaknoi Yudthagarngamtorn y Saenchai, dos leyendas tailandesas, mostrando técnicas avanzadas y striking de élite.",
     idYt: "Ve4Le7AC1EY",
@@ -15,7 +15,7 @@ export const mainEventFights: mainEventType[] = [
   },
   {
     id: 1,
-    title: "Namsaknoi vs Attachai | Pelea Completa",
+    title: "Namsaknoi vs Attachai",
     description:
       "Pelea intensa de Muay Thai entre Namsaknoi Yudthagarngamtorn y Attachai Fairtex en 2002. Una batalla épica entre dos leyendas tailandesas, destacando la presión de Namsaknoi y el movimiento evasivo de Attachai.",
     idYt: "zgaVBmY9NhI",
@@ -27,7 +27,7 @@ export const mainEventFights: mainEventType[] = [
   },
   {
     id: 2,
-    title: "Namsaknoi vs Rambo-Jiu | Pelea Completa",
+    title: "Namsaknoi vs Rambo-Jiu",
     description:
       "Pelea de Muay Thai entre Namsaknoi Yudthagarngamtorn y Rambo-Jiu. Namsaknoi mostró su elegancia en el Wai Kru y su dominio técnico en el ring.",
     idYt: "2q1SeWQ8J3w",
@@ -39,7 +39,7 @@ export const mainEventFights: mainEventType[] = [
   },
   {
     id: 3,
-    title: "Samart Payakaroon vs Samransak Muangsurin | Pelea Clásica",
+    title: "Samart Payakaroon vs Samransak Muangsurin",
     description:
       "Batalla clásica de Muay Thai en el Lumpini Stadium entre Samart Payakaroon, considerado el mejor de todos los tiempos, y Samransak Muangsurin. Samart muestra su maestría técnica, control de distancia y habilidades de contraataque.",
     idYt: "_ly7qiJAr_M",
