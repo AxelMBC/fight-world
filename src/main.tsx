@@ -1,14 +1,21 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 
+// Tailwind CSS
 import "./index.css";
+
+// Store
+import { Provider } from "react-redux";
+import { store } from "./store";
+
 import App from "./App.tsx";
 
+// Pages
 import WorldMap from "./pages/WorldMap";
 import Mexico from "./pages/countries/Mexico/index.tsx";
 import Thailand from "./pages/countries/Thailand/index.tsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { store } from "./store";
-import { Provider } from "react-redux";
+
+
 
 const router = createBrowserRouter([
   {

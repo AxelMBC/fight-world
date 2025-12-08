@@ -23,7 +23,7 @@ const EventCard = ({ video, onVideoSelect }: EventCardProps) => {
         />
       </div>
       <div className="p-4 flex flex-col flex-grow">
-        <h3 className="font-bold text-md flex-grow mb-4">
+        <h3 className="font-default text-md flex-grow mb-4">
           {video.title}
         </h3>
         <div className="flex flex-wrap gap-2 mb-4">
@@ -43,8 +43,8 @@ const EventCard = ({ video, onVideoSelect }: EventCardProps) => {
             </span>
           ))}
         </div>
-        <div className="mt-auto fc-primary font-bold self-end uppercase flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
-          Ver Video{" "}
+        <div className="font-default mt-auto fc-primary font-bold self-end uppercase flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+          Ver Video
           <span className="transition-transform duration-300 group-hover:translate-x-1">
             →
           </span>
