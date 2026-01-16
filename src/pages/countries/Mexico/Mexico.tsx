@@ -7,7 +7,7 @@ import { mainEventFights } from "./data/allEventsList";
 import CountryPage from "@/components/CountryPage/CountryPage";
 
 // Config
-import { mexicoConfig } from "@/config/countries";
+import { mexicoConfig } from "./config/mexico.config";
 
 const Mexico = () => {
   return (
@@ -17,6 +17,7 @@ const Mexico = () => {
       topEventsList={topEventsList}
       mainEventFights={mainEventFights}
     />
+    
   );
 };
 

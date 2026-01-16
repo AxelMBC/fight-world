@@ -7,7 +7,7 @@ import { mainEventFights } from "./data/allEventsList";
 import CountryPage from "@/components/CountryPage/CountryPage";
 
 // Config
-import { thailandConfig } from "@/config/countries";
+import { thailandConfig } from "./config/thailand.config";
 
 const Thailand = () => {
   return (
