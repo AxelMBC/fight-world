@@ -11,7 +11,7 @@ To add a new country page, follow these simple steps:
 Create a new file: `[country-name].config.ts` in this directory.
 
 ```typescript
-import type { CountryPageConfig } from "@components/CountryPage/CountryPage.types";
+import type { CountryPageConfig } from "@/components/CountryPage/CountryPage.types";
 
 export const [countryName]Config: CountryPageConfig = {
   countryName: "CountryName",
@@ -56,7 +56,7 @@ import { topEventsList } from "./data/topEventsList";
 import { mainEventFights } from "./data/mainEventsList";
 
 // Components
-import CountryPage from "@components/CountryPage/CountryPage";
+import CountryPage from "@/components/CountryPage/CountryPage";
 
 // Config
 import { [countryName]Config } from "@/config/countries";
