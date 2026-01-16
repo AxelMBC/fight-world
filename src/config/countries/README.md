@@ -53,7 +53,7 @@ Create a new file: `src/pages/countries/[CountryName]/[CountryName].tsx`
 // Data
 import { topFightersData } from "./data/topFightersList";
 import { topEventsList } from "./data/topEventsList";
-import { mainEventFights } from "./data/mainEventsList";
+import { mainEventFights } from "./data/allEventsList";
 
 // Components
 import CountryPage from "@/components/CountryPage/CountryPage";
@@ -81,7 +81,7 @@ Create the following data files in `src/pages/countries/[CountryName]/data/`:
 
 - `topFightersList.ts` - Array of top fighters
 - `topEventsList.ts` - Array of top events/videos
-- `mainEventsList.ts` - Array of main event fights
+- `allEventsList.ts` - Array of main event fights
 
 That's it! Your new country page is ready to use. The styling will automatically adapt to your color palette, and all components will work consistently across all country pages.
 

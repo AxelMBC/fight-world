@@ -1,7 +1,7 @@
 // Data
 import { topFightersData } from "./data/topFightersList";
 import { topEvents } from "./data/topEventsList";
-import { mainEventFights } from "./data/mainEventsList";
+import { mainEventFights } from "./data/allEventsList";
 
 // Components
 import CountryPage from "@/components/CountryPage/CountryPage";

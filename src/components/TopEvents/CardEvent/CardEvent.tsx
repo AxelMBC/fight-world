@@ -5,7 +5,7 @@ interface EventCardProps {
   onVideoSelect: (event: mainEventType) => void;
 }
 
-const EventCard = ({ video, onVideoSelect }: EventCardProps) => {
+const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
   const handleVideoClick = () => {
     onVideoSelect(video);
   };
@@ -54,4 +54,4 @@ const EventCard = ({ video, onVideoSelect }: EventCardProps) => {
   );
 };
 
-export default EventCard;
+export default CardEvent;

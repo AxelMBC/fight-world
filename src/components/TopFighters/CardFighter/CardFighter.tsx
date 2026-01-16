@@ -6,7 +6,7 @@ interface FighterCardProps {
   onSelect: (fighter: fighterType) => void;
 }
 
-const FighterCard = ({ boxer, rank, onSelect }: FighterCardProps) => {
+const CardFighter = ({ boxer, rank, onSelect }: FighterCardProps) => {
   return (
     <div
       className="relative group cursor-pointer"
@@ -39,4 +39,4 @@ const FighterCard = ({ boxer, rank, onSelect }: FighterCardProps) => {
   );
 };
 
-export default FighterCard;
+export default CardFighter;

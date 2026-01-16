@@ -1,5 +1,5 @@
 import type { mainEventType } from "@/types/fightEventType";
-import EventCard from "./EventCard";
+import CardEvent from "./CardEvent";
 
 type TopVideosProps = {
   title: string;
@@ -18,7 +18,7 @@ const TopEvents = ({ title, videos, onVideoSelect }: TopVideosProps) => {
           (video) =>
             video.idYt &&
             video.idYt && (
-              <EventCard
+              <CardEvent
                 key={video.idYt}
                 video={video}
                 onVideoSelect={onVideoSelect}

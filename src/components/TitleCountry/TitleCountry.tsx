@@ -1,4 +1,4 @@
-const HeaderTitle = ({ title }: { title: string }) => {
+const TitleCountry = ({ title }: { title: string }) => {
   return (
     <>
       <header  id="target-scroll" className="text-center header-title ">
@@ -9,4 +9,4 @@ const HeaderTitle = ({ title }: { title: string }) => {
   );
 };
 
-export default HeaderTitle;
+export default TitleCountry;
