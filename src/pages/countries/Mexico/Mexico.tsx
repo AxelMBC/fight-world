@@ -4,7 +4,7 @@ import { topEventsList } from "./data/topEventsList";
 import { mainEventFights } from "./data/mainEventsList";
 
 // Components
-import CountryPage from "@components/CountryPage/CountryPage";
+import CountryPage from "@/components/CountryPage/CountryPage";
 
 // Config
 import { mexicoConfig } from "@/config/countries";

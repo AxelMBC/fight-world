@@ -1,5 +1,5 @@
 import { createSlice, createAction } from "@reduxjs/toolkit";
-import type { fighterType } from "../../types/fighterType";
+import type { fighterType } from "@/types/fighterType";
 
 interface FighterState {
   fightersList: fighterType[];

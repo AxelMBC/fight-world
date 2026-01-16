@@ -6,10 +6,10 @@ import "./CountryPage.scss";
 import "@styles/all/spacing.scss";
 
 // Components
-import HeaderTitle from "@components/HeaderTitle";
-import TopFighters from "@components/TopFighters";
-import MainEvent from "@components/MainEvent";
-import TopEvents from "@components/TopEvents";
+import HeaderTitle from "@/components/HeaderTitle";
+import TopFighters from "@/components/TopFighters";
+import MainEvent from "@/components/MainEvent";
+import TopEvents from "@/components/TopEvents";
 
 // Hooks
 import { useMainVideoQueue } from "@/hooks/useMainVideoQueue";

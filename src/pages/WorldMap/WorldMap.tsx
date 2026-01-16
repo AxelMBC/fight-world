@@ -1,5 +1,5 @@
 import "maplibre-gl/dist/maplibre-gl.css";
-import "../../styles/WorldMap/styles.scss";
+import "@/styles/WorldMap/styles.scss";
 import type { MapRef } from "@vis.gl/react-maplibre";
 
 import { useRef, useState, useEffect } from "react";

@@ -1,4 +1,4 @@
-import type { fighterType } from "../../../../types/fighterType";
+import type { fighterType } from "@/types/fighterType";
 import JulioCesarImg from "../resources/Fighters/topFighterJulioCesar.avif";
 import CaneloAlvarezImg from "../resources/Fighters/topFighterCaneloAlvarez.webp";
 

@@ -4,8 +4,8 @@ import {
   fetchFightersSuccess,
   fetchFightersFailure,
 } from "./index";
-import { topFightersData } from "../../pages/countries/Mexico/data/topFightersList";
-import type { fighterType } from "../../types/fighterType";
+import { topFightersData } from "@/pages/countries/Mexico/data/topFightersList";
+import type { fighterType } from "@/types/fighterType";
 
 function* fetchFightersFromAPI() {
   yield new Promise((resolve) => setTimeout(resolve, 1000));

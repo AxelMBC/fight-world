@@ -1,4 +1,4 @@
-import type { mainEventType } from "../../../types/fightEventType";
+import type { mainEventType } from "@/types/fightEventType";
 
 interface EventCardProps {
   video: mainEventType;

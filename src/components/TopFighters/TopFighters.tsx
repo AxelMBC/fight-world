@@ -1,4 +1,4 @@
-import type { fighterType } from "../../types/fighterType";
+import type { fighterType } from "@/types/fighterType";
 import FighterCard from "./FighterCard";
 
 interface TopFightersProps {

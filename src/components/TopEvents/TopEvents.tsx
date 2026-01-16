@@ -1,4 +1,4 @@
-import type { mainEventType } from "../../types/fightEventType";
+import type { mainEventType } from "@/types/fightEventType";
 import EventCard from "./EventCard";
 
 type TopVideosProps = {
