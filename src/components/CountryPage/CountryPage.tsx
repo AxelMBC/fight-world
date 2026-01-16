@@ -3,7 +3,7 @@ import type { CSSProperties } from "react";
 
 // Styles
 import "./CountryPage.scss";
-import "@styles/all/spacing.scss";
+import "@/styles/all/spacing.scss";
 
 // Components
 import HeaderTitle from "@/components/HeaderTitle";
