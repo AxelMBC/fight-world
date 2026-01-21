@@ -1,10 +1,22 @@
+import { Box } from "@mui/material";
+
 const TitleCountry = ({ title }: { title: string }) => {
   return (
     <>
-      <header  id="target-scroll" className="text-center header-title ">
-        <h1 className="font-default section-spacing text-5xl md:text-8xl fc-primary-dark pt-2 uppercase mb-3">{title}</h1>
-      </header>
-      <div></div>
+      <Box
+        component="header"
+        id="target-scroll"
+        className="text-center header-title"
+      >
+        <Box
+          component="h1"
+          className="font-default section-spacing text-5xl md:text-8xl fc-primary-dark pt-2 uppercase mb-3"
+          >
+          {title}
+        </Box>
+      </Box>
+
+      <Box />
     </>
   );
 };

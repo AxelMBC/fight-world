@@ -1,8 +1,14 @@
+// TYPE
 import type { mainEventType } from "../../types/fightEventType";
+
+// Libreria Externa
+import { motion } from "framer-motion";
+
+// Icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiceThree } from "@fortawesome/free-solid-svg-icons";
+
 import MainEventCard from "./MainEventCard";
-import { motion } from "framer-motion";
 
 type MainEventProps = {
   loading: boolean;
