@@ -1,4 +1,9 @@
 import type { fighterType } from "@/types/fighterType";
+
+// MUI
+import { Box, Grid } from "@mui/material";
+
+// Components
 import CardFighter from "./CardFighter";
 
 interface TopFightersProps {
@@ -7,14 +12,33 @@ interface TopFightersProps {
   onFighterSelect: (fighter: fighterType) => void;
 }
 
-const TopFighters = ({ title, topFightersData, onFighterSelect }: TopFightersProps) => {
+const TopFighters = ({
+  title,
+  topFightersData,
+  onFighterSelect,
+}: TopFightersProps) => {
   return (
-    <section className="section-spacing">
-      <h2 className="font-default text-5xl md:text-8xl fc-primary-dark pt-2 uppercase mb-3 text-center">
+    <Box component="section" className="section-spacing">
+      <Box
+        component="h2"
+        className="font-default fc-primary-dark"
+        textAlign="center"
+        textTransform="uppercase"
+        marginBottom={2}
+        sx={{
+          fontSize: {
+            xs: "3rem",
+            md: "6rem",
+          },
+        }}
+        
+        
+      >
         {title}
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        <div className="lg:col-span-2">
+      </Box>
+
+      <Grid container spacing={5}>
+        <Grid size={{ xs: 12, md: 6, lg: 8 }}>
           {topFightersData[0] && (
             <CardFighter
               boxer={topFightersData[0]}
@@ -22,8 +46,9 @@ const TopFighters = ({ title, topFightersData, onFighterSelect }: TopFightersPro
               onSelect={onFighterSelect}
             />
           )}
-        </div>
-        <div className="md:col-span-1">
+        </Grid>
+
+        <Grid size={{ xs: 12, md: 6, lg: 4 }}>
           {topFightersData[1] && (
             <CardFighter
               boxer={topFightersData[1]}
@@ -31,17 +56,19 @@ const TopFighters = ({ title, topFightersData, onFighterSelect }: TopFightersPro
               onSelect={onFighterSelect}
             />
           )}
-        </div>
+        </Grid>
+
         {topFightersData.slice(2).map((b, i) => (
-          <CardFighter
-            key={b.id}
-            boxer={b}
-            rank={i + 3}
-            onSelect={onFighterSelect}
-          />
+          <Grid key={b.id} size={{ xs: 12, md: 6, lg: 4 }}>
+            <CardFighter
+              boxer={b}
+              rank={i + 3}
+              onSelect={onFighterSelect}
+            />
+          </Grid>
         ))}
-      </div>
-    </section>
+      </Grid>
+    </Box>
   );
 };
 

@@ -1,5 +1,8 @@
 import type { fighterType } from "@/types/fighterType";
 
+// MUI
+import { Box } from "@mui/material";
+
 interface FighterCardProps {
   boxer: fighterType;
   rank: number;
@@ -8,34 +11,110 @@ interface FighterCardProps {
 
 const CardFighter = ({ boxer, rank, onSelect }: FighterCardProps) => {
   return (
-    <div
-      className="relative group cursor-pointer"
+    <Box
       onClick={() => onSelect(boxer)}
+      sx={{
+        position: "relative",
+        cursor: "pointer",
+        "&:hover .card-root": {
+          boxShadow: "12px 12px 0 #ca2626",
+        },
+        "&:hover img": {
+          filter: { lg: "grayscale(0%)" },
+        },
+      }}
     >
-      <div className="relative bg-white border-4 border-black shadow-[10px_10px_0_#000] group-hover:shadow-[12px_12px_0_#ca2626] transition-all duration-200">
-        <div className="absolute top-0 left-0 bg-black fc-white font-anton text-5xl px-3 z-10">
-          #{rank}
-        </div>
-        <div className="overflow-hidden">
-          <img
+      <Box
+        className="card-root"
+        sx={{
+          position: "relative",
+          backgroundColor: "#fff",
+          border: "4px solid #000",
+          boxShadow: "10px 10px 0 #000",
+          transition: "all 0.2s ease",
+        }}
+      >
+        {/* Rank */}
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            backgroundColor: "#000",
+            px: 1.5,
+            zIndex: 1,
+          }}
+          className="fc-white font-anton"
+        >
+          <Box component="span" sx={{ fontSize: "3rem" }}>
+            #{rank}
+          </Box>
+        </Box>
+
+        {/* Image */}
+        <Box
+          sx={{
+            overflow: "hidden",
+          }}
+        >
+          <Box
+            component="img"
             src={boxer.image}
             alt={boxer.name}
-            className="w-full h-80 object-cover object-top filter lg:grayscale group-hover:grayscale-0 transition-all duration-300"
+            sx={{
+              width: "100%",
+              height: 320,
+              objectFit: "cover",
+              objectPosition: "top",
+              filter: { lg: "grayscale(100%)" },
+              transition: "all 0.3s ease",
+            }}
           />
-        </div>
-        <div className="p-5 border-t-4 border-black">
-          <h3 className="font-anton text-3xl uppercase fc-black truncate">
+        </Box>
+
+        {/* Content */}
+        <Box
+          sx={{
+            p: 2.5,
+            borderTop: "4px solid #000",
+          }}
+        >
+          <Box
+            component="h3"
+            className="font-anton fc-black"
+            sx={{
+              fontSize: "1.875rem",
+              textTransform: "uppercase",
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+          >
             {boxer.name}
-          </h3>
-          <p className="fc-gray mt-1 text-md">
+          </Box>
+
+          <Box
+            component="p"
+            className="fc-gray"
+            sx={{ mt: 0.5, fontSize: "1rem" }}
+          >
             RÉCORD: {boxer.record}
-          </p>
-          <p className="mt-2 fc-primary font-bold uppercase">
+          </Box>
+
+          <Box
+            component="p"
+            className="fc-primary"
+            sx={{
+              mt: 1,
+              fontWeight: 700,
+              textTransform: "uppercase",
+            }}
+          >
             {boxer.achievements}
-          </p>
-        </div>
-      </div>
-    </div>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
