@@ -1,4 +1,9 @@
 import type { mainEventType } from "@/types/fightEventType";
+
+// MUI
+import { Box, Grid } from "@mui/material";
+
+// Components
 import CardEvent from "./CardEvent";
 
 type TopVideosProps = {
@@ -9,24 +14,40 @@ type TopVideosProps = {
 
 const TopEvents = ({ title, videos, onVideoSelect }: TopVideosProps) => {
   return (
-    <section style={{marginTop: '120px'}} >
-      <h2 className="font-default font-bold section-spacing fc-primary-dark text-5xl md:text-7xl uppercase mb-10 text-center">
+    <Box component="section" sx={{ mt: "120px" }}>
+      <Box
+        component="h2"
+        className="font-default fc-primary-dark"
+        textAlign="center"
+        textTransform="uppercase"
+        marginBottom={5}
+        sx={{
+          fontSize: {
+            xs: "3rem",  // text-5xl
+            md: "4.5rem" // text-7xl
+          },
+        }}
+      >
         {title}
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      </Box>
+
+      <Grid container spacing={8}>
         {videos.map(
           (video) =>
-            video.idYt &&
             video.idYt && (
-              <CardEvent
+              <Grid
                 key={video.idYt}
-                video={video}
-                onVideoSelect={onVideoSelect}
-              />
+                size={{ xs: 12, sm: 6, lg: 4 }}
+              >
+                <CardEvent
+                  video={video}
+                  onVideoSelect={onVideoSelect}
+                />
+              </Grid>
             )
         )}
-      </div>
-    </section>
+      </Grid>
+    </Box>
   );
 };
 

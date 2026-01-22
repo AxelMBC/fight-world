@@ -1,56 +1,151 @@
 import type { mainEventType } from "@/types/fightEventType";
 
+// MUI
+import { Box } from "@mui/material";
+
 interface EventCardProps {
   video: mainEventType;
   onVideoSelect: (event: mainEventType) => void;
 }
 
 const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
-  const handleVideoClick = () => {
-    onVideoSelect(video);
-  };
-
   return (
-    <div
-      onClick={() => handleVideoClick()}
-      className="group bg-white flex flex-col border-4 border-black shadow-[8px_8px_0_#000] hover:shadow-[12px_12px_0_#ca2626] transition-all duration-300 max-w-sm cursor-pointer"
+    <Box
+      onClick={() => onVideoSelect(video)}
+      sx={{
+        bgcolor: "white",
+        display: "flex",
+        flexDirection: "column",
+        border: "4px solid #000",
+        boxShadow: "8px 8px 0 #000",
+        maxWidth: 384,
+        cursor: "pointer",
+        transition: "all 300ms ease",
+        "&:hover": {
+          boxShadow: "12px 12px 0 #ca2626",
+        },
+      }}
     >
-      <div className="overflow-hidden border-b-4 border-black">
-        <img
+      {/* Image */}
+      <Box
+        sx={{
+          overflow: "hidden",
+          borderBottom: "4px solid #000",
+        }}
+      >
+        <Box
+          component="img"
           src={video.thumbnail}
           alt={video.title}
-          className="w-full h-48 object-cover filter lg:grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300 ease-in-out"
+          sx={{
+            width: "100%",
+            height: 192,
+            objectFit: "cover",
+            transition: "all 300ms ease",
+            filter: {
+              lg: "grayscale(100%)",
+            },
+            "&:hover": {
+              filter: "grayscale(0%)",
+              transform: "scale(1.1)",
+            },
+          }}
         />
-      </div>
-      <div className="p-4 flex flex-col flex-grow">
-        <h3 className="font-default text-md flex-grow mb-4">
+      </Box>
+
+      {/* Content */}
+      <Box
+        sx={{
+          p: 2,
+          display: "flex",
+          flexDirection: "column",
+          flexGrow: 1,
+        }}
+      >
+        <Box
+          component="h3"
+          className="font-default"
+          sx={{
+            fontSize: "0.875rem",
+            mb: 2,
+            flexGrow: 1,
+          }}
+        >
           {video.title}
-        </h3>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {video.tags.map((tag: string, index: number) => (
-            <span
+        </Box>
+
+        {/* Tags */}
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 1,
+            mb: 2,
+          }}
+        >
+          {video.tags.map((tag, index) => (
+            <Box
               key={index}
-              className={`px-2 py-1 text-xs font-bold border-2 border-black shadow-[1px_1px_0_#000] 
-              ${
+              component="span"
+              className={
                 index % 3 === 0
-                  ? "bg-primary fc-white"
+                  ? "fc-white"
                   : index % 3 === 1
-                  ? "bg-white fc-black"
-                  : "bg-secondary-dark fc-white"
-              }`}
+                  ? "fc-black"
+                  : "fc-white"
+              }
+              sx={{
+                px: 1,
+                py: 0.5,
+                fontSize: "0.75rem",
+                fontWeight: 700,
+                border: "2px solid #000",
+                boxShadow: "1px 1px 0 #000",
+                bgcolor:
+                  index % 3 === 0
+                    ? "primary.main"
+                    : index % 3 === 1
+                    ? "#fff"
+                    : "secondary.dark",
+              }}
             >
               {tag}
-            </span>
+            </Box>
           ))}
-        </div>
-        <div className="font-default mt-auto fc-primary font-bold self-end uppercase flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+        </Box>
+
+        {/* CTA */}
+        <Box
+          className="font-default fc-primary"
+          sx={{
+            mt: "auto",
+            fontWeight: 700,
+            textTransform: "uppercase",
+            alignSelf: "flex-end",
+            display: "flex",
+            alignItems: "center",
+            gap: 1,
+            transition: "gap 300ms ease",
+            "&:hover": {
+              gap: 1.5,
+            },
+          }}
+        >
           Ver Video
-          <span className="transition-transform duration-300 group-hover:translate-x-1">
+          <Box
+            component="span"
+            sx={{
+              transition: "transform 300ms ease",
+              "&:hover": {
+                transform: "translateX(4px)",
+              },
+            }}
+          >
             →
-          </span>
-        </div>
-      </div>
-    </div>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
