@@ -12,7 +12,6 @@
 .country-theme {
   background-color: var(--color-background);
   font-family: var(--font-family, "Roboto Slab", sans-serif);
-  min-height: 100vh;
 
   // Font
   .font-anton {
@@ -78,7 +77,8 @@
   }
   100% {
     transform: translateY(-4px) scale(1.05);
-    box-shadow: 12px 12px 0 var(--color-background),
+    box-shadow:
+      12px 12px 0 var(--color-background),
       0 0 12px var(--color-primary-light);
   }
 }
@@ -86,7 +86,8 @@
 @keyframes button-reset {
   0% {
     transform: translateY(-4px) scale(1.05);
-    box-shadow: 12px 12px 0 var(--color-background),
+    box-shadow:
+      12px 12px 0 var(--color-background),
       0 0 12px var(--color-primary-light);
   }
   100% {

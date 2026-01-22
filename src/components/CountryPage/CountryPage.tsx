@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import type { CSSProperties } from "react";
 
+// MUI
+import { Box, Container } from "@mui/material";
+
 // Styles
 import "./CountryPage.scss";
-import "@/styles/all/spacing.scss";
 
 // Components
 import TitleCountry from "@/components/TitleCountry";
@@ -32,7 +34,6 @@ const CountryPage = ({
     selectSpecificVideo,
   } = useMainVideoQueue(mainEventFights);
 
-
   useEffect(() => {
     if (config.enableScrollToTop) {
       window.scrollTo(0, 0);
@@ -40,7 +41,7 @@ const CountryPage = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Generate CSS custom properties from color palette
+  // CSS custom properties (theme bridge)
   const themeStyles: CSSProperties = {
     "--color-primary": config.colorPalette.primary,
     "--color-primary-dark": config.colorPalette.primaryDark,
@@ -58,12 +59,34 @@ const CountryPage = ({
   }
 
   return (
-    <div className={`country-theme ${config.themeClassName} p-4 sm:p-6`} style={themeStyles}>
-      <div
-        className="container mx-auto p-4 sm:p-6 bg-white border-4 md:border-8 border-black"
-        style={{ maxWidth: config.maxWidth }}
+    <Box
+      className={`country-theme ${config.themeClassName}`}
+      sx={{
+        p: {
+          xs: 2,
+          sm: 3,
+        },
+      }}
+      style={themeStyles}
+    >
+      <Container
+        disableGutters
+        sx={{
+          maxWidth: config.maxWidth,
+          mx: "auto",
+          p: {
+            xs: 2,
+            sm: 3,
+          },
+          bgcolor: "#fff",
+          border: {
+            xs: "4px solid #000",
+            md: "8px solid #000",
+          },
+        }}
       >
         <TitleCountry title={config.headerTitle} />
+
         <MainEvent
           loading={loading}
           error={error}
@@ -82,8 +105,8 @@ const CountryPage = ({
           videos={topEventsList}
           onVideoSelect={selectSpecificVideo}
         />
-      </div>
-    </div>
+      </Container>
+    </Box>
   );
 };
 

@@ -1,9 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 
-// Tailwind CSS
-import "./index.css";
-
 // Store
 import { Provider } from "react-redux";
 import { store } from "./store";
@@ -15,16 +12,16 @@ import WorldMap from "./pages/WorldMap";
 import Mexico from "./pages/countries/Mexico/index.tsx";
 import Thailand from "./pages/countries/Thailand/index.tsx";
 
-
-
 const router = createBrowserRouter([
   {
     path: "/",
+
     element: (
       <Provider store={store}>
         <App />
       </Provider>
     ),
+
     children: [
       { index: true, element: <WorldMap /> },
       { path: "Mexico", element: <Mexico /> },

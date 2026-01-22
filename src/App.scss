@@ -1,6 +1,21 @@
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1200px;
 
+// Global reset to remove default white margins around the page
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: "Roboto Slab";
   src: url("./assets/fonts/RobotoSlab.ttf") format("truetype");

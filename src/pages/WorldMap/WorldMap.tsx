@@ -6,15 +6,20 @@ import { useRef, useState, useEffect } from "react";
 import Map from "react-map-gl/maplibre";
 import { useNavigate } from "react-router-dom";
 
+// MUI
+import { Box } from "@mui/material";
+
 const WorldMap = () => {
   const navigate = useNavigate();
-    const goToCountry = (country: string) => {
+
+  const goToCountry = (country: string) => {
     if (country) {
       navigate(`/${country}`);
     }
   };
 
   const mapRef = useRef<MapRef | null>(null);
+
   const [dialog, setDialog] = useState({
     show: false,
     country: "",
@@ -47,33 +52,42 @@ const WorldMap = () => {
       point: { x: number; y: number };
     }
   ) => {
-    if (mapRef.current) {
-      const map = mapRef.current.getMap();
-      const features = map.queryRenderedFeatures(event.point);
-      if (
-        features.length > 0 &&
-        features[0].layer.id !== "Water" &&
-        features[0].layer.id !== "Country labels" &&
-        features[0].layer.id !== "Ocean labels"
-      ) {
-        const countryName = features[0].layer.id;
-        setDialog({
-          show: true,
-          country: countryName,
-          lng: event.lngLat.lng,
-          lat: event.lngLat.lat,
-          x: event.point.x,
-          y: event.point.y,
-        });
-        setTimeout(() => {
-          setDialog((prev) => ({ ...prev, show: false }));
-        }, 3000);
-      }
+    if (!mapRef.current) return;
+
+    const map = mapRef.current.getMap();
+    const features = map.queryRenderedFeatures(event.point);
+
+    if (
+      features.length > 0 &&
+      features[0].layer.id !== "Water" &&
+      features[0].layer.id !== "Country labels" &&
+      features[0].layer.id !== "Ocean labels"
+    ) {
+      const countryName = features[0].layer.id;
+
+      setDialog({
+        show: true,
+        country: countryName,
+        lng: event.lngLat.lng,
+        lat: event.lngLat.lat,
+        x: event.point.x,
+        y: event.point.y,
+      });
+
+      setTimeout(() => {
+        setDialog((prev) => ({ ...prev, show: false }));
+      }, 3000);
     }
   };
 
   return (
-    <div className="relative w-screen h-screen">
+    <Box
+      sx={{
+        position: "relative",
+        width: "100vw",
+        height: "100vh",
+      }}
+    >
       <Map
         mapStyle="https://api.maptiler.com/maps/0197251e-f92a-7cb9-98e8-774bde6e5d8e/style.json?key=FcmP3QUhWP2LWWud2CSk"
         ref={mapRef}
@@ -85,33 +99,53 @@ const WorldMap = () => {
           zoom: 2,
         }}
         style={{
-          width: "100vw",
-          height: "100vh",
+          width: "100%",
+          height: "100%",
           display: "block",
         }}
         onClick={handleClick}
       />
 
       {dialog.show && (
-        <div
-          className="absolute z-[1000] px-4 py-3 flex items-center justify-center rounded-md shadow-xl border-2 text-center country-label animate-pop-in"
-          style={{
-            left: `${dialog.x}px`,
-            top: `${dialog.y - 80}px`,
+        <Box
+          className="country-label animate-pop-in"
+          sx={{
+            position: "absolute",
+            zIndex: 1000,
+            left: dialog.x,
+            top: dialog.y - 80,
             transform: "translateX(-50%)",
-            minWidth: "180px",
+            px: 2,
+            py: 1.5,
+            minWidth: 180,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+            borderRadius: 1,
+            boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
+            border: "2px solid darkred",
             background: "linear-gradient(#cc1c2a, #f89a16)",
-            borderColor: "darkred",
           }}
         >
-          <h1 className="fc-white title-country mb-0 text-xl cursor-pointer"  onClick={() => goToCountry(dialog.country)}>
+          <Box
+            component="h1"
+            className="fc-white title-country"
+            sx={{
+              fontSize: "1.25rem",
+              mb: 0,
+              cursor: "pointer",
+            }}
+            onClick={() => goToCountry(dialog.country)}
+          >
             {dialog.country}
-          </h1>
+          </Box>
 
-          <div
-            className="absolute"
-            style={{
-              bottom: "-10px",
+          {/* Arrow */}
+          <Box
+            sx={{
+              position: "absolute",
+              bottom: -10,
               left: "50%",
               transform: "translateX(-50%)",
               width: 0,
@@ -121,9 +155,9 @@ const WorldMap = () => {
               borderTop: "10px solid #cc1c2a",
             }}
           />
-        </div>
+        </Box>
       )}
-    </div>
+    </Box>
   );
 };
 
