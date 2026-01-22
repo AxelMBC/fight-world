@@ -1,10 +1,27 @@
 import type { mainEventType } from "@/types/fightEventType";
 
+// MUI
+import { Box } from "@mui/material";
+
 const MainEventVideo: React.FC<{ video: mainEventType }> = ({ video }) => (
-  <div className="bg-white p-4 border-4 border-black shadow-[10px_10px_0_#000]">
-    <div className="border-4 border-black">
-      <div className="relative w-full aspect-video">
-        <iframe
+  <Box
+    sx={{
+      backgroundColor: "#fff",
+      p: 2,
+      border: "4px solid #000",
+      boxShadow: "10px 10px 0 #000",
+    }}
+  >
+    <Box sx={{ border: "4px solid #000" }}>
+      <Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          aspectRatio: "16 / 9",
+        }}
+      >
+        <Box
+          component="iframe"
           id="main-event-video"
           src={`https://www.youtube.com/embed/${video.idYt}?autoplay=1&mute=1${
             video.startTime ? `&start=${video.startTime}` : ""
@@ -12,17 +29,42 @@ const MainEventVideo: React.FC<{ video: mainEventType }> = ({ video }) => (
           title={video.title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media;"
           allowFullScreen
-          className="absolute top-0 left-0 w-full h-full"
-        ></iframe>
-      </div>
-    </div>
-    <div className="mt-4">
-      <h3 className="text-2xl md:text-4xl">
+          sx={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            border: 0,
+          }}
+        />
+      </Box>
+    </Box>
+
+    <Box sx={{ mt: 4 }}>
+      <Box
+        className="font-anton"
+        sx={{
+          
+          fontSize: {
+            xs: "1.5rem",   // text-2xl
+            md: "2.25rem",  // text-4xl
+          },
+        }}
+      >
         {video.title}
-      </h3>
-      <p className="mt-2">{video.description}</p>
-    </div>
-  </div>
+      </Box>
+
+      <Box
+        component="p"
+        sx={{
+          mt: 2,
+          fontFamily: "inherit",
+        }}
+      >
+        {video.description}
+      </Box>
+    </Box>
+  </Box>
 );
 
 export default MainEventVideo;

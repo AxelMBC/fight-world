@@ -1,4 +1,3 @@
-// MUI
 import { Box } from "@mui/material";
 
 const TitleCountry = ({ title }: { title: string }) => {
@@ -7,12 +6,24 @@ const TitleCountry = ({ title }: { title: string }) => {
       <Box
         component="header"
         id="target-scroll"
-        className="text-center header-title"
+        className="header-title"
+        sx={{
+          textAlign: "center",
+        }}
       >
         <Box
           component="h1"
-          className="font-default section-spacing text-5xl md:text-8xl fc-primary-dark pt-2 uppercase mb-3"
-          >
+          className="font-default section-spacing fc-primary-dark"
+          sx={{
+            pt: 2,
+            mb: 3,
+            textTransform: "uppercase",
+            fontSize: {
+              xs: "3rem",
+              md: "6rem",
+            },
+          }}
+        >
           {title}
         </Box>
       </Box>

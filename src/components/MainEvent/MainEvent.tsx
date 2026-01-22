@@ -1,6 +1,9 @@
 // TYPE
 import type { mainEventType } from "../../types/fightEventType";
 
+// MUI
+import { Box, Button, Typography } from "@mui/material";
+
 // Libreria Externa
 import { motion } from "framer-motion";
 
@@ -8,6 +11,7 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiceThree } from "@fortawesome/free-solid-svg-icons";
 
+// Components
 import MainEventCard from "./MainEventCard";
 
 type MainEventProps = {
@@ -17,6 +21,8 @@ type MainEventProps = {
   fetchMainVideo: () => void;
 };
 
+const MotionButton = motion(Button);
+
 const MainEvent = ({
   loading,
   error,
@@ -24,36 +30,79 @@ const MainEvent = ({
   fetchMainVideo,
 }: MainEventProps) => {
   return (
-    <section className="section-spacing border-y-8 border-black py-5">
+    <Box
+      component="section"
+      className="section-spacing"
+      sx={{
+        borderTop: "8px solid #000",
+        borderBottom: "8px solid #000",
+        py: 5,
+      }}
+    >
       {loading && (
-        <p className="text-center font-bold text-3xl fc-primary">
+        <Typography
+          className="fc-primary"
+          sx={{
+            textAlign: "center",
+            fontWeight: "bold",
+            fontSize: "2rem",
+          }}
+        >
           BUSCANDO COMBATE...
-        </p>
+        </Typography>
       )}
+
       {error && (
-        <p className="fc-error text-center font-bold text-2xl p-4">
+        <Typography
+          className="fc-error"
+          sx={{
+            textAlign: "center",
+            fontWeight: "bold",
+            fontSize: "1.5rem",
+            p: 4,
+          }}
+        >
           {error}
-        </p>
+        </Typography>
       )}
+
       {mainVideo && <MainEventCard video={mainVideo} />}
+
       {!loading && mainVideo && (
-        <div className="text-center my-7">
-          <motion.button
+        <Box
+          sx={{
+            textAlign: "center",
+            my: 7,
+          }}
+        >
+          <MotionButton
             id="fetch-another-fight"
-            onClick={() => fetchMainVideo()}
-            className="fc-white button-font cursor-pointer uppercase text-2xl py-3 px-8 border-4 border-black"
+            onClick={fetchMainVideo}
+            className="fc-white font-anton"
             whileHover={{ scale: 1.3 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            sx={{
+              cursor: "pointer",
+              textTransform: "uppercase",
+              fontSize: "1.5rem",
+              py: 1.5,
+              px: 4,
+              border: "4px solid #000",
+              backgroundColor: "#000",
+              "&:hover": {
+                backgroundColor: "#000",
+              },
+            }}
           >
-            <span className="me-2">
+            <Box component="span" sx={{ mr: 1 }}>
               <FontAwesomeIcon icon={faDiceThree} />
-            </span>
+            </Box>
             Otro Combate
-          </motion.button>
-        </div>
+          </MotionButton>
+        </Box>
       )}
-    </section>
+    </Box>
   );
 };
 
