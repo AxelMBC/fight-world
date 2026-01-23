@@ -18,9 +18,14 @@ const TopFighters = ({
   onFighterSelect,
 }: TopFightersProps) => {
   return (
-    <Box component="section" className="section-spacing">
+    <Box
+      component="section"
+      className="section-spacing"
+      paddingBottom={8}
+      marginTop={4}
+      sx={{ borderBottom: "8px solid #000" }}
+    >
       <Box
-        component="h2"
         className="font-default fc-primary-dark"
         textAlign="center"
         textTransform="uppercase"
@@ -31,8 +36,6 @@ const TopFighters = ({
             md: "6rem",
           },
         }}
-        
-        
       >
         {title}
       </Box>
@@ -60,11 +63,7 @@ const TopFighters = ({
 
         {topFightersData.slice(2).map((b, i) => (
           <Grid key={b.id} size={{ xs: 12, md: 6, lg: 4 }}>
-            <CardFighter
-              boxer={b}
-              rank={i + 3}
-              onSelect={onFighterSelect}
-            />
+            <CardFighter boxer={b} rank={i + 3} onSelect={onFighterSelect} />
           </Grid>
         ))}
       </Grid>

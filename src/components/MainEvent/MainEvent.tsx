@@ -34,9 +34,8 @@ const MainEvent = ({
       component="section"
       className="section-spacing"
       sx={{
-        borderTop: "8px solid #000",
         borderBottom: "8px solid #000",
-        py: 5,
+        mt: 1,
       }}
     >
       {loading && (
@@ -72,7 +71,7 @@ const MainEvent = ({
         <Box
           sx={{
             textAlign: "center",
-            my: 7,
+            my: 5,
           }}
         >
           <MotionButton

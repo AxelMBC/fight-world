@@ -12,11 +12,9 @@ const TitleCountry = ({ title }: { title: string }) => {
         }}
       >
         <Box
-          component="h1"
           className="font-default section-spacing fc-primary-dark"
           sx={{
-            pt: 2,
-            mb: 3,
+            mt: 1,
             textTransform: "uppercase",
             fontSize: {
               xs: "3rem",

@@ -14,17 +14,16 @@ type TopVideosProps = {
 
 const TopEvents = ({ title, videos, onVideoSelect }: TopVideosProps) => {
   return (
-    <Box component="section" sx={{ mt: "120px" }}>
+    <Box component="section" marginTop={4}>
       <Box
-        component="h2"
         className="font-default fc-primary-dark"
         textAlign="center"
         textTransform="uppercase"
         marginBottom={5}
         sx={{
           fontSize: {
-            xs: "3rem",  // text-5xl
-            md: "4.5rem" // text-7xl
+            xs: "3rem",
+            md: "6rem",
           },
         }}
       >
@@ -35,14 +34,8 @@ const TopEvents = ({ title, videos, onVideoSelect }: TopVideosProps) => {
         {videos.map(
           (video) =>
             video.idYt && (
-              <Grid
-                key={video.idYt}
-                size={{ xs: 12, sm: 6, lg: 4 }}
-              >
-                <CardEvent
-                  video={video}
-                  onVideoSelect={onVideoSelect}
-                />
+              <Grid key={video.idYt} size={{ xs: 12, sm: 6, lg: 4 }}>
+                <CardEvent video={video} onVideoSelect={onVideoSelect} />
               </Grid>
             )
         )}
