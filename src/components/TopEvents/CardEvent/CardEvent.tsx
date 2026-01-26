@@ -107,7 +107,7 @@ const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
             },
           }}
         >
-          Ver Video
+          Ver Pelea
           <Box
             component="span"
             sx={{
