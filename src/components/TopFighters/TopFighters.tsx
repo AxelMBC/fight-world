@@ -1,7 +1,7 @@
 import type { fighterType } from "@/types/fighterType";
 
 // MUI
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
 // Components
 import CardFighter from "./CardFighter";
@@ -19,26 +19,20 @@ const TopFighters = ({
 }: TopFightersProps) => {
   return (
     <Box
-      component="section"
-      className="section-spacing"
       paddingBottom={8}
       marginTop={4}
-      sx={{ borderBottom: "8px solid #000" }}
+      className="section-spacing"
+      borderBottom="8px solid #000"
     >
-      <Box
-        className="font-default fc-primary-dark"
+      <Typography
+        marginBottom={2}
+        className="font-anton fc-primary-dark"
         textAlign="center"
         textTransform="uppercase"
-        marginBottom={2}
-        sx={{
-          fontSize: {
-            xs: "3rem",
-            md: "6rem",
-          },
-        }}
+        fontSize={{ xs: "1.5rem", md: "6rem" }}
       >
         {title}
-      </Box>
+      </Typography>
 
       <Grid container spacing={5}>
         <Grid size={{ xs: 12, md: 6, lg: 8 }}>

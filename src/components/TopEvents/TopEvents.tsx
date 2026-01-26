@@ -16,7 +16,7 @@ const TopEvents = ({ title, videos, onVideoSelect }: TopVideosProps) => {
   return (
     <Box component="section" marginTop={4}>
       <Box
-        className="font-default fc-primary-dark"
+        className=" font-anton fc-primary-dark"
         textAlign="center"
         textTransform="uppercase"
         marginBottom={5}

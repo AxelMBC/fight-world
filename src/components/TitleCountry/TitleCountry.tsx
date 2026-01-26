@@ -12,7 +12,7 @@ const TitleCountry = ({ title }: { title: string }) => {
         }}
       >
         <Box
-          className="font-default section-spacing fc-primary-dark"
+          className=" font-anton section-spacing fc-primary-dark"
           sx={{
             mt: 1,
             textTransform: "uppercase",

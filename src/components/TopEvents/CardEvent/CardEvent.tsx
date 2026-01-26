@@ -64,7 +64,7 @@ const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
       >
         <Box
           component="h3"
-          className="font-default"
+          className=" font-anton"
           sx={{
             fontSize: "0.875rem",
             mb: 2,
@@ -91,8 +91,8 @@ const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
                 index % 3 === 0
                   ? "fc-white"
                   : index % 3 === 1
-                  ? "fc-black"
-                  : "fc-white"
+                    ? "fc-black"
+                    : "fc-white"
               }
               sx={{
                 px: 1,
@@ -105,8 +105,8 @@ const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
                   index % 3 === 0
                     ? "primary.main"
                     : index % 3 === 1
-                    ? "#fff"
-                    : "secondary.dark",
+                      ? "#fff"
+                      : "secondary.dark",
               }}
             >
               {tag}
@@ -116,7 +116,7 @@ const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
 
         {/* CTA */}
         <Box
-          className="font-default fc-primary"
+          className=" font-anton fc-primary"
           sx={{
             mt: "auto",
             fontWeight: 700,

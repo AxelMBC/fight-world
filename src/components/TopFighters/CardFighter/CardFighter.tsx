@@ -1,7 +1,7 @@
 import type { fighterType } from "@/types/fighterType";
 
 // MUI
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 interface FighterCardProps {
   boxer: fighterType;
@@ -13,8 +13,8 @@ const CardFighter = ({ boxer, rank, onSelect }: FighterCardProps) => {
   return (
     <Box
       onClick={() => onSelect(boxer)}
+      position="relative"
       sx={{
-        position: "relative",
         cursor: "pointer",
         "&:hover .card-root": {
           boxShadow: "12px 12px 0 #ca2626",
@@ -26,46 +26,39 @@ const CardFighter = ({ boxer, rank, onSelect }: FighterCardProps) => {
     >
       <Box
         className="card-root"
+        position="relative"
+        border="4px solid #000"
+        boxShadow="10px 10px 0 #000"
+        bgcolor="#fff"
         sx={{
-          position: "relative",
-          backgroundColor: "#fff",
-          border: "4px solid #000",
-          boxShadow: "10px 10px 0 #000",
           transition: "all 0.2s ease",
         }}
       >
         {/* Rank */}
         <Box
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            backgroundColor: "#000",
-            px: 1.5,
-            zIndex: 1,
-          }}
           className="fc-white font-anton"
+          position="absolute"
+          top={0}
+          left={0}
+          px={1.5}
+          zIndex={1}
+          bgcolor="#000"
         >
-          <Box component="span" sx={{ fontSize: "3rem" }}>
+          <Box component="span" fontSize="3rem">
             #{rank}
           </Box>
         </Box>
 
         {/* Image */}
-        <Box
-          sx={{
-            overflow: "hidden",
-          }}
-        >
+        <Box overflow="hidden">
           <Box
             component="img"
             src={boxer.image}
             alt={boxer.name}
+            width="100%"
+            height={320}
             sx={{
-              width: "100%",
-              height: 320,
               objectFit: "cover",
-              objectPosition: "top",
               filter: { lg: "grayscale(100%)" },
               transition: "all 0.3s ease",
             }}
@@ -73,45 +66,30 @@ const CardFighter = ({ boxer, rank, onSelect }: FighterCardProps) => {
         </Box>
 
         {/* Content */}
-        <Box
-          sx={{
-            p: 2.5,
-            borderTop: "4px solid #000",
-          }}
-        >
+        <Box p={2.5} borderTop="4px solid #000">
           <Box
-            component="h3"
             className="font-anton fc-black"
             sx={{
               fontSize: "1.875rem",
               textTransform: "uppercase",
-              whiteSpace: "nowrap",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
             }}
           >
             {boxer.name}
           </Box>
 
-          <Box
-            component="p"
-            className="fc-gray"
-            sx={{ mt: 0.5, fontSize: "1rem" }}
-          >
+          <Typography variant="body1" mt={0.5} className="fc-gray">
             RÉCORD: {boxer.record}
-          </Box>
+          </Typography>
 
-          <Box
-            component="p"
+          <Typography
+            mt={0.5}
+            variant="body1"
             className="fc-primary"
-            sx={{
-              mt: 1,
-              fontWeight: 700,
-              textTransform: "uppercase",
-            }}
+            fontWeight={700}
+            textTransform="uppercase"
           >
-            {boxer.achievements}
-          </Box>
+            {boxer.nickName}
+          </Typography>
         </Box>
       </Box>
     </Box>
