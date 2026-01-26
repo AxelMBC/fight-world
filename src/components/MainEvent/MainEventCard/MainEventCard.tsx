@@ -1,22 +1,22 @@
 import type { mainEventType } from "@/types/fightEventType";
 
 // MUI
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const MainEventVideo: React.FC<{ video: mainEventType }> = ({ video }) => (
   <Box
+    padding={2}
+    border="4px solid #000"
+    boxShadow="10px 10px 0 #000"
     sx={{
       backgroundColor: "#fff",
-      p: 2,
-      border: "4px solid #000",
-      boxShadow: "10px 10px 0 #000",
     }}
   >
-    <Box sx={{ border: "4px solid #000" }}>
+    <Box border="4px solid #000">
       <Box
+        position="relative"
+        width="100%"
         sx={{
-          position: "relative",
-          width: "100%",
           aspectRatio: "16 / 9",
         }}
       >
@@ -29,39 +29,24 @@ const MainEventVideo: React.FC<{ video: mainEventType }> = ({ video }) => (
           title={video.title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media;"
           allowFullScreen
+          position="absolute"
+          width="100%"
+          height="100%"
+          border="0"
           sx={{
-            position: "absolute",
             inset: 0,
-            width: "100%",
-            height: "100%",
-            border: 0,
           }}
         />
       </Box>
     </Box>
 
-    <Box sx={{ mt: 4 }}>
-      <Box
-        className="font-anton"
-        sx={{
-          
-          fontSize: {
-            xs: "1.5rem",   // text-2xl
-            md: "2.25rem",  // text-4xl
-          },
-        }}
-      >
+    <Box marginTop={2}>
+      <Box className="font-anton" fontSize={{ xs: "1.5rem", md: "2.25rem" }}>
         {video.title}
       </Box>
 
-      <Box
-        component="p"
-        sx={{
-          mt: 2,
-          fontFamily: "inherit",
-        }}
-      >
-        {video.description}
+      <Box marginTop={1}>
+        <Typography variant="body1">{video.description}</Typography>
       </Box>
     </Box>
   </Box>

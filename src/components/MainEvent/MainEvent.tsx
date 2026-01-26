@@ -33,19 +33,15 @@ const MainEvent = ({
     <Box
       component="section"
       className="section-spacing"
-      sx={{
-        borderBottom: "8px solid #000",
-        mt: 1,
-      }}
+      borderBottom="8px solid #000"
+      marginTop={1}
     >
       {loading && (
         <Typography
           className="fc-primary"
-          sx={{
-            textAlign: "center",
-            fontWeight: "bold",
-            fontSize: "2rem",
-          }}
+          textAlign="center"
+          fontWeight="bold"
+          fontSize="1.5rem"
         >
           BUSCANDO COMBATE...
         </Typography>
@@ -54,12 +50,10 @@ const MainEvent = ({
       {error && (
         <Typography
           className="fc-error"
-          sx={{
-            textAlign: "center",
-            fontWeight: "bold",
-            fontSize: "1.5rem",
-            p: 4,
-          }}
+          textAlign="center"
+          fontWeight="bold"
+          fontSize="1.5rem"
+          p={4}
         >
           {error}
         </Typography>
@@ -68,12 +62,7 @@ const MainEvent = ({
       {mainVideo && <MainEventCard video={mainVideo} />}
 
       {!loading && mainVideo && (
-        <Box
-          sx={{
-            textAlign: "center",
-            my: 5,
-          }}
-        >
+        <Box textAlign="center" marginY={5}>
           <MotionButton
             id="fetch-another-fight"
             onClick={fetchMainVideo}
@@ -94,7 +83,7 @@ const MainEvent = ({
               },
             }}
           >
-            <Box component="span" sx={{ mr: 1 }}>
+            <Box component="span" marginRight={1}>
               <FontAwesomeIcon icon={faDiceThree} />
             </Box>
             Otro Combate
