@@ -16,15 +16,13 @@ const TopEvents = ({ title, videos, onVideoSelect }: TopVideosProps) => {
   return (
     <Box component="section" marginTop={4}>
       <Box
-        className=" font-anton fc-primary-dark"
+        className="font-anton fc-primary-dark"
         textAlign="center"
         textTransform="uppercase"
         marginBottom={5}
-        sx={{
-          fontSize: {
-            xs: "3rem",
-            md: "6rem",
-          },
+        fontSize={{
+          xs: "3rem",
+          md: "6rem",
         }}
       >
         {title}

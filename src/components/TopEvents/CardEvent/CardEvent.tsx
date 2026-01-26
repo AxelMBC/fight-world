@@ -1,7 +1,7 @@
 import type { mainEventType } from "@/types/fightEventType";
 
 // MUI
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 interface EventCardProps {
   video: mainEventType;
@@ -12,13 +12,13 @@ const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
   return (
     <Box
       onClick={() => onVideoSelect(video)}
+      bgcolor="white"
+      display="flex"
+      flexDirection="column"
+      border="4px solid #000"
+      boxShadow="8px 8px 0 #000"
+      maxWidth={384}
       sx={{
-        bgcolor: "white",
-        display: "flex",
-        flexDirection: "column",
-        border: "4px solid #000",
-        boxShadow: "8px 8px 0 #000",
-        maxWidth: 384,
         cursor: "pointer",
         transition: "all 300ms ease",
         "&:hover": {
@@ -27,19 +27,14 @@ const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
       }}
     >
       {/* Image */}
-      <Box
-        sx={{
-          overflow: "hidden",
-          borderBottom: "4px solid #000",
-        }}
-      >
+      <Box overflow="hidden" borderBottom="4px solid #000">
         <Box
           component="img"
           src={video.thumbnail}
           alt={video.title}
+          width="100%"
+          height={192}
           sx={{
-            width: "100%",
-            height: 192,
             objectFit: "cover",
             transition: "all 300ms ease",
             filter: {
@@ -54,39 +49,22 @@ const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
       </Box>
 
       {/* Content */}
-      <Box
-        sx={{
-          p: 2,
-          display: "flex",
-          flexDirection: "column",
-          flexGrow: 1,
-        }}
-      >
-        <Box
-          component="h3"
+      <Box mx={2} my={1} display="flex" flexDirection="column" flexGrow={1}>
+        <Typography
+          variant="body1"
           className=" font-anton"
-          sx={{
-            fontSize: "0.875rem",
-            mb: 2,
-            flexGrow: 1,
-          }}
+          fontSize="1.2rem"
+          mb={1}
         >
           {video.title}
-        </Box>
+        </Typography>
 
         {/* Tags */}
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 1,
-            mb: 2,
-          }}
-        >
+        <Box display="flex" flexWrap="wrap" gap={1} mb={2}>
           {video.tags.map((tag, index) => (
-            <Box
+            <Typography
+              variant="body1"
               key={index}
-              component="span"
               className={
                 index % 3 === 0
                   ? "fc-white"
@@ -94,37 +72,35 @@ const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
                     ? "fc-black"
                     : "fc-white"
               }
-              sx={{
-                px: 1,
-                py: 0.5,
-                fontSize: "0.75rem",
-                fontWeight: 700,
-                border: "2px solid #000",
-                boxShadow: "1px 1px 0 #000",
-                bgcolor:
-                  index % 3 === 0
-                    ? "primary.main"
-                    : index % 3 === 1
-                      ? "#fff"
-                      : "secondary.dark",
-              }}
+              px={1}
+              py={0.5}
+              fontSize="0.75rem"
+              fontWeight={400}
+              border="2px solid #000"
+              boxShadow="1px 1px 0 #000"
+              bgcolor={
+                index % 3 === 0
+                  ? "primary.main"
+                  : index % 3 === 1
+                    ? "#fff"
+                    : "secondary.dark"
+              }
             >
               {tag}
-            </Box>
+            </Typography>
           ))}
         </Box>
 
-        {/* CTA */}
-        <Box
-          className=" font-anton fc-primary"
+        {/* View More */}
+        <Typography
+          className="font-anton fc-primary"
+          mt="auto"
+          textTransform="uppercase"
+          alignSelf="flex-end"
+          display="flex"
+          alignItems="center"
+          gap={1}
           sx={{
-            mt: "auto",
-            fontWeight: 700,
-            textTransform: "uppercase",
-            alignSelf: "flex-end",
-            display: "flex",
-            alignItems: "center",
-            gap: 1,
             transition: "gap 300ms ease",
             "&:hover": {
               gap: 1.5,
@@ -143,7 +119,7 @@ const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
           >
             →
           </Box>
-        </Box>
+        </Typography>
       </Box>
     </Box>
   );

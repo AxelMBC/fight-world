@@ -21,7 +21,7 @@ type MainEventProps = {
   fetchMainVideo: () => void;
 };
 
-const MotionButton = motion(Button);
+const MotionButton = motion.create(Button);
 
 const MainEvent = ({
   loading,
