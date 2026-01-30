@@ -7,7 +7,7 @@ import Map from "react-map-gl/maplibre";
 import { useNavigate } from "react-router-dom";
 
 // MUI
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const WorldMap = () => {
   const navigate = useNavigate();
@@ -128,9 +128,9 @@ const WorldMap = () => {
             background: "linear-gradient(#cc1c2a, #f89a16)",
           }}
         >
-          <Box
-            component="h1"
-            className="fc-white title-country"
+          <Typography
+            variant="body1"
+            className="fc-white font-anton"
             sx={{
               fontSize: "1.25rem",
               mb: 0,
@@ -139,9 +139,8 @@ const WorldMap = () => {
             onClick={() => goToCountry(dialog.country)}
           >
             {dialog.country}
-          </Box>
+          </Typography>
 
-          {/* Arrow */}
           <Box
             sx={{
               position: "absolute",

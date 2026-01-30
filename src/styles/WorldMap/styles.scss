@@ -23,7 +23,9 @@
 .country-label {
   height: 50px;
   animation: pop-in 0.3s ease-out forwards;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 
   &.hide {
     animation: pop-out 0.3s ease-in forwards;
@@ -35,4 +37,13 @@
   &:hover {
     font-size: 24px;
   }
+}
+
+.fc-white {
+  color: whitesmoke;
+}
+
+.font-anton {
+  font-family: "Anton", sans-serif;
+  text-transform: uppercase;
 }
