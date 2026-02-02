@@ -46,6 +46,9 @@ const WorldMap = () => {
     }
   }, [dialog.lat, dialog.lng, dialog.show]);
 
+  // TODO: delete
+  console.log("WorldMap rendered");
+
   const handleClick = (
     event: maplibregl.MapMouseEvent & {
       lngLat: maplibregl.LngLat;
