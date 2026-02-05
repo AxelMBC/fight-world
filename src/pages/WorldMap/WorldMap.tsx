@@ -46,9 +46,6 @@ const WorldMap = () => {
     }
   }, [dialog.lat, dialog.lng, dialog.show]);
 
-  // TODO: delete
-  console.log("WorldMap rendered");
-
   const handleClick = (
     event: maplibregl.MapMouseEvent & {
       lngLat: maplibregl.LngLat;
@@ -132,12 +129,16 @@ const WorldMap = () => {
           }}
         >
           <Typography
-            variant="body1"
+            variant="h1"
             className="fc-white font-anton"
+            fontSize="1.25rem"
             sx={{
-              fontSize: "1.25rem",
-              mb: 0,
               cursor: "pointer",
+              fontWeight: 550,
+              "&:hover": {
+                color: "white",
+                fontSize: "1.7rem",
+              },
             }}
             onClick={() => goToCountry(dialog.country)}
           >

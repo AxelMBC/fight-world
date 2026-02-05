@@ -1,21 +1,20 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const TitleCountry = ({ title }: { title: string }) => {
   return (
     <>
       <Box
-        component="header"
         id="target-scroll"
         className="header-title"
-        sx={{
-          textAlign: "center",
-        }}
+        textAlign="center"
       >
-        <Box
-          className=" font-anton section-spacing fc-primary-dark"
+        <Typography
+          variant="h1"
+          className="section-spacing"
+          mt={1}
           sx={{
-            mt: 1,
             textTransform: "uppercase",
+            color: "primary.main",
             fontSize: {
               xs: "3rem",
               md: "6rem",
@@ -23,7 +22,7 @@ const TitleCountry = ({ title }: { title: string }) => {
           }}
         >
           {title}
-        </Box>
+        </Typography>
       </Box>
 
       <Box />
