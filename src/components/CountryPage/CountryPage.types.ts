@@ -21,8 +21,8 @@ export interface CountryPageConfig {
   fontFamily?: string;
   enableScrollToTop?: boolean;
   enableReduxFighters?: boolean;
-  titleFont: string;
-  buttonFont: string;
+  titleFont?: string;
+  buttonFont?: string;
 }
 
 export interface CountryPageProps {
