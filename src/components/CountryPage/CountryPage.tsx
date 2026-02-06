@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 
 // MUI
 import { Box, Container } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
 
 // Styles
 import "./CountryPage.scss";
@@ -24,6 +25,7 @@ const CountryPage = ({
   topFightersData,
   topEventsList,
   mainEventFights,
+  theme,
 }: CountryPageProps) => {
   const {
     mainVideo,
@@ -59,54 +61,56 @@ const CountryPage = ({
   }
 
   return (
-    <Box
-      className={`country-theme ${config.themeClassName}`}
-      sx={{
-        p: {
-          xs: 2,
-          sm: 3,
-        },
-      }}
-      style={themeStyles}
-    >
-      <Container
-        disableGutters
+    <ThemeProvider theme={theme}>
+      <Box
+        className={`country-theme ${config.themeClassName}`}
         sx={{
-          maxWidth: config.maxWidth,
-          mx: "auto",
           p: {
             xs: 2,
             sm: 3,
           },
-          bgcolor: "#fff",
-          border: {
-            xs: "4px solid #000",
-            md: "8px solid #000",
-          },
         }}
+        style={themeStyles}
       >
-        <TitleCountry title={config.headerTitle} />
+        <Container
+          disableGutters
+          sx={{
+            maxWidth: config.maxWidth,
+            mx: "auto",
+            p: {
+              xs: 2,
+              sm: 3,
+            },
+            bgcolor: "#fff",
+            border: {
+              xs: "4px solid #000",
+              md: "8px solid #000",
+            },
+          }}
+        >
+          <TitleCountry title={config.headerTitle} />
 
-        <MainEvent
-          loading={loading}
-          error={error}
-          mainVideo={mainVideo}
-          fetchMainVideo={fetchNextVideo}
-        />
+          <MainEvent
+            loading={loading}
+            error={error}
+            mainVideo={mainVideo}
+            fetchMainVideo={fetchNextVideo}
+          />
 
-        <TopFighters
-          title={config.topFightersTitle}
-          topFightersData={topFightersData}
-          onFighterSelect={fetchVideoByFighter}
-        />
+          <TopFighters
+            title={config.topFightersTitle}
+            topFightersData={topFightersData}
+            onFighterSelect={fetchVideoByFighter}
+          />
 
-        <TopEvents
-          title={config.topEventsTitle}
-          videos={topEventsList}
-          onVideoSelect={selectSpecificVideo}
-        />
-      </Container>
-    </Box>
+          <TopEvents
+            title={config.topEventsTitle}
+            videos={topEventsList}
+            onVideoSelect={selectSpecificVideo}
+          />
+        </Container>
+      </Box>
+    </ThemeProvider>
   );
 };
 

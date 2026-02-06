@@ -41,9 +41,9 @@ const MainEventVideo: React.FC<{ video: mainEventType }> = ({ video }) => (
     </Box>
 
     <Box marginTop={2}>
-      <Box className="font-anton" fontSize={{ xs: "1.5rem", md: "2.25rem" }}>
+      <Typography variant="h2" fontSize={{ xs: "1.5rem", md: "2.25rem" }}>
         {video.title}
-      </Box>
+      </Typography>
 
       <Box marginTop={1}>
         <Typography variant="body1">{video.description}</Typography>

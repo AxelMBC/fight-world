@@ -51,7 +51,7 @@ const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
       {/* Content */}
       <Box mx={2} my={1} display="flex" flexDirection="column" flexGrow={1}>
         <Typography
-          variant="body1"
+          variant="h3"
           className=" font-anton"
           fontSize="1.2rem"
           mb={1}

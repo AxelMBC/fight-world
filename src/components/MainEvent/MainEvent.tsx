@@ -38,9 +38,9 @@ const MainEvent = ({
     >
       {loading && (
         <Typography
+          variant="h1"
           className="fc-primary"
           textAlign="center"
-          fontWeight="bold"
           fontSize="1.5rem"
         >
           BUSCANDO COMBATE...
@@ -62,7 +62,7 @@ const MainEvent = ({
       {mainVideo && <MainEventCard video={mainVideo} />}
 
       {!loading && mainVideo && (
-        <Box textAlign="center" marginY={5}>
+        <Box textAlign="center" mb={8} mt={6}>
           <MotionButton
             id="fetch-another-fight"
             onClick={fetchMainVideo}
@@ -76,11 +76,6 @@ const MainEvent = ({
               fontSize: "1.5rem",
               py: 1.5,
               px: 4,
-              border: "4px solid #000",
-              backgroundColor: "#000",
-              "&:hover": {
-                backgroundColor: "#000",
-              },
             }}
           >
             <Box component="span" marginRight={1}>

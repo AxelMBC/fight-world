@@ -1,12 +1,20 @@
-import { createTheme} from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 import { mexicoConfig } from "./mexico.config";
-
 
 export const theme = createTheme({
   typography: {
     fontFamily: "Raleway, Arial",
     h1: {
-      fontFamily: "Anton, sans-serif",
+      fontFamily: mexicoConfig.titleFont,
+    },
+    h2: {
+      fontFamily: mexicoConfig.titleFont,
+    },
+    h3: {
+      fontFamily: mexicoConfig.titleFont,
+    },
+    button: {
+      fontFamily: mexicoConfig.buttonFont,
     },
   },
   palette: {

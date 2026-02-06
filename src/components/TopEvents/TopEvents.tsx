@@ -1,7 +1,7 @@
 import type { mainEventType } from "@/types/fightEventType";
 
 // MUI
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
 // Components
 import CardEvent from "./CardEvent";
@@ -15,8 +15,9 @@ type TopVideosProps = {
 const TopEvents = ({ title, videos, onVideoSelect }: TopVideosProps) => {
   return (
     <Box component="section" marginTop={4}>
-      <Box
-        className="font-anton fc-primary-dark"
+      <Typography
+        variant="h1"
+        className="fc-primary-dark"
         textAlign="center"
         textTransform="uppercase"
         marginBottom={5}
@@ -26,7 +27,7 @@ const TopEvents = ({ title, videos, onVideoSelect }: TopVideosProps) => {
         }}
       >
         {title}
-      </Box>
+      </Typography>
 
       <Grid container spacing={8}>
         {videos.map(

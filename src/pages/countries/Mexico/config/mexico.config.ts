@@ -18,7 +18,9 @@ export const mexicoConfig: CountryPageConfig = {
     error: "#d40000",
   },
   maxWidth: "1120px",
+  titleFont: "Anton, sans-serif",
   fontFamily: '"Roboto Slab", sans-serif',
+  buttonFont: "Anton, sans-serif",
   enableScrollToTop: true,
   enableReduxFighters: true,
 };

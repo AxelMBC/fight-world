@@ -21,6 +21,8 @@ export interface CountryPageConfig {
   fontFamily?: string;
   enableScrollToTop?: boolean;
   enableReduxFighters?: boolean;
+  titleFont: string;
+  buttonFont: string;
 }
 
 export interface CountryPageProps {
@@ -28,4 +30,5 @@ export interface CountryPageProps {
   topFightersData: any[];
   topEventsList: any[];
   mainEventFights: any[];
+  theme: any;
 }
