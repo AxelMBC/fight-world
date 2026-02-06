@@ -30,5 +30,5 @@ export interface CountryPageProps {
   topFightersData: any[];
   topEventsList: any[];
   mainEventFights: any[];
-  theme: any;
+  theme?: any;
 }
