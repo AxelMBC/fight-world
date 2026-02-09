@@ -27,7 +27,7 @@ const TopFighters = ({
       <Typography
         marginBottom={2}
         variant="h3"
-        className="fc-primary-dark"
+        color="primary.dark"
         textAlign="center"
         textTransform="uppercase"
         fontSize={{ xs: "1.5rem", md: "6rem" }}

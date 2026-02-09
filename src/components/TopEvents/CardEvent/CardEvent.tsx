@@ -50,12 +50,7 @@ const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
 
       {/* Content */}
       <Box mx={2} my={1} display="flex" flexDirection="column" flexGrow={1}>
-        <Typography
-          variant="h3"
-          className=" font-anton"
-          fontSize="1.2rem"
-          mb={1}
-        >
+        <Typography variant="h3" fontSize="1.2rem" mb={1}>
           {video.title}
         </Typography>
 
@@ -93,13 +88,14 @@ const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
 
         {/* View More */}
         <Typography
-          className="font-anton fc-primary"
+          variant="button"
           mt="auto"
           textTransform="uppercase"
           alignSelf="flex-end"
           display="flex"
           alignItems="center"
           gap={1}
+          color="primary"
           sx={{
             transition: "gap 300ms ease",
             "&:hover": {

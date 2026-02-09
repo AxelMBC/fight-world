@@ -19,7 +19,8 @@ export const theme = createTheme({
   },
   palette: {
     primary: {
-      main: mexicoConfig.colorPalette.primaryDark,
+      main: mexicoConfig.colorPalette.primary,
+      dark: mexicoConfig.colorPalette.primaryDark,
     },
     secondary: {
       main: mexicoConfig.colorPalette.secondary,

@@ -17,7 +17,7 @@ const TopEvents = ({ title, videos, onVideoSelect }: TopVideosProps) => {
     <Box component="section" marginTop={4}>
       <Typography
         variant="h1"
-        className="fc-primary-dark"
+        color="primary.dark"
         textAlign="center"
         textTransform="uppercase"
         marginBottom={5}

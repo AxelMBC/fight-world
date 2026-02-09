@@ -129,8 +129,8 @@ const WorldMap = () => {
           }}
         >
           <Typography
-            variant="h1"
-            className="fc-white font-anton"
+            variant="button"
+            className="fc-white"
             fontSize="1.25rem"
             sx={{
               cursor: "pointer",

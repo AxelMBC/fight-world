@@ -35,8 +35,9 @@ const CardFighter = ({ boxer, rank, onSelect }: FighterCardProps) => {
         }}
       >
         {/* Rank */}
-        <Box
-          className="fc-white font-anton"
+        <Typography
+          variant="h3"
+          className="fc-white"
           position="absolute"
           top={0}
           left={0}
@@ -47,7 +48,7 @@ const CardFighter = ({ boxer, rank, onSelect }: FighterCardProps) => {
           <Box component="span" fontSize="3rem">
             #{rank}
           </Box>
-        </Box>
+        </Typography>
 
         {/* Image */}
         <Box overflow="hidden">
@@ -67,15 +68,16 @@ const CardFighter = ({ boxer, rank, onSelect }: FighterCardProps) => {
 
         {/* Content */}
         <Box p={2.5} borderTop="4px solid #000">
-          <Box
-            className="font-anton fc-black"
+          <Typography
+            variant="h3"
+            className="fc-black"
             sx={{
               fontSize: "1.875rem",
               textTransform: "uppercase",
             }}
           >
             {boxer.name}
-          </Box>
+          </Typography>
 
           <Typography variant="body1" mt={0.5} className="fc-gray">
             RÉCORD: {boxer.record}
@@ -84,9 +86,9 @@ const CardFighter = ({ boxer, rank, onSelect }: FighterCardProps) => {
           <Typography
             mt={0.5}
             variant="body1"
-            className="fc-primary"
             fontWeight={700}
             textTransform="uppercase"
+            color="primary"
           >
             {boxer.nickName}
           </Typography>

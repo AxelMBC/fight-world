@@ -37,12 +37,7 @@ const MainEvent = ({
       marginTop={1}
     >
       {loading && (
-        <Typography
-          variant="h1"
-          className="fc-primary"
-          textAlign="center"
-          fontSize="1.5rem"
-        >
+        <Typography variant="h1" textAlign="center" fontSize="1.5rem">
           BUSCANDO COMBATE...
         </Typography>
       )}
@@ -66,7 +61,7 @@ const MainEvent = ({
           <MotionButton
             id="fetch-another-fight"
             onClick={fetchMainVideo}
-            className="fc-white font-anton"
+            className="fc-white"
             whileHover={{ scale: 1.3 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}

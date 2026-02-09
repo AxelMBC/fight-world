@@ -4,12 +4,12 @@
 
 // Color Palette
 // Primary
-$primary-color: #2D2A4A;
+$primary-color: #2d2a4a;
 $primary-color-dark: #120e31;
 $primary-color-light: #5d5699;
 
 //Secondary
-$secondary-color: #F4E589;
+$secondary-color: #f4e589;
 $secondary-color-dark: #948b53;
 
 // Extended
@@ -20,19 +20,6 @@ $error-color: #d40000;
 
 .thailand-theme {
   background-color: $background-color;
-
-  // Font
-  .font-anton {
-    font-family: "Anton", sans-serif;
-  }
-
-  .fc-primary {
-    color: $primary-color;
-  }
-
-  .fc-primary-dark {
-    color: $primary-color-dark;
-  }
 
   .fc-black {
     color: $background-color;
@@ -79,7 +66,8 @@ $error-color: #d40000;
   }
   100% {
     transform: translateY(-4px) scale(1.05);
-    box-shadow: 12px 12px 0 $background-color,
+    box-shadow:
+      12px 12px 0 $background-color,
       0 0 12px rgba($primary-color, 0.6);
   }
 }
@@ -87,7 +75,8 @@ $error-color: #d40000;
 @keyframes button-reset {
   0% {
     transform: translateY(-4px) scale(1.05);
-    box-shadow: 12px 12px 0 $background-color,
+    box-shadow:
+      12px 12px 0 $background-color,
       0 0 12px rgba($primary-color, 0.6);
   }
   100% {

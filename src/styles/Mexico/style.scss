@@ -29,19 +29,6 @@ $error-color: #d40000;
   background-color: $background-color;
   font-family: "Roboto Slab", sans-serif;
 
-  // Font
-  .font-anton {
-    font-family: "Anton", sans-serif;
-  }
-
-  .fc-primary {
-    color: $primary-color;
-  }
-
-  .fc-primary-dark {
-    color: $primary-color-dark;
-  }
-
   .fc-black {
     color: $background-color;
   }
@@ -93,7 +80,8 @@ $error-color: #d40000;
   }
   100% {
     transform: translateY(-4px) scale(1.05);
-    box-shadow: 12px 12px 0 $background-color,
+    box-shadow:
+      12px 12px 0 $background-color,
       0 0 12px rgba($primary-color, 0.6);
   }
 }
@@ -101,7 +89,8 @@ $error-color: #d40000;
 @keyframes button-reset {
   0% {
     transform: translateY(-4px) scale(1.05);
-    box-shadow: 12px 12px 0 $background-color,
+    box-shadow:
+      12px 12px 0 $background-color,
       0 0 12px rgba($primary-color, 0.6);
   }
   100% {
