@@ -13,6 +13,9 @@ export const theme = createTheme({
     h3: {
       fontFamily: mexicoConfig.titleFont,
     },
+    body1: {
+      fontFamily: mexicoConfig.bodyFont,
+    },
     button: {
       fontFamily: mexicoConfig.buttonFont,
     },
@@ -24,6 +27,9 @@ export const theme = createTheme({
     },
     secondary: {
       main: mexicoConfig.colorPalette.secondary,
+    },
+    background: {
+      default: mexicoConfig.colorPalette.white,
     },
   },
 });

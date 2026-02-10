@@ -7,18 +7,20 @@ export const thailandConfig: CountryPageConfig = {
   topFightersTitle: "Leyendas Historicas",
   topEventsTitle: "Las guerras de Thailandia",
   colorPalette: {
-    primary: "#0047AB",      // Royal blue
+    primary: "#0047AB",
     primaryDark: "#002855",
     primaryLight: "#4D7FBF",
-    secondary: "#FFD700",    // Gold
+    secondary: "#FFD700",
     secondaryDark: "#B8860B",
-    background: "#001f3f",   // Navy background
+    background: "#001f3f",
     text: "#faf9f6",
     accent: "#faf9f6",
     error: "#d40000",
   },
   maxWidth: "1120px",
-  fontFamily: '"Roboto Slab", sans-serif',
+  titleFont: "Anton, sans-serif",
+  bodyFont: '"Merriweather", serif',
+  buttonFont: "Anton, sans-serif",
   enableScrollToTop: false,
   enableReduxFighters: false,
 };

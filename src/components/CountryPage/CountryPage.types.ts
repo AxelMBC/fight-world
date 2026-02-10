@@ -5,6 +5,7 @@ export interface ColorPalette {
   secondary: string;
   secondaryDark: string;
   background: string;
+  white?: string;
   text: string;
   accent: string;
   error: string;
@@ -18,7 +19,7 @@ export interface CountryPageConfig {
   topEventsTitle: string;
   colorPalette: ColorPalette;
   maxWidth: string;
-  fontFamily?: string;
+  bodyFont?: string;
   enableScrollToTop?: boolean;
   enableReduxFighters?: boolean;
   titleFont?: string;

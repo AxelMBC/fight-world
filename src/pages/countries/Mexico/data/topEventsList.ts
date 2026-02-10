@@ -45,36 +45,41 @@ export const topEventsList = [
     id: 4,
     type: "Full Fight",
     title: "Julio César vs Juan Laporte",
-    description: "Un joven Julio César Chávez se enfrenta a otro grande del boxeo, Juan Laporte. Chávez ganó en una dura pelea que demostró el talento de ambos boxeadores, consolidando al 'César del boxeo' en la historia.",
+    description:
+      "Un joven Julio César Chávez se enfrenta a otro grande del boxeo, Juan Laporte. Chávez ganó en una dura pelea que demostró el talento de ambos boxeadores, consolidando al 'César del boxeo' en la historia.",
     idYt: "12J_QOE0esU",
     startTime: "40",
-    tags: ["Leyendas del boxeo", "Campeones", "Clásicos del boxeo"],
+    tags: ["Leyendas del boxeo", "Campeones"],
     fighterBlue: "Julio César Chávez",
     fighterRed: "Juan Laporte",
-    thumbnail: "https://a4.espncdn.com/combiner/i?img=%2Fdeportes%2F2003%2Fphotos2015%2F1023%2Fbox_g_chavez576.jpg"
+    thumbnail:
+      "https://a4.espncdn.com/combiner/i?img=%2Fdeportes%2F2003%2Fphotos2015%2F1023%2Fbox_g_chavez576.jpg",
   },
   {
     id: 5,
     type: "Full Fight",
     title: "Marco Barrera vs Manuel Márquez",
-    description: "El 17 de marzo de 2007, dos leyendas mexicanas se enfrentaron en una guerra épica por el Campeonato de Peso Superpluma del CMB. Una exhibición de técnica, poder y corazón que dejó a los aficionados al boxeo pidiendo más.",
+    description:
+      "El 17 de marzo de 2007, dos leyendas mexicanas se enfrentaron en una guerra épica por el Campeonato de Peso Superpluma del CMB. Una exhibición de técnica, poder y corazón que dejó a los aficionados al boxeo pidiendo más.",
     idYt: "n9gRn6h6mDk",
     startTime: "37",
-    tags: ["Guerra mexicana", "Campeonato CMB", "Leyendas"],
+    tags: ["Guerra mexicana", "Leyendas"],
     fighterBlue: "Juan Manuel Márquez",
     fighterRed: "Marco Antonio Barrera",
-    thumbnail: "https://i.ytimg.com/vi/72nNrnvbeUA/sddefault.jpg"
+    thumbnail: "https://i.ytimg.com/vi/72nNrnvbeUA/sddefault.jpg",
   },
   {
     id: 6,
     type: "Full Fight",
     title: "Canelo Álvarez vs. GGG III",
-    description: "El 17 de septiembre de 2022, Saúl 'Canelo' Álvarez y Gennadiy 'GGG' Golovkin se enfrentaron por tercera y última vez por el título indiscutido de peso súper mediano. Canelo se llevó la victoria por decisión unánime, cerrando una de las trilogías más grandes del boxeo moderno.",
+    description:
+      "El 17 de septiembre de 2022, Saúl 'Canelo' Álvarez y Gennadiy 'GGG' Golovkin se enfrentaron por tercera y última vez por el título indiscutido de peso súper mediano. Canelo se llevó la victoria por decisión unánime, cerrando una de las trilogías más grandes del boxeo moderno.",
     idYt: "6rZCJGsoGxI",
     startTime: "105",
-    tags: ["Trilogía épica", "Campeonato indiscutido", "Pelea moderna"],
+    tags: ["Trilogía épica", "Campeonato indiscutido"],
     fighterBlue: "Saúl 'Canelo' Álvarez",
     fighterRed: "Gennadiy 'GGG' Golovkin",
-    thumbnail: "https://platform.badlefthook.com/wp-content/uploads/sites/18/chorus/uploads/chorus_asset/file/24040851/1243362878.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400"
-  }
+    thumbnail:
+      "https://platform.badlefthook.com/wp-content/uploads/sites/18/chorus/uploads/chorus_asset/file/24040851/1243362878.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400",
+  },
 ];

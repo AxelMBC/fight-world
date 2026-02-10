@@ -18,6 +18,7 @@ const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
       border="4px solid #000"
       boxShadow="8px 8px 0 #000"
       maxWidth={384}
+      minHeight={300}
       sx={{
         cursor: "pointer",
         transition: "all 300ms ease",

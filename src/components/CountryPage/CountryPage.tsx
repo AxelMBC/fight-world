@@ -57,12 +57,12 @@ const CountryPage = ({
           disableGutters
           sx={{
             maxWidth: config.maxWidth,
+            backgroundColor: "background.default",
             mx: "auto",
             p: {
               xs: 2,
               sm: 3,
             },
-            bgcolor: "#fff",
             border: {
               xs: "4px solid #000",
               md: "8px solid #000",
