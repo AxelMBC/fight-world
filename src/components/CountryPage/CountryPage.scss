@@ -10,12 +10,7 @@
 }
 
 .country-theme {
-  background-color: var(--color-background);
   font-family: var(--font-family, "Roboto Slab", sans-serif);
-
-  .fc-black {
-    color: var(--color-background);
-  }
 
   .fc-white {
     color: whitesmoke;
@@ -23,61 +18,5 @@
 
   .fc-gray {
     color: #999999;
-  }
-
-  .fc-error {
-    color: var(--color-error);
-  }
-
-  // Background Colors
-  .bg-primary {
-    background-color: var(--color-primary);
-  }
-
-  .bg-secondary-dark {
-    background-color: var(--color-secondary-dark);
-  }
-
-  .bg-black {
-    background-color: var(--color-background);
-  }
-
-  .bg-white {
-    background-color: var(--color-accent);
-  }
-
-  .border-black {
-    border-color: var(--color-background);
-  }
-
-  #fetch-another-fight {
-    background-color: var(--color-primary);
-    padding: 0.75rem 2rem;
-  }
-}
-
-@keyframes button-lift {
-  0% {
-    transform: translateY(0) scale(1);
-    box-shadow: 8px 8px 0 var(--color-background);
-  }
-  100% {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow:
-      12px 12px 0 var(--color-background),
-      0 0 12px var(--color-primary-light);
-  }
-}
-
-@keyframes button-reset {
-  0% {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow:
-      12px 12px 0 var(--color-background),
-      0 0 12px var(--color-primary-light);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-    box-shadow: 8px 8px 0 var(--color-background);
   }
 }

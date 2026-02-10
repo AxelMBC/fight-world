@@ -44,7 +44,6 @@ const MainEvent = ({
 
       {error && (
         <Typography
-          className="fc-error"
           textAlign="center"
           fontWeight="bold"
           fontSize="1.5rem"
@@ -71,6 +70,7 @@ const MainEvent = ({
               fontSize: "1.5rem",
               py: 1.5,
               px: 4,
+              backgroundColor: "primary.main",
             }}
           >
             <Box component="span" marginRight={1}>

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import type { CSSProperties } from "react";
 
 // MUI
 import { Box, Container } from "@mui/material";
@@ -43,23 +42,6 @@ const CountryPage = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // CSS custom properties (theme bridge)
-  const themeStyles: CSSProperties = {
-    "--color-primary": config.colorPalette.primary,
-    "--color-primary-dark": config.colorPalette.primaryDark,
-    "--color-primary-light": config.colorPalette.primaryLight,
-    "--color-secondary": config.colorPalette.secondary,
-    "--color-secondary-dark": config.colorPalette.secondaryDark,
-    "--color-background": config.colorPalette.background,
-    "--color-text": config.colorPalette.text,
-    "--color-accent": config.colorPalette.accent,
-    "--color-error": config.colorPalette.error,
-  } as CSSProperties;
-
-  if (config.fontFamily) {
-    (themeStyles as any)["--font-family"] = config.fontFamily;
-  }
-
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -70,7 +52,6 @@ const CountryPage = ({
             sm: 3,
           },
         }}
-        style={themeStyles}
       >
         <Container
           disableGutters

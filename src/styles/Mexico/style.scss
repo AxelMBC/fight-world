@@ -37,19 +37,6 @@ $error-color: #d40000;
     color: color.adjust($text-color, $lightness: -40%, $space: hsl);
   }
 
-  .fc-error {
-    color: $error-color;
-  }
-
-  // Background Colors
-  .bg-primary {
-    background-color: $primary-color;
-  }
-
-  .bg-secondary-dark {
-    background-color: $secondary-color-dark;
-  }
-
   .bg-black {
     background-color: $background-color;
   }
@@ -60,12 +47,6 @@ $error-color: #d40000;
 
   .border-black {
     border-color: $background-color;
-  }
-
-  #fetch-another-fight {
-    background-color: $primary-color;
-    // font-size: 2rem;
-    padding: 0.75rem 2rem;
   }
 }
 
