@@ -36,10 +36,7 @@ const CountryPage = ({
   } = useMainVideoQueue(mainEventFights);
 
   useEffect(() => {
-    if (config.enableScrollToTop) {
-      window.scrollTo(0, 0);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    window.scrollTo(0, 0);
   }, []);
 
   return (
@@ -47,10 +44,8 @@ const CountryPage = ({
       <Box
         className={`country-theme ${config.themeClassName}`}
         sx={{
-          p: {
-            xs: 2,
-            sm: 3,
-          },
+          pb: 8,
+          backgroundColor: "background.default",
         }}
       >
         <Container
@@ -62,10 +57,6 @@ const CountryPage = ({
             p: {
               xs: 2,
               sm: 3,
-            },
-            border: {
-              xs: "4px solid #000",
-              md: "8px solid #000",
             },
           }}
         >

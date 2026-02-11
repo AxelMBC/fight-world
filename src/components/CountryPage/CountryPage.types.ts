@@ -6,8 +6,6 @@ export interface ColorPalette {
   secondaryDark: string;
   background: string;
   white?: string;
-  text: string;
-  accent: string;
   error: string;
 }
 
@@ -20,8 +18,6 @@ export interface CountryPageConfig {
   colorPalette: ColorPalette;
   maxWidth: string;
   bodyFont?: string;
-  enableScrollToTop?: boolean;
-  enableReduxFighters?: boolean;
   titleFont?: string;
   buttonFont?: string;
 }
