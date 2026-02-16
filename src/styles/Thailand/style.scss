@@ -21,14 +21,6 @@ $error-color: #d40000;
 .thailand-theme {
   background-color: $background-color;
 
-  .fc-black {
-    color: $background-color;
-  }
-
-  .fc-white {
-    color: $text-color;
-  }
-
   .fc-gray {
     color: color.adjust($text-color, $lightness: -40%, $space: hsl);
   }

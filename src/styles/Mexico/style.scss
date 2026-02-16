@@ -29,10 +29,6 @@ $error-color: #d40000;
   background-color: $background-color;
   font-family: "Roboto Slab", sans-serif;
 
-  .fc-black {
-    color: $background-color;
-  }
-
   .fc-gray {
     color: color.adjust($text-color, $lightness: -40%, $space: hsl);
   }
@@ -48,10 +44,6 @@ $error-color: #d40000;
   .border-black {
     border-color: $background-color;
   }
-}
-
-.fc-white {
-  color: $text-color;
 }
 
 @keyframes button-lift {

@@ -61,19 +61,19 @@ const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
             <Typography
               variant="body1"
               key={index}
-              className={
-                index % 3 === 0
-                  ? "fc-white"
-                  : index % 3 === 1
-                    ? "fc-black"
-                    : "fc-white"
-              }
               px={1}
               py={0.5}
               fontSize="0.75rem"
               fontWeight={400}
               border="2px solid #000"
               boxShadow="1px 1px 0 #000"
+              color={
+                index % 3 === 0
+                  ? "text.secondary"
+                  : index % 3 === 1
+                    ? "text.primary"
+                    : "text.secondary"
+              }
               bgcolor={
                 index % 3 === 0
                   ? "primary.main"

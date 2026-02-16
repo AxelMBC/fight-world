@@ -42,7 +42,7 @@ const CountryPage = ({
   return (
     <ThemeProvider theme={theme}>
       <Box
-        className={`country-theme ${config.themeClassName}`}
+        className={`${config.themeClassName}`}
         sx={{
           pb: 8,
           backgroundColor: "background.default",

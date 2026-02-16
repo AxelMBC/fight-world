@@ -37,8 +37,8 @@ const CardFighter = ({ boxer, rank, onSelect }: FighterCardProps) => {
         {/* Rank */}
         <Typography
           variant="h3"
-          className="fc-white"
           position="absolute"
+          color="text.secondary"
           top={0}
           left={0}
           px={1.5}
@@ -70,7 +70,6 @@ const CardFighter = ({ boxer, rank, onSelect }: FighterCardProps) => {
         <Box p={2.5} borderTop="4px solid #000">
           <Typography
             variant="h3"
-            className="fc-black"
             sx={{
               fontSize: "1.875rem",
               textTransform: "uppercase",

@@ -14,6 +14,8 @@ export const mexicoConfig: CountryPageConfig = {
     secondaryDark: "#3d744d",
     background: "#031602",
     white: "#f2f2f2",
+    textPrimary: "#031602",
+    textSecondary: "#f2f2f2",
     error: "#d40000",
   },
   maxWidth: "1120px",

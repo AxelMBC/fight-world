@@ -11,6 +11,8 @@ export interface ColorPalette {
   background: string;
   white?: string;
   error: string;
+  textPrimary?: string;
+  textSecondary?: string;
 }
 
 export interface CountryPageConfig {

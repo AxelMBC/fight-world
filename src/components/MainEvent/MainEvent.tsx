@@ -60,7 +60,6 @@ const MainEvent = ({
           <MotionButton
             id="fetch-another-fight"
             onClick={fetchMainVideo}
-            className="fc-white"
             whileHover={{ scale: 1.3 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -71,6 +70,7 @@ const MainEvent = ({
               py: 1.5,
               px: 4,
               backgroundColor: "primary.main",
+              color: "text.secondary",
             }}
           >
             <Box component="span" marginRight={1}>
