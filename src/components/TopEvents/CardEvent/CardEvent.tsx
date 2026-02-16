@@ -1,14 +1,10 @@
-import type { mainEventType } from "@/types/fightEventType";
+// Types
+import type { cardEventType } from "./cardEventType";
 
 // MUI
 import { Box, Typography } from "@mui/material";
 
-interface EventCardProps {
-  video: mainEventType;
-  onVideoSelect: (event: mainEventType) => void;
-}
-
-const CardEvent = ({ video, onVideoSelect }: EventCardProps) => {
+const CardEvent = ({ video, onVideoSelect }: cardEventType) => {
   return (
     <Box
       onClick={() => onVideoSelect(video)}

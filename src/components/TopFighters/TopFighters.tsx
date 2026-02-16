@@ -1,22 +1,17 @@
-import type { fighterType } from "@/types/fighterType";
+// TYPES
+import type { topFightersType } from "./topFightersType";
 
 // MUI
 import { Box, Grid, Typography } from "@mui/material";
 
 // Components
-import CardFighter from "./CardFighter";
-
-interface TopFightersProps {
-  title: string;
-  topFightersData: fighterType[];
-  onFighterSelect: (fighter: fighterType) => void;
-}
+import FighterCard from "./FighterCard";
 
 const TopFighters = ({
   title,
   topFightersData,
   onFighterSelect,
-}: TopFightersProps) => {
+}: topFightersType) => {
   return (
     <Box
       paddingBottom={8}
@@ -38,7 +33,7 @@ const TopFighters = ({
       <Grid container spacing={5}>
         <Grid size={{ xs: 12, md: 6, lg: 8 }}>
           {topFightersData[0] && (
-            <CardFighter
+            <FighterCard
               boxer={topFightersData[0]}
               rank={1}
               onSelect={onFighterSelect}
@@ -48,7 +43,7 @@ const TopFighters = ({
 
         <Grid size={{ xs: 12, md: 6, lg: 4 }}>
           {topFightersData[1] && (
-            <CardFighter
+            <FighterCard
               boxer={topFightersData[1]}
               rank={2}
               onSelect={onFighterSelect}
@@ -58,7 +53,7 @@ const TopFighters = ({
 
         {topFightersData.slice(2).map((b, i) => (
           <Grid key={b.id} size={{ xs: 12, md: 6, lg: 4 }}>
-            <CardFighter boxer={b} rank={i + 3} onSelect={onFighterSelect} />
+            <FighterCard boxer={b} rank={i + 3} onSelect={onFighterSelect} />
           </Grid>
         ))}
       </Grid>

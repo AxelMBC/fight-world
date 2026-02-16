@@ -1,5 +1,5 @@
 // TYPE
-import type { mainEventType } from "../../types/fightEventType";
+import type { MainEventProps } from "./MainEventType";
 
 // MUI
 import { Box, Button, Typography } from "@mui/material";
@@ -13,13 +13,6 @@ import { faDiceThree } from "@fortawesome/free-solid-svg-icons";
 
 // Components
 import MainEventCard from "./MainEventCard";
-
-type MainEventProps = {
-  loading: boolean;
-  error: string | null;
-  mainVideo: mainEventType | null;
-  fetchMainVideo: () => void;
-};
 
 const MotionButton = motion.create(Button);
 

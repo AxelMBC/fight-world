@@ -1,6 +1,6 @@
 // Config
-import { mexicoConfig } from "./config/mexico.config";
 import { theme } from "./config/mexicoTheme";
+import { mexicoConfig } from "./config/mexico.config";
 
 // Data
 import { topFightersData } from "./data/topFightersList";

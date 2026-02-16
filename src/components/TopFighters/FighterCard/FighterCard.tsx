@@ -1,15 +1,10 @@
-import type { fighterType } from "@/types/fighterType";
+// Types
+import type { fighterCardType } from "./fighterCardType";
 
 // MUI
 import { Box, Typography } from "@mui/material";
 
-interface FighterCardProps {
-  boxer: fighterType;
-  rank: number;
-  onSelect: (fighter: fighterType) => void;
-}
-
-const CardFighter = ({ boxer, rank, onSelect }: FighterCardProps) => {
+const FighterCard = ({ boxer, rank, onSelect }: fighterCardType) => {
   return (
     <Box
       onClick={() => onSelect(boxer)}
@@ -97,4 +92,4 @@ const CardFighter = ({ boxer, rank, onSelect }: FighterCardProps) => {
   );
 };
 
-export default CardFighter;
+export default FighterCard;
