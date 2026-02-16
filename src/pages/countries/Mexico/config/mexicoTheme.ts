@@ -3,7 +3,7 @@ import { mexicoConfig } from "./mexico.config";
 
 export const theme = createTheme({
   typography: {
-    fontFamily: "Raleway, Arial",
+    fontFamily: mexicoConfig.bodyFont,
     h1: {
       fontFamily: mexicoConfig.titleFont,
     },

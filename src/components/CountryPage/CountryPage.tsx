@@ -1,11 +1,14 @@
 import { useEffect } from "react";
 
+// Styles
+import "./CountryPage.scss";
+
+// Types
+import type { CountryPageProps } from "./CountryPage.types";
+
 // MUI
 import { Box, Container } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-
-// Styles
-import "./CountryPage.scss";
 
 // Components
 import TitleCountry from "@/components/TitleCountry";
@@ -15,9 +18,6 @@ import TopEvents from "@/components/TopEvents";
 
 // Hooks
 import { useMainVideoQueue } from "@/hooks/useMainVideoQueue";
-
-// Types
-import type { CountryPageProps } from "./CountryPage.types";
 
 const CountryPage = ({
   config,
@@ -52,8 +52,6 @@ const CountryPage = ({
           disableGutters
           sx={{
             maxWidth: config.maxWidth,
-            backgroundColor: "background.default",
-            mx: "auto",
             p: {
               xs: 2,
               sm: 3,

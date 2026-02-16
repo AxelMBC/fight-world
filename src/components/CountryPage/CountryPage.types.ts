@@ -1,3 +1,7 @@
+import type { Theme } from "@mui/material/styles";
+import type { fighterType } from "@/types/fighterType";
+import type { mainEventType } from "@/types/fightEventType";
+
 export interface ColorPalette {
   primary: string;
   primaryDark: string;
@@ -24,8 +28,8 @@ export interface CountryPageConfig {
 
 export interface CountryPageProps {
   config: CountryPageConfig;
-  topFightersData: any[];
-  topEventsList: any[];
-  mainEventFights: any[];
-  theme?: any;
+  topFightersData: fighterType[];
+  topEventsList: mainEventType[];
+  mainEventFights: mainEventType[];
+  theme: Theme;
 }
