@@ -17,6 +17,7 @@ export const thailandConfig: CountryPageConfig = {
     textPrimary: "#031602",
     textSecondary: "#f2f2f2",
     error: "#d40000",
+    info: "#818589",
   },
   maxWidth: "1120px",
   titleFont: "Anton, sans-serif",

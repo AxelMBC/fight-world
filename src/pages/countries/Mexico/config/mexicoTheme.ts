@@ -35,5 +35,8 @@ export const theme = createTheme({
     background: {
       default: mexicoConfig.colorPalette.white,
     },
+    info: {
+      main: mexicoConfig.colorPalette.info,
+    },
   },
 });

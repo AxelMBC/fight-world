@@ -73,7 +73,7 @@ const FighterCard = ({ boxer, rank, onSelect }: fighterCardType) => {
             {boxer.name}
           </Typography>
 
-          <Typography variant="body1" mt={0.5} className="fc-gray">
+          <Typography variant="body1" color="info.main" mt={0.5}>
             RÉCORD: {boxer.record}
           </Typography>
 

@@ -42,7 +42,6 @@ const CountryPage = ({
   return (
     <ThemeProvider theme={theme}>
       <Box
-        className={`${config.themeClassName}`}
         sx={{
           pb: 8,
           backgroundColor: "background.default",

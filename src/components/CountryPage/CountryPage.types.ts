@@ -13,6 +13,7 @@ export interface ColorPalette {
   error: string;
   textPrimary?: string;
   textSecondary?: string;
+  info: string;
 }
 
 export interface CountryPageConfig {
