@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Styles
 import "./CountryPage.scss";
@@ -7,7 +8,7 @@ import "./CountryPage.scss";
 import type { CountryPageProps } from "./CountryPage.types";
 
 // MUI
-import { Box, Container } from "@mui/material";
+import { Box, Container, Button } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 
 // Components
@@ -26,6 +27,8 @@ const CountryPage = ({
   mainEventFights,
   theme,
 }: CountryPageProps) => {
+  const navigate = useNavigate();
+
   const {
     mainVideo,
     loading,
@@ -57,6 +60,27 @@ const CountryPage = ({
             },
           }}
         >
+          <Button
+            onClick={() => navigate("/")}
+            variant="text"
+            sx={{
+              position: "fixed",
+              top: 20,
+              left: 24,
+              zIndex: 2000,
+              fontSize: "0.9rem",
+              fontWeight: 500,
+              textTransform: "none",
+              color: "text.primary",
+              opacity: 0.7,
+              "&:hover": {
+                opacity: 1,
+                backgroundColor: "transparent",
+              },
+            }}
+          >
+            ← Mapa Mundial
+          </Button>
           <TitleCountry title={config.headerTitle} />
 
           <MainEvent
