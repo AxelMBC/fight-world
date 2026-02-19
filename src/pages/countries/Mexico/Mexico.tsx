@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 // Config
 import { theme } from "./config/mexicoTheme";
 import { mexicoConfig } from "./config/mexico.config";
@@ -10,7 +12,15 @@ import { mainEventFights } from "./data/allEventsList";
 // Components
 import CountryPage from "@/components/CountryPage/CountryPage";
 
+import { setFightersList } from "@/store/Fighters";
+
 const Mexico = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setFightersList(topFightersData));
+  }, [dispatch]);
+
   return (
     <CountryPage
       theme={theme}

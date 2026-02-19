@@ -7,6 +7,7 @@ export const topFightersData: fighterType[] = [
     record: "280-15-5",
     nickName: "El Emperador",
     image: "https://gofind.jjtravel.com/26657",
+    fightsCounter: 5,
   },
   {
     id: "2",
@@ -15,6 +16,7 @@ export const topFightersData: fighterType[] = [
     nickName: "Saenchai",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/SaenchaiSorKingstar.jpg/1280px-SaenchaiSorKingstar.jpg",
+    fightsCounter: 5,
   },
   {
     id: "3",
@@ -23,6 +25,7 @@ export const topFightersData: fighterType[] = [
     nickName: "El Muhammed Ali de Muay Thai",
     image:
       "https://cdn.evolve-vacation.com/wp-content/uploads/2019/06/Samart-Payakaroon.jpg",
+    fightsCounter: 5,
   },
   {
     id: "4",
@@ -31,6 +34,7 @@ export const topFightersData: fighterType[] = [
     nickName: "El rey the las rodillas",
     image:
       "https://images.tapology.com/letterbox_images/370862/default/BE7C2DAA-16AF-4F8A-A2A3-2816B43B4012.jpeg?1674407913",
+    fightsCounter: 5,
   },
   {
     id: "5",
@@ -39,6 +43,7 @@ export const topFightersData: fighterType[] = [
     nickName: "La patada de la muerte",
     image:
       "https://cdn.evolve-mma.com/wp-content/uploads/2019/09/Apidej-Sit-Hirun-Muay-THai.png",
+    fightsCounter: 5,
   },
 ];
 

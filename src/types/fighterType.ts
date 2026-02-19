@@ -3,7 +3,8 @@ export interface fighterType {
   name: string;
   record: string;
   nickName: string;
-  image?: string;
+  image: string;
+  fightsCounter: number;
 }
 
 export interface topFightersType {

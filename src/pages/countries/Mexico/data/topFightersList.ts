@@ -10,6 +10,7 @@ export const topFightersData: fighterType[] = [
     record: "107-6-2",
     nickName: "El Gran Campeón Mexicano",
     image: JulioCesarImg,
+    fightsCounter: 5,
   },
   {
     id: "2",
@@ -17,6 +18,7 @@ export const topFightersData: fighterType[] = [
     record: "61-2-2",
     nickName: "Rey Indiscutido",
     image: CaneloAlvarezImg,
+    fightsCounter: 5,
   },
   {
     id: "3",
@@ -25,6 +27,7 @@ export const topFightersData: fighterType[] = [
     nickName: "Finito, La Perfección",
     image:
       "https://www.infobae.com/resizer/v2/6AMVEHZNYVGHJGXDUVFYHCJNRQ.jpg?auth=673c35eeb291c91cd8d7928c4a4943f64ffe929c7200e7715ec93f8e4afd8155",
+    fightsCounter: 5,
   },
   {
     id: "4",
@@ -33,6 +36,7 @@ export const topFightersData: fighterType[] = [
     nickName: "Maestro del Contragolpe",
     image:
       "https://i0.wp.com/wbanews.com/wp-content/uploads/2013/01/Juan-Manuel-Marquez-dejo-a-Latinoamerica-en-lo-mas-alto.jpg",
+    fightsCounter: 5,
   },
   {
     id: "5",
@@ -40,6 +44,7 @@ export const topFightersData: fighterType[] = [
     record: "44-1-1",
     nickName: "El Campeón Inmortal",
     image: SalvadorSanchezImg,
+    fightsCounter: 5,
   },
 ];
 
