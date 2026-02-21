@@ -1,18 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
 import type { fighterType } from "@/types/fighterType";
+
+import { createSlice } from "@reduxjs/toolkit";
+import { topFightersData } from "@/pages/countries/Mexico/data/topFightersList";
 
 interface FighterState {
   fightersList: fighterType[];
   selectedFighter: fighterType | null;
-  loading: boolean;
-  error: string | null;
 }
 
 const initialState: FighterState = {
-  fightersList: [],
+  fightersList: topFightersData,
   selectedFighter: null,
-  loading: false,
-  error: null,
 };
 
 export const fighterSlice = createSlice({
@@ -25,18 +23,10 @@ export const fighterSlice = createSlice({
     setSelectedFighter: (state, action) => {
       state.selectedFighter = action.payload;
     },
-
-    setLoading: (state, action) => {
-      state.loading = action.payload;
-    },
-    setError: (state, action) => {
-      state.error = action.payload;
-    },
   },
 });
 
-export const { setFightersList, setSelectedFighter, setLoading, setError } =
-  fighterSlice.actions;
+export const { setFightersList, setSelectedFighter } = fighterSlice.actions;
 
 export const selectFightersState = (state: { fighter: FighterState }) =>
   state.fighter;

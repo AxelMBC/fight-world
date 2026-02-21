@@ -1,12 +1,8 @@
 // TYPES
 import type { topFightersType } from "./topFightersType";
 
-import { useSelector } from "react-redux";
-
 // MUI
 import { Box, Grid, Typography } from "@mui/material";
-
-import { selectFightersState } from "@/store/Fighters";
 
 // Components
 import FighterCard from "./FighterCard";
@@ -16,8 +12,6 @@ const TopFighters = ({
   topFightersData,
   onFighterSelect,
 }: topFightersType) => {
-  const { fightersList } = useSelector(selectFightersState);
-  console.log("fightersList", fightersList);
   return (
     <Box
       paddingBottom={8}

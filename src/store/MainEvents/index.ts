@@ -1,0 +1,29 @@
+import { mainEventType } from "@/types/fightEventType";
+
+import { createSlice } from "@reduxjs/toolkit";
+import { mainEventFights } from "@/pages/countries/Mexico/data/allEventsList";
+
+interface MainEventsState {
+  mainEventsList: mainEventType[];
+}
+
+const initialState: MainEventsState = {
+  mainEventsList: mainEventFights,
+};
+
+export const mainEventsSlice = createSlice({
+  name: "mainEvents",
+  initialState,
+  reducers: {
+    setMainEventsList: (state, action) => {
+      state.mainEventsList = action.payload;
+    },
+  },
+});
+
+export const { setMainEventsList } = mainEventsSlice.actions;
+
+export const selectMainEventsState = (state: { mainEvents: MainEventsState }) =>
+  state.mainEvents;
+
+export default mainEventsSlice.reducer;

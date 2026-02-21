@@ -1,12 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
 import fighterReducer from "./Fighters";
+import mainEventsReducer from "./MainEvents";
+import topEventsReducer from "./TopEvents";
 
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
   reducer: {
     fighter: fighterReducer,
+    mainEvents: mainEventsReducer,
+    topEvents: topEventsReducer,
   },
 
   middleware: (getDefaultMiddleware) =>
